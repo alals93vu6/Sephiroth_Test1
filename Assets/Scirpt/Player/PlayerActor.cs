@@ -36,14 +36,14 @@ public class PlayerActor : MonoBehaviour
     
     private void PlayerMove()
     {
-        rig.velocity = new Vector2 (Input.GetAxis("Horizontal") * RunSpeed, rig.velocity.y);
+        rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
 
-        if(Input.GetAxisRaw("Horizontal") <= -0.01f )
+        if(Input.GetAxisRaw("HorizontalA") <= -0.01f )
         {
             transform.localScale = new Vector3(-0.14f, 0.21f, 0.14f);
         }
 
-        if(Input.GetAxisRaw("Horizontal") >= 0.01f )
+        if(Input.GetAxisRaw("HorizontalA") >= 0.01f )
         {
             transform.localScale = new Vector3(0.14f, 0.21f, 0.14f);
         }
