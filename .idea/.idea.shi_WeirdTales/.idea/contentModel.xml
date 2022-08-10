@@ -9,6 +9,14 @@
         <e p="BBB.cs" t="Include" />
         <e p="Scirpt" t="Include">
           <e p="EventBus.cs" t="Include" />
+          <e p="Events" t="Include">
+            <e p="GamePlaying" t="Include">
+              <e p="PlayerAttackDetected.cs" t="Include" />
+            </e>
+          </e>
+          <e p="GamePlaying" t="Include">
+            <e p="GamePlayManager.cs" t="Include" />
+          </e>
           <e p="Player" t="Include">
             <e p="PlayerActor.cs" t="Include" />
             <e p="ShiCtrl" t="Include">

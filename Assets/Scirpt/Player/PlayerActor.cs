@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Project;
 using UnityEngine;
 
 public class PlayerActor : MonoBehaviour
@@ -36,6 +37,8 @@ public class PlayerActor : MonoBehaviour
     
     private void PlayerMove()
     {
+        
+        
         rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
 
         if(Input.GetAxisRaw("HorizontalA") <= -0.01f )
@@ -48,13 +51,9 @@ public class PlayerActor : MonoBehaviour
             transform.localScale = new Vector3(0.14f, 0.21f, 0.14f);
         }
         /*
-        if(Input.GetAxisRaw("Horizontal") == 0 )
-        {
-
-        }
+        
         */
         //到時候記得依角色大小改Scale
-
     }
     
     private void PlayerJumpWhether()
