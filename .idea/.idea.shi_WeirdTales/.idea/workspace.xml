@@ -25,6 +25,7 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Events/GamePlaying/PlayerAttackDetected.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/StayArea.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -77,7 +78,8 @@
       <workItem from="1660004496215" duration="3207000" />
       <workItem from="1660020281404" duration="1020000" />
       <workItem from="1660038261345" duration="43000" />
-      <workItem from="1660108359988" duration="6875000" />
+      <workItem from="1660108359988" duration="6973000" />
+      <workItem from="1660744049388" duration="2291000" />
     </task>
     <servers />
   </component>
