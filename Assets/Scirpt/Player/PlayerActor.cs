@@ -61,7 +61,7 @@ public class PlayerActor : MonoBehaviour
         if(Input.GetButtonDown("AKey") && !IsJump)
         {
             rig.AddForce(new Vector2 (rig.velocity.x , JumpFouce), ForceMode2D.Impulse);
-            Debug.Log("AAA");
+            //Debug.Log("AAA");
         }
         
         if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFool))
