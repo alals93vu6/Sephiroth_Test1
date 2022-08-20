@@ -12,6 +12,8 @@
           <e p="Events" t="Include">
             <e p="GamePlaying" t="Include">
               <e p="PlayerAttackDetected.cs" t="Include" />
+              <e p="PlayerCallShiDetected.cs" t="Include" />
+              <e p="ShiReturnDetected.cs" t="Include" />
             </e>
           </e>
           <e p="GamePlaying" t="Include">
@@ -20,11 +22,13 @@
           <e p="Player" t="Include">
             <e p="PlayerActor.cs" t="Include" />
             <e p="ShiCtrl" t="Include">
-              <e p="CtrlDistance.cs" t="Include" />
               <e p="FollowObj.cs" t="Include" />
               <e p="ShiActor.cs" t="Include" />
-              <e p="StayArea.cs" t="Include" />
             </e>
+          </e>
+          <e p="Trashcans" t="Include">
+            <e p="CtrlDistance.cs" t="Include" />
+            <e p="StayArea.cs" t="Include" />
           </e>
         </e>
         <e p="Test" t="Include">

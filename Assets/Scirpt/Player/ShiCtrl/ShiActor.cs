@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using Project;
+using Project.Events.GamePlaying;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
 
 public class ShiActor : MonoBehaviour
 {
     [Header("數值")]
     [SerializeField] private float MoveSpeed;
-    [SerializeField] private float PlayerX, PlayerY;
+    [SerializeField] private float PlayerX;
+    [SerializeField] private float NowShiGapPosx , NowShiGapPosY;
     [SerializeField] private float XAxis;
 
     [Header("物件")] 
@@ -26,27 +31,44 @@ public class ShiActor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-       
         if (IsSummons)
         {
-            
+            SummonsPosMaxDetection();
         }
         else
         {
             ShiFollowMove();
             ShiFollowPosMax();
+            
+            
+            
+            if (Input.GetButtonDown("XKey") || Input.GetKeyDown(KeyCode.H))
+            {
+                
+                SummonsShi();
+            }
         }
     }
     
     private void SummonsShi()
     {
         IsSummons = true;
+        Shirig.velocity = Vector2.zero;
+        EventBus.Post(new PlayerCallShiDetected());
     }
 
-    private void SummonsPosMax()
+    private void SummonsPosMaxDetection()
+    {
+        NowShiGapPosx = Mathf.Abs(this.gameObject.transform.position.x - PlayerNowPos.transform.position.x);
+        NowShiGapPosY = Mathf.Abs(this.gameObject.transform.position.y - PlayerNowPos.transform.position.y);
+
+        if (NowShiGapPosx >= 12 || NowShiGapPosY >= 8) { ShiReTurn();}
+    }
+
+    private void ShiReTurn()
     {
         IsSummons = false;
+        EventBus.Post(new ShiReturnDetected());
     }
 
     private void ShiFollowMove()
@@ -60,8 +82,7 @@ public class ShiActor : MonoBehaviour
     private void ShiFollowPosMax()
     {
         PlayerX = PlayerNowPos.transform.position.x;
-        PlayerY = PlayerNowPos.transform.position.y;
-        
+
         this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1.5f, PlayerX + 1.5f), 
             Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1.4f, PlayerNowPos.transform.position.y + 1.4f));
     }

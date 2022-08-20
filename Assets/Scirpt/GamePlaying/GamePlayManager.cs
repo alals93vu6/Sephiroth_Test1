@@ -10,6 +10,21 @@ public class GamePlayManager : MonoBehaviour
     void Start()
     {
         EventBus.Subscribe<PlayerAttackDetected>(OnPlayerAttack);//玩家發動攻擊
+        EventBus.Subscribe<PlayerCallShiDetected>(OnCallingShi);//玩家召喚替身
+        EventBus.Subscribe<ShiReturnDetected>(OnShiReturn);//替身回到玩家身邊
+    }
+    void Update()
+    {
+        
+    }
+    private void OnShiReturn(ShiReturnDetected obj)
+    {
+        Debug.Log("ShiIsBack");
+    }
+
+    private void OnCallingShi(PlayerCallShiDetected obj)
+    {
+        Debug.Log("SummosShi!!");
     }
 
     private void OnPlayerAttack(PlayerAttackDetected obj)
@@ -17,9 +32,5 @@ public class GamePlayManager : MonoBehaviour
         throw new System.NotImplementedException();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

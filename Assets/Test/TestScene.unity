@@ -326,7 +326,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 4.2
   PlayerX: 0
-  PlayerY: 0
+  NowShiGapPosx: 0
+  NowShiGapPosY: 0
   XAxis: 0
   PlayerNowPos: {fileID: 1112707111}
   IsSummons: 0
@@ -598,8 +599,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051678893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.022, y: -5, z: 0}
-  m_LocalScale: {x: 3.7099562, y: 0.80086577, z: 1}
+  m_LocalPosition: {x: -0.021994, y: -5, z: 0}
+  m_LocalScale: {x: 73.828125, y: 0.80086577, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -881,6 +882,49 @@ MonoBehaviour:
   CamereX: 0
   CamereY: 0
   CamerePos: {fileID: 519420028}
+--- !u!1 &1349943610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1349943612}
+  - component: {fileID: 1349943611}
+  m_Layer: 0
+  m_Name: GamePlayingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1349943611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349943610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85aabcf84c726c349a48012c21468e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1349943612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349943610}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.43425316, y: 2.2094836, z: 3.3350015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1681987538
 GameObject:
   m_ObjectHideFlags: 0
