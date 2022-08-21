@@ -11,67 +11,47 @@ public class ShiActor : MonoBehaviour
     [Header("數值")]
     [SerializeField] private float MoveSpeed;
     [SerializeField] private float PlayerX;
-    [SerializeField] private float NowShiGapPosx , NowShiGapPosY;
+    [SerializeField] private float NowShiGapPosX , NowShiGapPosY;
     [SerializeField] private float XAxis;
 
     [Header("物件")] 
     [SerializeField] private GameObject PlayerNowPos;
     
-    [Header("狀態")] 
-    [SerializeField] private bool IsSummons;
+    [Header("狀態")]
     [SerializeField] private Rigidbody2D Shirig;
+    [SerializeField] private IState currenState = new FollowState();
 
     // Start is called before the first frame update
     void Start()
     {
         Shirig = GetComponent<Rigidbody2D>();
-        IsSummons = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsSummons)
-        {
-            SummonsPosMaxDetection();
-        }
-        else
-        {
-            ShiFollowMove();
-            ShiFollowPosMax();
-            
-            
-            
-            if (Input.GetButtonDown("XKey") || Input.GetKeyDown(KeyCode.H))
-            {
-                
-                SummonsShi();
-            }
-        }
+        currenState.OnStayState(this);
+       
     }
     
-    private void SummonsShi()
+    public void SummonsShi()
     {
-        IsSummons = true;
         Shirig.velocity = Vector2.zero;
         EventBus.Post(new PlayerCallShiDetected());
     }
 
-    private void SummonsPosMaxDetection()
+    public void SummonsPosMaxDetection()
     {
-        NowShiGapPosx = Mathf.Abs(this.gameObject.transform.position.x - PlayerNowPos.transform.position.x);
+        NowShiGapPosX = Mathf.Abs(this.gameObject.transform.position.x - PlayerNowPos.transform.position.x);
         NowShiGapPosY = Mathf.Abs(this.gameObject.transform.position.y - PlayerNowPos.transform.position.y);
-
-        if (NowShiGapPosx >= 12 || NowShiGapPosY >= 8) { ShiReTurn();}
     }
 
-    private void ShiReTurn()
+    public void ShiReTurn()
     {
-        IsSummons = false;
         EventBus.Post(new ShiReturnDetected());
     }
 
-    private void ShiFollowMove()
+    public void ShiFollowMove()
     {
         XAxis = Input.GetAxisRaw("HorizontalA");
         
@@ -79,12 +59,29 @@ public class ShiActor : MonoBehaviour
         
         //StayArearig.AddForce(new Vector2(-XAxis, 0) * MoveSpeed, ForceMode2D.Impulse);
     }
-    private void ShiFollowPosMax()
+    public void ShiFollowPosMax()
     {
         PlayerX = PlayerNowPos.transform.position.x;
 
         this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1.5f, PlayerX + 1.5f), 
             Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1.4f, PlayerNowPos.transform.position.y + 1.4f));
+    }
+
+    public void ChangeState(IState NextState)
+    {
+        currenState.OnExitState(this);
+        NextState.OnEnterState(this);
+        currenState = NextState;
+    }
+
+    public float GetNowShiGapPosX()
+    {
+        return NowShiGapPosX;
+    }
+
+    public float GetNowShiGapPosY()
+    {
+        return NowShiGapPosY;
     }
 
 }

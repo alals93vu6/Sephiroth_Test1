@@ -30,8 +30,12 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Events/GamePlaying/PlayerCallShiDetected.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Events/GamePlaying/ShiReturnDetected.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/IStateShi.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/FollowState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/SummonState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/IState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -87,6 +91,7 @@
       <workItem from="1660108359988" duration="6973000" />
       <workItem from="1660744049388" duration="5461000" />
       <workItem from="1660977319496" duration="5100000" />
+      <workItem from="1661080607752" duration="3377000" />
     </task>
     <servers />
   </component>

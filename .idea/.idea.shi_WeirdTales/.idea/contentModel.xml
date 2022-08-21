@@ -23,7 +23,12 @@
             <e p="PlayerActor.cs" t="Include" />
             <e p="ShiCtrl" t="Include">
               <e p="FollowObj.cs" t="Include" />
+              <e p="IState.cs" t="Include" />
               <e p="ShiActor.cs" t="Include" />
+              <e p="ShiState" t="Include">
+                <e p="FollowState.cs" t="Include" />
+                <e p="SummonState.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="Trashcans" t="Include">

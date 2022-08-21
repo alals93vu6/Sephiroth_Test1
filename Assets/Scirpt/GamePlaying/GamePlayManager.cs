@@ -19,12 +19,12 @@ public class GamePlayManager : MonoBehaviour
     }
     private void OnShiReturn(ShiReturnDetected obj)
     {
-        Debug.Log("ShiIsBack");
+        //Debug.Log("ShiIsBack");
     }
 
     private void OnCallingShi(PlayerCallShiDetected obj)
     {
-        Debug.Log("SummosShi!!");
+        //Debug.Log("SummosShi!!");
     }
 
     private void OnPlayerAttack(PlayerAttackDetected obj)
