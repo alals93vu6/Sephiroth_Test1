@@ -9,8 +9,8 @@ public class PlayerActor : MonoBehaviour
     
     [Header("狀態")]
     [SerializeField] Rigidbody2D rig;
-
     [SerializeField] private bool IsJump;
+    [SerializeField] private IState CurrenState = new IdeoState();
     
     [Header("數值")]
     [SerializeField] private float RunSpeed;
@@ -31,14 +31,11 @@ public class PlayerActor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMove();
-        PlayerJumpWhether();
+        CurrenState.OnStayState(this);
     }
     
-    private void PlayerMove()
+    public void PlayerMove()
     {
-        
-        
         rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
 
         if(Input.GetAxisRaw("HorizontalA") <= -0.01f )
@@ -55,26 +52,48 @@ public class PlayerActor : MonoBehaviour
         */
         //到時候記得依角色大小改Scale
     }
-    
-    private void PlayerJumpWhether()
+
+    public void OnPlayerJump()
     {
         if(Input.GetButtonDown("AKey") && !IsJump)
         {
             rig.AddForce(new Vector2 (rig.velocity.x , JumpFouce), ForceMode2D.Impulse);
+            ChangeState(new JumpState());
             //Debug.Log("AAA");
         }
-        
+    }
+
+    public void PlayerJumpWhether()
+    {
         if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFool))
         {
             IsJump = false;
-            
+
         }
-        else { IsJump = true; }
+        else { IsJump = true; ChangeState(new DropState()); }
     }
-    
+
+    public void PlayerDownWhether()
+    {
+        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFool))
+        {
+            IsJump = false;
+            Debug.Log("著陸");
+            ChangeState(new MoveState());
+        }
+        else { IsJump = true;}
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(JumpArea.transform.position,JumpRange);
+    }
+
+    public void ChangeState(IState nextState)
+    {
+        CurrenState.OnExitState(this);
+        nextState.OnEnterState(this);
+        CurrenState = nextState;
     }
 }
