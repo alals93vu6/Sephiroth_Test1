@@ -24,7 +24,7 @@ public class JumpState : IState
 
         if (DelayTime >= 0.4f)
         {
-            Debug.Log("準備著陸");
+            //Debug.Log("準備著陸");
             actor.ChangeState(new DropState());
         }
 

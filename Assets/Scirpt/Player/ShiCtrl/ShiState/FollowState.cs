@@ -14,6 +14,7 @@ public class FollowState : IState
         var actor = (ShiActor) action;
         actor.ShiFollowMove();
         actor.ShiFollowPosMax();
+        actor.ShiRotation();
         
         if (Input.GetButtonDown("XKey") || Input.GetKeyDown(KeyCode.H))
         {

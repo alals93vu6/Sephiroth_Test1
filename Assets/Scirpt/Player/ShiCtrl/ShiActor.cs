@@ -59,12 +59,27 @@ public class ShiActor : MonoBehaviour
         
         //StayArearig.AddForce(new Vector2(-XAxis, 0) * MoveSpeed, ForceMode2D.Impulse);
     }
+
+    public void ShiRotation()
+    {
+        if (this.transform.position.x <= PlayerX)
+        {
+            this.transform.localScale = new Vector2(0.2f, 0.2f);
+        }
+        else
+        {
+            this.transform.localScale = new Vector2(-0.2f, 0.2f);
+        }
+    }
+
     public void ShiFollowPosMax()
     {
         PlayerX = PlayerNowPos.transform.position.x;
 
         this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1.5f, PlayerX + 1.5f), 
             Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1.4f, PlayerNowPos.transform.position.y + 1.4f));
+        
+        
     }
 
     public void ChangeState(IState NextState)

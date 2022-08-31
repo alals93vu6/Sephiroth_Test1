@@ -8,6 +8,7 @@ public class MoveState : IState
     public void OnEnterState(object action)
     {
         //Debug.Log("IsMove");
+        PlayerAnimatorManager.instance.PlayRun();
     }
 
     public void OnStayState(object action)
@@ -26,6 +27,6 @@ public class MoveState : IState
 
     public void OnExitState(object action)
     {
-        
+        PlayerAnimatorManager.instance.PlayStopMove();
     }
 }
