@@ -40,12 +40,12 @@ public class PlayerActor : MonoBehaviour
 
         if(Input.GetAxisRaw("HorizontalA") <= -0.01f )
         {
-            transform.localScale = new Vector3(-0.14f, 0.21f, 0.14f);
+            transform.localScale = new Vector3(-7f, 7f, 7f);
         }
 
         if(Input.GetAxisRaw("HorizontalA") >= 0.01f )
         {
-            transform.localScale = new Vector3(0.14f, 0.21f, 0.14f);
+            transform.localScale = new Vector3(7f, 7f, 7f);
         }
         /*
         

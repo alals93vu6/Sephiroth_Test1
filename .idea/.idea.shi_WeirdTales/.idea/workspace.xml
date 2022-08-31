@@ -38,8 +38,8 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -96,7 +96,8 @@
       <workItem from="1660744049388" duration="5461000" />
       <workItem from="1660977319496" duration="5100000" />
       <workItem from="1661080607752" duration="3857000" />
-      <workItem from="1661263029453" duration="5045000" />
+      <workItem from="1661263029453" duration="5754000" />
+      <workItem from="1661939046085" duration="950000" />
     </task>
     <servers />
   </component>
@@ -107,24 +108,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs</url>
-          <line>5</line>
-          <properties documentPath="F:\GitHub\Shi_WeirdTales\Assets\Scirpt\Player\PlayerActor.cs" initialLine="5">
-            <startOffsets>
-              <option value="135" />
-            </startOffsets>
-            <endOffsets>
-              <option value="135" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
