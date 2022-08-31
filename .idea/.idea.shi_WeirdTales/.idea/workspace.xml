@@ -19,6 +19,7 @@
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/每周瘋狗課程/第2周_汁郎/unity/week2/Assets/C#/CtrlSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/每周瘋狗課程/第3周_縮圈糞GAME/unity/Week3_2.0/Assets/C#/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/每周瘋狗課程/第4周_一發狙擊手/unity/week04/Assets/C#/Player.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../電腦/Unitybitch/skill/skillCD/Assets/C#/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/每周瘋狗課程/第13周_奔跑三角錐/unity/Week13/Assets/Script/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../PunchMan/Assets/Script/GamePlay/ActorJudgement.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -35,15 +36,15 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/SummonState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/IState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/StopMoveState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/FollowState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -101,7 +102,7 @@
       <workItem from="1660977319496" duration="5100000" />
       <workItem from="1661080607752" duration="3857000" />
       <workItem from="1661263029453" duration="5754000" />
-      <workItem from="1661939046085" duration="7272000" />
+      <workItem from="1661939046085" duration="11185000" />
     </task>
     <servers />
   </component>

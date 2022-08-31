@@ -47,4 +47,14 @@ public class PlayerAnimatorManager : MonoBehaviour
         AN.Play("PlayerStopMoveTest");
     }
     
+    public void PlayJump()
+    {
+        AN.Play("PlayerJumpTest");
+    }
+    
+    public void PlayDrop()
+    {
+        AN.Play("PlayerDropTest");
+    }
+    
 }

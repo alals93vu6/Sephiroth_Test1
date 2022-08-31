@@ -16,6 +16,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private float RunSpeed;
     [SerializeField] private float JumpRange;
     [SerializeField] private float JumpFouce;
+    [SerializeField] private float BrakesFouce;
 
     [Header("Layer")]
     [SerializeField] private LayerMask JumpFool;
@@ -63,6 +64,27 @@ public class PlayerActor : MonoBehaviour
         }
     }
 
+    public void OnPlayerStopMove()
+    {
+        if (this.transform.localScale.x <= 0)
+        {
+            rig.AddForce(new Vector2(-BrakesFouce,0) , ForceMode2D.Impulse);
+        }
+        else
+        {
+            rig.AddForce(new Vector2(BrakesFouce,0) , ForceMode2D.Impulse);
+        }
+        
+        
+        Invoke("StopSlip",0.4f);
+        
+    }
+
+    private void StopSlip()
+    {
+        rig.velocity = Vector2.zero;
+    }
+
     public void PlayerJumpWhether()
     {
         if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFool))
@@ -79,7 +101,7 @@ public class PlayerActor : MonoBehaviour
         {
             IsJump = false;
             Debug.Log("著陸");
-            ChangeState(new MoveState());
+            ChangeState(new IdeoState());
         }
         else { IsJump = true;}
     }

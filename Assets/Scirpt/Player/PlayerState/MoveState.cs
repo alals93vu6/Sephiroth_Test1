@@ -27,6 +27,10 @@ public class MoveState : IState
 
     public void OnExitState(object action)
     {
+        var actor = (PlayerActor) action;
         PlayerAnimatorManager.instance.PlayStopMove();
+        
+        actor.OnPlayerStopMove();
+        
     }
 }
