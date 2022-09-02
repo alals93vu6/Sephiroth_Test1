@@ -54,9 +54,12 @@ public class ShiActor : MonoBehaviour
     public void ShiFollowMove()
     {
         XAxis = Input.GetAxisRaw("HorizontalA");
-        
-        Shirig.velocity = new Vector2(-XAxis ,0) * MoveSpeed;
-        
+
+        if (XAxis >= 0.55f)
+        {
+            Shirig.velocity = new Vector2(-XAxis ,0) * MoveSpeed;
+        }
+
         //StayArearig.AddForce(new Vector2(-XAxis, 0) * MoveSpeed, ForceMode2D.Impulse);
     }
 

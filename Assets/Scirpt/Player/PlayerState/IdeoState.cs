@@ -17,7 +17,7 @@ public class IdeoState : IState
         actor.OnPlayerJump();
         actor.PlayerJumpWhether();
 
-        if (Input.GetAxis("HorizontalA") != 0)
+        if (Mathf.Abs(Input.GetAxis("HorizontalA")) >= 0.55f)
         {
             actor.ChangeState(new MoveState());
         }

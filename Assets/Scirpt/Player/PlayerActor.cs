@@ -19,7 +19,8 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private float BrakesFouce;
 
     [Header("Layer")]
-    [SerializeField] private LayerMask JumpFool;
+    [SerializeField] private LayerMask JumpFloor;
+    [SerializeField] private LayerMask LandFloor;
     
     [Header("物件")]
     [SerializeField] GameObject JumpArea;
@@ -37,6 +38,15 @@ public class PlayerActor : MonoBehaviour
     
     public void PlayerMove()
     {
+        /*
+        float H = Input.GetAxis("HorizontalA");
+
+        if (Mathf.Abs(H) >= 0.6f)
+        {
+            rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
+        }
+        
+        */
         rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
 
         if(Input.GetAxisRaw("HorizontalA") <= -0.01f )
@@ -48,9 +58,7 @@ public class PlayerActor : MonoBehaviour
         {
             transform.localScale = new Vector3(7f, 7f, 7f);
         }
-        /*
         
-        */
         //到時候記得依角色大小改Scale
     }
 
@@ -87,17 +95,22 @@ public class PlayerActor : MonoBehaviour
 
     public void PlayerJumpWhether()
     {
-        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFool))
+        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor)||
+           Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,LandFloor))
         {
             IsJump = false;
 
         }
         else { IsJump = true; ChangeState(new DropState()); }
     }
+    
+    //||
+    //Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,LandFool)
 
     public void PlayerDownWhether()
     {
-        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFool))
+        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor)||
+           Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,LandFloor))
         {
             IsJump = false;
             Debug.Log("著陸");

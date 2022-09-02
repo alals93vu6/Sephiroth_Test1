@@ -14,12 +14,12 @@ TagManager:
   - UI
   - 
   - 
-  - JumpFool
+  - JumpFloor
   - ShiAereControl
   - ShiAereScreen
-  - 
-  - 
-  - 
+  - LandFloor
+  - Player
+  - Monster
   - 
   - 
   - 
