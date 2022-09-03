@@ -413,6 +413,7 @@ MonoBehaviour:
   CubeSizeX: 6.45
   CubeSizeY: 0.68
   IsWriting: 0
+  ActiveLand: 0
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 4096
@@ -427,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 506832141}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: JumpArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1567,6 +1568,7 @@ MonoBehaviour:
   CubeSizeX: 6.45
   CubeSizeY: 0.68
   IsWriting: 0
+  ActiveLand: 0
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 4096
@@ -1819,6 +1821,7 @@ MonoBehaviour:
   CubeSizeX: 6.45
   CubeSizeY: 0.68
   IsWriting: 0
+  ActiveLand: 0
   PlayerLayer:
     serializedVersion: 2
     m_Bits: 4096

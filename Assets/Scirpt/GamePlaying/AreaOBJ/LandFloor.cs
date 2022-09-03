@@ -9,6 +9,7 @@ public class LandFloor : MonoBehaviour
     [SerializeField] private float CubeSizeY;
 
     [SerializeField] private bool IsWriting;
+    [SerializeField] private bool ActiveLand;
 
     [SerializeField] private LayerMask PlayerLayer;
 
@@ -24,8 +25,16 @@ public class LandFloor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        WritingDetect();
-        OnFloorCross();
+        if (IsWriting)
+        {
+            OnFloorCross();
+        }
+
+        if (!ActiveLand)
+        {
+            WritingDetect();
+            OnFloorCross();
+        }
     }
 
     private async void WritingDetect()
@@ -54,10 +63,6 @@ public class LandFloor : MonoBehaviour
                 OnNotAllowed();
             }
 
-            
-
-            
-            //Debug.Log("ISOFF");
         }
 
         /*
@@ -74,13 +79,20 @@ public class LandFloor : MonoBehaviour
 
     }
 
-    private void OnFloorCross()
+    private async void OnFloorCross()
     {
-        if (IsWriting)
+        if (Input.GetAxis("VerticalA") <= -0.6f && Input.GetButtonDown("AKey"))
         {
+            ActiveLand = true;
+            OnNotAllowed();
+
+            await Task.Delay(1000);
             
+            OnAllowed();
+            ActiveLand = false;
         }
     }
+    
 
     private void OnAllowed()
     {
