@@ -59,6 +59,10 @@ public class ShiActor : MonoBehaviour
         {
             Shirig.velocity = new Vector2(-XAxis ,0) * MoveSpeed;
         }
+        else
+        {
+            Shirig.velocity = Vector2.zero;
+        }
 
         //StayArearig.AddForce(new Vector2(-XAxis, 0) * MoveSpeed, ForceMode2D.Impulse);
     }
@@ -80,7 +84,7 @@ public class ShiActor : MonoBehaviour
         PlayerX = PlayerNowPos.transform.position.x;
 
         this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1.5f, PlayerX + 1.5f), 
-            Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1.4f, PlayerNowPos.transform.position.y + 1.4f));
+            Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 3f, PlayerNowPos.transform.position.y + 3f));
         
         
     }

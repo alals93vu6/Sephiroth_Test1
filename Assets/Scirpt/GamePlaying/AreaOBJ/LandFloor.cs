@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class LandFloor : MonoBehaviour
@@ -27,17 +28,39 @@ public class LandFloor : MonoBehaviour
         OnFloorCross();
     }
 
-    private void WritingDetect()
+    private async void WritingDetect()
     {
-        if (Physics2D.OverlapBox(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY),PlayerLayer))
+        if (Physics2D.OverlapBox(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY),0,PlayerLayer))
         {
             IsWriting = true;
+            
+            await Task.Delay(300);
+            
+            OnAllowed();
+            //Debug.Log("ISON");
         }
-        else
+        else 
         {
             IsWriting = false;
+            
+            if (this.transform.position.y + 1.5f <= NowPlayer.transform.position.y)
+            {
+                await Task.Delay(300);
+                
+                OnAllowed();
+            }
+            else
+            {
+                OnNotAllowed();
+            }
+
+            
+
+            
+            //Debug.Log("ISOFF");
         }
 
+        /*
         if (NowPlayer.transform.position.y >= this.transform.position.y)
         {
             OnAllowed();
@@ -46,6 +69,8 @@ public class LandFloor : MonoBehaviour
         {
             OnNotAllowed();
         }
+        
+        */
 
     }
 
@@ -60,7 +85,7 @@ public class LandFloor : MonoBehaviour
     private void OnAllowed()
     {
         Physics2D.IgnoreLayerCollision(12,11,false);
-        Debug.Log("UP");
+        
     }
 
     private void OnNotAllowed()
