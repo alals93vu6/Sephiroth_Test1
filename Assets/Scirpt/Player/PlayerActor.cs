@@ -88,6 +88,14 @@ public class PlayerActor : MonoBehaviour
         
     }
 
+    public void OnPlayerSquatDetect()
+    {
+        if (Input.GetAxis("VerticalA") <= -0.6f)
+        {
+            ChangeState(new SquatState());
+        }
+    }
+
     private void StopSlip()
     {
         rig.velocity = Vector2.zero;
@@ -117,6 +125,11 @@ public class PlayerActor : MonoBehaviour
             ChangeState(new IdeoState());
         }
         else { IsJump = true;}
+    }
+
+    public void OnSquatReady()
+    {
+        rig.velocity = Vector2.zero;
     }
 
     private void OnDrawGizmos()

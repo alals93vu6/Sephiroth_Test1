@@ -2,30 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdeoState : IState
+public class SquatState : IState
 {
     public void OnEnterState(object action)
     {
-        //Debug.Log("IsIdeo");
+        var actor = (PlayerActor) action;
+        
+        actor.OnSquatReady();
         PlayerAnimatorManager.instance.PlayIdeo();
     }
 
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        //actor.PlayerMove();
-        actor.OnPlayerJump();
-        actor.PlayerJumpWhether();
-        actor.OnPlayerSquatDetect();
-
-        if (Mathf.Abs(Input.GetAxis("HorizontalA")) >= 0.55f)
+        
+        if(Input.GetAxis("VerticalA") >= -0.6f)
         {
-            actor.ChangeState(new MoveState());
+            actor.ChangeState(new IdeoState());
         }
     }
 
     public void OnExitState(object action)
     {
-        PlayerAnimatorManager.instance.ExitIdeo();
+        
     }
 }

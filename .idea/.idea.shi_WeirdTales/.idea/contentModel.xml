@@ -91,6 +91,7 @@
               <e p="IdeoState.cs" t="Include" />
               <e p="JumpState.cs" t="Include" />
               <e p="MoveState.cs" t="Include" />
+              <e p="SquatState.cs" t="Include" />
             </e>
             <e p="ShiCtrl" t="Include">
               <e p="FollowObj.cs" t="Include" />

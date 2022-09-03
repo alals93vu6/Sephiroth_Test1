@@ -91,7 +91,7 @@ public class LandFloor : MonoBehaviour
     private void OnNotAllowed()
     {
         Physics2D.IgnoreLayerCollision(12,11,true);
-        Debug.Log("Down");
+        //Debug.Log("Down");
     }
     
     private void OnDrawGizmos()
