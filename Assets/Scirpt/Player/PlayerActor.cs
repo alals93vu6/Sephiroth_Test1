@@ -47,18 +47,27 @@ public class PlayerActor : MonoBehaviour
         }
         
         */
-        rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
 
+        //rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
+        
+        
         if(Input.GetAxisRaw("HorizontalA") <= -0.01f )
         {
+            rig.velocity = new Vector2 (-1 * RunSpeed, rig.velocity.y);
             transform.localScale = new Vector3(-7f, 7f, 7f);
         }
 
         if(Input.GetAxisRaw("HorizontalA") >= 0.01f )
         {
+            rig.velocity = new Vector2 (1 * RunSpeed, rig.velocity.y);
             transform.localScale = new Vector3(7f, 7f, 7f);
         }
-        
+
+        if (Input.GetAxis("HorizontalA") == 0f)
+        {
+            rig.velocity = new Vector2 (0 * RunSpeed, rig.velocity.y);
+        }
+
         //到時候記得依角色大小改Scale
     }
 
@@ -96,15 +105,14 @@ public class PlayerActor : MonoBehaviour
         }
     }
 
-    private void StopSlip()
+    public void StopSlip()
     {
         rig.velocity = Vector2.zero;
     }
 
     public void PlayerJumpWhether()
     {
-        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor)||
-           Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,LandFloor))
+        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor))
         {
             IsJump = false;
 
@@ -117,8 +125,7 @@ public class PlayerActor : MonoBehaviour
 
     public void PlayerDownWhether()
     {
-        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor)||
-           Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,LandFloor))
+        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor))
         {
             IsJump = false;
             Debug.Log("著陸");

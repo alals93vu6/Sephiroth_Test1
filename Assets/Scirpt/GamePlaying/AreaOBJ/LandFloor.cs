@@ -35,10 +35,59 @@ public class LandFloor : MonoBehaviour
             WritingDetect();
             OnFloorCross();
         }
+        
     }
 
-    private async void WritingDetect()
+    private void WritingDetect()
     {
+        if (Physics2D.OverlapBox(DetectArea.transform.position, new Vector2(CubeSizeX, CubeSizeY), 0, PlayerLayer))
+        {
+            if (NowPlayer.transform.position.y >= this.transform.position.y + 1.2f)
+            {
+                OnAllowed();
+                IsWriting = true;
+            }
+            else
+            {
+                OnNotAllowed();
+                IsWriting = false;
+            }
+            Debug.Log("VAR");
+        }
+    }
+
+    private async void OnFloorCross()
+    {
+        if (Input.GetAxis("VerticalA") <= -0.6f && Input.GetButtonDown("AKey"))
+        {
+            ActiveLand = true;
+            OnNotAllowed();
+
+            await Task.Delay(1000);
+            
+            OnAllowed();
+            ActiveLand = false;
+        }
+    }
+    
+
+    private void OnAllowed()
+    {
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+    }
+
+    private void OnNotAllowed()
+    {
+        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY));
+    }
+    
+    /*
         if (Physics2D.OverlapBox(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY),0,PlayerLayer))
         {
             IsWriting = true;
@@ -62,53 +111,12 @@ public class LandFloor : MonoBehaviour
             {
                 OnNotAllowed();
             }
-
-        }
-
-        /*
-        if (NowPlayer.transform.position.y >= this.transform.position.y)
-        {
-            OnAllowed();
-        }
-        else
-        {
-            OnNotAllowed();
-        }
-        
-        */
-
-    }
-
-    private async void OnFloorCross()
-    {
-        if (Input.GetAxis("VerticalA") <= -0.6f && Input.GetButtonDown("AKey"))
-        {
-            ActiveLand = true;
-            OnNotAllowed();
-
-            await Task.Delay(1000);
             
-            OnAllowed();
-            ActiveLand = false;
         }
-    }
-    
-
-    private void OnAllowed()
-    {
-        Physics2D.IgnoreLayerCollision(12,11,false);
         
-    }
-
-    private void OnNotAllowed()
-    {
-        Physics2D.IgnoreLayerCollision(12,11,true);
-        //Debug.Log("Down");
-    }
+        
+        gameObject.layer = LayerMask.NameToLayer("JumpFloor");
+        Debug.Log("UP");
+        */
     
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireCube(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY));
-    }
 }

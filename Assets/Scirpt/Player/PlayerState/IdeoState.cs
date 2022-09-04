@@ -7,6 +7,7 @@ public class IdeoState : IState
     public void OnEnterState(object action)
     {
         //Debug.Log("IsIdeo");
+        
         PlayerAnimatorManager.instance.PlayIdeo();
     }
 

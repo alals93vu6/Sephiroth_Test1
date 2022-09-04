@@ -9,6 +9,7 @@ public class JumpState : IState
     public void OnEnterState(object action)
     {
         //Debug.Log("IsJump");
+        
         DelayTime = 0f;
         PlayerAnimatorManager.instance.PlayJump();
     }

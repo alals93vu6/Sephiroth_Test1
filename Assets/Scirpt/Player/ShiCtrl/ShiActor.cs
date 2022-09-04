@@ -84,7 +84,7 @@ public class ShiActor : MonoBehaviour
         PlayerX = PlayerNowPos.transform.position.x;
 
         this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1.5f, PlayerX + 1.5f), 
-            Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 3f, PlayerNowPos.transform.position.y + 3f));
+            Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1.5f, PlayerNowPos.transform.position.y + 1.5f));
         
         
     }

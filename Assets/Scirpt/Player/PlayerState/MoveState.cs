@@ -40,6 +40,7 @@ public class MoveState : IState
             PlayerAnimatorManager.instance.PlayStopMove();
             actor.OnPlayerStopMove();
         }
+        
     }
 
     private void RunTime()
