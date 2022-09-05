@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using System.Threading.Tasks;
 using Project;
 using Project.Events.GamePlaying;
 using UnityEngine;
@@ -20,6 +21,7 @@ public class ShiActor : MonoBehaviour
     [Header("狀態")]
     [SerializeField] private Rigidbody2D Shirig;
     [SerializeField] private IState currenState = new FollowState();
+    [SerializeField] public bool SummonCD;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,15 @@ public class ShiActor : MonoBehaviour
     {
         Shirig.velocity = Vector2.zero;
         EventBus.Post(new PlayerCallShiDetected());
+    }
+
+    public async void OnSummonCD()
+    {
+        SummonCD = true;
+
+        await Task.Delay(2000);
+
+        SummonCD = false;
     }
 
     public void SummonsPosMaxDetection()

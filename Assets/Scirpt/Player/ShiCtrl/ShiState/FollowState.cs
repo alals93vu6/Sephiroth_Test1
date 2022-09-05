@@ -15,13 +15,15 @@ public class FollowState : IState
         actor.ShiFollowMove();
         actor.ShiFollowPosMax();
         actor.ShiRotation();
-        
-        if (Input.GetButtonDown("XKey") || Input.GetKeyDown(KeyCode.H))
+
+
+        if (Input.GetAxis("SummonKey") >= 0.85f && actor.SummonCD == false)
         {
             actor.SummonsShi();
             actor.ChangeState(new SummonState());
+            actor.OnSummonCD();
         }
-        
+
     }
 
     public void OnExitState(object action)

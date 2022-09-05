@@ -35,11 +35,9 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Events/GamePlaying/PlayerCallShiDetected.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Events/GamePlaying/ShiReturnDetected.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/IStateShi.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/SummonState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/IState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/StopMoveState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/FollowState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFool.cs" />
@@ -47,9 +45,11 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiActor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/SummonState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/FollowState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -112,7 +112,7 @@
       <workItem from="1662140273212" duration="2860000" />
       <workItem from="1662143492485" duration="4582000" />
       <workItem from="1662225757230" duration="6508000" />
-      <workItem from="1662329094346" duration="7607000" />
+      <workItem from="1662329094346" duration="13209000" />
     </task>
     <servers />
   </component>

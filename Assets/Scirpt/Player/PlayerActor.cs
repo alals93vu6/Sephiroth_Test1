@@ -128,7 +128,7 @@ public class PlayerActor : MonoBehaviour
         if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor))
         {
             IsJump = false;
-            Debug.Log("著陸");
+            //Debug.Log("著陸");
             ChangeState(new IdeoState());
         }
         else { IsJump = true;}

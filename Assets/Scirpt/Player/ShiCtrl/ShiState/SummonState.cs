@@ -19,6 +19,14 @@ public class SummonState : IState
             actor.ShiReTurn();
             actor.ChangeState(new FollowState());
         }
+
+        if (Input.GetAxis("SummonKey") >= 0.85f && actor.SummonCD == false)
+        {
+            actor.ShiReTurn();
+            actor.ChangeState(new FollowState());
+            actor.OnSummonCD();
+        }
+
         
     }
 
