@@ -33,7 +33,6 @@ public class LandFloor : MonoBehaviour
         if (!ActiveLand)
         {
             WritingDetect();
-            OnFloorCross();
         }
         
     }
@@ -52,14 +51,20 @@ public class LandFloor : MonoBehaviour
                 OnNotAllowed();
                 IsWriting = false;
             }
-            Debug.Log("VAR");
+            //Debug.Log("VAR");
         }
+        else
+        {
+            OnAllowed();
+        }
+        
     }
 
     private async void OnFloorCross()
     {
         if (Input.GetAxis("VerticalA") <= -0.6f && Input.GetButtonDown("AKey"))
         {
+            //Debug.Log("PlayerDown");
             ActiveLand = true;
             OnNotAllowed();
 
@@ -67,6 +72,8 @@ public class LandFloor : MonoBehaviour
             
             OnAllowed();
             ActiveLand = false;
+            
+            
         }
     }
     
@@ -74,11 +81,13 @@ public class LandFloor : MonoBehaviour
     private void OnAllowed()
     {
         gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        //Debug.Log("IsUP");
     }
 
     private void OnNotAllowed()
     {
         gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        //Debug.Log("IsDown");
     }
     
     private void OnDrawGizmos()
