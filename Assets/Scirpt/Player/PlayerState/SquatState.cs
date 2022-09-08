@@ -15,11 +15,14 @@ public class SquatState : IState
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
+        actor.OnPlayerSquatDetect();
         
-        if(Input.GetAxis("VerticalA") >= -0.6f)
+        if(!actor.IsSquat)
         {
             actor.ChangeState(new IdeoState());
         }
+
+        Debug.Log("IsSquat");
     }
 
     public void OnExitState(object action)

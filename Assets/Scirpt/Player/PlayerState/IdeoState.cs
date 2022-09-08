@@ -15,14 +15,17 @@ public class IdeoState : IState
     {
         var actor = (PlayerActor) action;
         //actor.PlayerMove();
+        actor.OnPlayerMoveDetect();
         actor.OnPlayerJump();
         actor.PlayerJumpWhether();
         actor.OnPlayerSquatDetect();
 
-        if (Mathf.Abs(Input.GetAxis("HorizontalA")) >= 0.55f)
+        if (actor.IsMove)
         {
             actor.ChangeState(new MoveState());
         }
+
+        Debug.Log("IsIdeo");
     }
 
     public void OnExitState(object action)

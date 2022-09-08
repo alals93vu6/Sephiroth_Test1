@@ -20,13 +20,17 @@ public class MoveState : IState
         var actor = (PlayerActor) action;
         
         actor.PlayerMove();
+        actor.OnPlayerMoveDetect();
         actor.OnPlayerJump();
         actor.PlayerJumpWhether();
         actor.OnPlayerSquatDetect();
 
-        if (Input.GetAxis("HorizontalA") == 0)
+        Debug.Log("IsMove");
+
+        if (!actor.IsMove)
         {
             actor.ChangeState(new IdeoState());
+            Debug.Log("StopMove");
         }
     }
 

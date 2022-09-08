@@ -39,25 +39,6 @@ public class LandFloor : MonoBehaviour
 
     private void WritingDetect()
     {
-        if (Physics2D.OverlapBox(DetectArea.transform.position, new Vector2(CubeSizeX, CubeSizeY), 0, PlayerLayer))
-        {
-            if (NowPlayer.transform.position.y >= this.transform.position.y + 1.2f)
-            {
-                OnAllowed();
-                IsWriting = true;
-            }
-            else
-            {
-                OnNotAllowed();
-                IsWriting = false;
-            }
-            //Debug.Log("VAR");
-        }
-        else
-        {
-            OnAllowed();
-        }
-        
     }
 
     private async void OnFloorCross()
@@ -74,6 +55,18 @@ public class LandFloor : MonoBehaviour
             ActiveLand = false;
             
             
+        }
+
+        if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space))
+        {
+            //Debug.Log("PlayerDown");
+            ActiveLand = true;
+            OnNotAllowed();
+
+            await Task.Delay(1000);
+            
+            OnAllowed();
+            ActiveLand = false;
         }
     }
     

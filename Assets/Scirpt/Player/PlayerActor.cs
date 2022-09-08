@@ -10,6 +10,8 @@ public class PlayerActor : MonoBehaviour
     [Header("狀態")]
     [SerializeField] Rigidbody2D rig;
     [SerializeField] private bool IsJump;
+    [SerializeField] public bool IsSquat;
+    [SerializeField] public bool IsMove;
     [SerializeField] private IState CurrenState = new IdeoState();
     
     [Header("數值")]
@@ -17,6 +19,9 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private float JumpRange;
     [SerializeField] private float JumpFouce;
     [SerializeField] private float BrakesFouce;
+
+    [SerializeField] private float H;
+    [SerializeField] private float V;
 
     [Header("Layer")]
     [SerializeField] private LayerMask JumpFloor;
@@ -33,6 +38,9 @@ public class PlayerActor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        H = Input.GetAxis("HorizontalA");
+        V = Input.GetAxis("VerticalA");
+        
         CurrenState.OnStayState(this);
     }
     
@@ -51,29 +59,31 @@ public class PlayerActor : MonoBehaviour
         //rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
         
         
-        if(Input.GetAxisRaw("HorizontalA") <= -0.01f )
+        if(Input.GetAxisRaw("HorizontalA") <= -0.01f  || Input.GetKey(KeyCode.A))
         {
             rig.velocity = new Vector2 (-1 * RunSpeed, rig.velocity.y);
             transform.localScale = new Vector3(-7f, 7f, 7f);
+            
         }
 
-        if(Input.GetAxisRaw("HorizontalA") >= 0.01f )
+        if(Input.GetAxisRaw("HorizontalA") >= 0.01f || Input.GetKey(KeyCode.D))
         {
             rig.velocity = new Vector2 (1 * RunSpeed, rig.velocity.y);
             transform.localScale = new Vector3(7f, 7f, 7f);
         }
 
-        if (Input.GetAxis("HorizontalA") == 0f)
+        if (Input.GetAxis("HorizontalA") == 0f && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             rig.velocity = new Vector2 (0 * RunSpeed, rig.velocity.y);
         }
 
+        
         //到時候記得依角色大小改Scale
     }
 
     public void OnPlayerJump()
     {
-        if(Input.GetButtonDown("AKey") && !IsJump)
+        if(Input.GetButtonDown("AKey") || Input.GetKeyDown(KeyCode.Space) && !IsJump)
         {
             rig.AddForce(new Vector2 (rig.velocity.x , JumpFouce), ForceMode2D.Impulse);
             ChangeState(new JumpState());
@@ -99,9 +109,52 @@ public class PlayerActor : MonoBehaviour
 
     public void OnPlayerSquatDetect()
     {
-        if (Input.GetAxis("VerticalA") <= -0.6f)
+        if (Input.GetAxis("VerticalA") <= -0.6f && !Input.GetKey(KeyCode.S))
+        {
+            IsSquat = true;
+        }
+        
+        if (Input.GetAxis("VerticalA") == 0 && Input.GetKey(KeyCode.S))
+        {
+            IsSquat = true;
+        }
+        
+        if (Input.GetAxis("VerticalA") >= -0.6 && !Input.GetKey(KeyCode.S))
+        {
+            IsSquat = false;
+        }
+        
+        if (Input.GetAxis("VerticalA") == 0 && !Input.GetKey(KeyCode.S))
+        {
+            IsSquat = false;
+        }
+
+        if (IsSquat)
         {
             ChangeState(new SquatState());
+        }
+    }
+
+    public void OnPlayerMoveDetect()
+    {
+        if (Mathf.Abs(Input.GetAxis("HorizontalA")) >= 0.55f && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            IsMove = true;
+        }
+
+        if (Input.GetAxis("HorizontalA") == 0 && Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            IsMove = true;
+        }
+
+        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            
+        }
+
+        if (Input.GetAxis("HorizontalA") == 0 && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            IsMove = false;
         }
     }
 
@@ -151,4 +204,5 @@ public class PlayerActor : MonoBehaviour
         nextState.OnEnterState(this);
         CurrenState = nextState;
     }
+    
 }

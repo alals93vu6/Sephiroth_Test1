@@ -17,6 +17,8 @@ public class ShiActor : MonoBehaviour
 
     [Header("物件")] 
     [SerializeField] private GameObject PlayerNowPos;
+    [SerializeField] private GameObject AmmoArea;
+    [SerializeField] private GameObject ShiAmmo;
     
     [Header("狀態")]
     [SerializeField] private Rigidbody2D Shirig;
@@ -33,9 +35,17 @@ public class ShiActor : MonoBehaviour
     void Update()
     {
         currenState.OnStayState(this);
-       
     }
-    
+
+    public void ShiAttack()
+    {
+        if (Input.GetButtonDown("XKey") || Input.GetMouseButtonDown(0))
+        {
+            Instantiate(ShiAmmo,AmmoArea.transform.position,AmmoArea.transform.rotation);
+            //Debug.Log("Attack");
+        }
+    }
+
     public void SummonsShi()
     {
         Shirig.velocity = Vector2.zero;

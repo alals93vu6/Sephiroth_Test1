@@ -17,7 +17,7 @@ public class FollowState : IState
         actor.ShiRotation();
 
 
-        if (Input.GetAxis("SummonKey") >= 0.85f && actor.SummonCD == false)
+        if (Input.GetAxis("SummonKey") >= 0.85f || Input.GetMouseButtonDown(1) && actor.SummonCD == false)
         {
             actor.SummonsShi();
             actor.ChangeState(new SummonState());
