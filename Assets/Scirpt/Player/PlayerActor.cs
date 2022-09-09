@@ -62,14 +62,14 @@ public class PlayerActor : MonoBehaviour
         if(Input.GetAxisRaw("HorizontalA") <= -0.01f  || Input.GetKey(KeyCode.A))
         {
             rig.velocity = new Vector2 (-1 * RunSpeed, rig.velocity.y);
-            transform.localScale = new Vector3(-7f, 7f, 7f);
+            transform.localScale = new Vector3(-5f, 5f, 5f);
             
         }
 
         if(Input.GetAxisRaw("HorizontalA") >= 0.01f || Input.GetKey(KeyCode.D))
         {
             rig.velocity = new Vector2 (1 * RunSpeed, rig.velocity.y);
-            transform.localScale = new Vector3(7f, 7f, 7f);
+            transform.localScale = new Vector3(5f, 5f, 5f);
         }
 
         if (Input.GetAxis("HorizontalA") == 0f && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))

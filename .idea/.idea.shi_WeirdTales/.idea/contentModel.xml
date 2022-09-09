@@ -93,10 +93,13 @@
               <e p="MoveState.cs" t="Include" />
               <e p="SquatState.cs" t="Include" />
             </e>
-            <e p="ShiCtrl" t="Include">
+            <e p="WeaponA" t="Include">
               <e p="FollowObj.cs" t="Include" />
               <e p="ShiActor.cs" t="Include" />
-              <e p="ShiState" t="Include">
+              <e p="WeaponAmmo" t="Include">
+                <e p="AttackAmmo.cs" t="Include" />
+              </e>
+              <e p="WeaponAState" t="Include">
                 <e p="FollowState.cs" t="Include" />
                 <e p="SummonState.cs" t="Include" />
               </e>

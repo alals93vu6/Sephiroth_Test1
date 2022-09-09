@@ -25,7 +25,7 @@ public class IdeoState : IState
             actor.ChangeState(new MoveState());
         }
 
-        Debug.Log("IsIdeo");
+        //Debug.Log("IsIdeo");
     }
 
     public void OnExitState(object action)

@@ -13,7 +13,6 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../PunchMan/Assets/Script/GamePlay/HPCalculation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../PunchMan/Assets/Script/GamePlay/GameIngManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/每周瘋狗課程/第2周_汁郎/unity/week2/Assets/C#/CtrlSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/每周瘋狗課程/第3周_縮圈糞GAME/unity/Week3_2.0/Assets/C#/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -42,14 +41,14 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFool.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/SummonState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/FollowState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -113,6 +112,7 @@
       <workItem from="1662143492485" duration="4582000" />
       <workItem from="1662225757230" duration="6508000" />
       <workItem from="1662329094346" duration="13209000" />
+      <workItem from="1662700203553" duration="3516000" />
     </task>
     <servers />
   </component>
