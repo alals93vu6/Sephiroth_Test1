@@ -92,11 +92,11 @@ public class ShiActor : MonoBehaviour
     {
         if (this.transform.position.x <= PlayerX)
         {
-            this.transform.localScale = new Vector2(0.2f, 0.2f);
+            this.transform.localScale = new Vector2(0.12f, 0.12f);
         }
         else
         {
-            this.transform.localScale = new Vector2(-0.2f, 0.2f);
+            this.transform.localScale = new Vector2(-0.12f, 0.12f);
         }
     }
 
@@ -104,8 +104,8 @@ public class ShiActor : MonoBehaviour
     {
         PlayerX = PlayerNowPos.transform.position.x;
 
-        this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1.5f, PlayerX + 1.5f), 
-            Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1.5f, PlayerNowPos.transform.position.y + 1.5f));
+        this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1f, PlayerX + 1f), 
+            Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1f, PlayerNowPos.transform.position.y + 1f));
         
         
     }

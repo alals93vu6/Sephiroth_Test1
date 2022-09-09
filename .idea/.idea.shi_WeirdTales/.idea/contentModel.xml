@@ -71,6 +71,7 @@
           <e p="EventBus.cs" t="Include" />
           <e p="Events" t="Include">
             <e p="GamePlaying" t="Include">
+              <e p="FloorCrossDetected.cs" t="Include" />
               <e p="PlayerAttackDetected.cs" t="Include" />
               <e p="PlayerCallShiDetected.cs" t="Include" />
               <e p="ShiReturnDetected.cs" t="Include" />

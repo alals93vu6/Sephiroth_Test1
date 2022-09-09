@@ -107,6 +107,11 @@ public class PlayerActor : MonoBehaviour
         
     }
 
+    public void OnFloorCross()
+    {
+        
+    }
+
     public void OnPlayerSquatDetect()
     {
         if (Input.GetAxis("VerticalA") <= -0.6f && !Input.GetKey(KeyCode.S))

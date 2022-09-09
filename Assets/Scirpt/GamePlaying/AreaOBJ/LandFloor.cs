@@ -5,8 +5,19 @@ using UnityEngine;
 
 public class LandFloor : MonoBehaviour
 {
+    #region Instance
+    static public LandFloor instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+    
     [SerializeField] private float CubeSizeX;
     [SerializeField] private float CubeSizeY;
+    [SerializeField] private float SizeRamX;
+    [SerializeField] private float SizeRamY;
+    
 
     [SerializeField] private bool IsWriting;
     [SerializeField] private bool ActiveLand;
@@ -19,31 +30,96 @@ public class LandFloor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SizeRamX = CubeSizeX;
+        SizeRamY = CubeSizeY;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsWriting)
+        WritimgDetect();
+        
+        OnPlayerFloorCross();
+    }
+
+    private void WritimgDetect()
+    {
+        if (Physics2D.OverlapBox(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY),0,PlayerLayer))
         {
-            OnFloorCross();
+            //Debug.Log("On");
+            OnAllowed();
+            IsWriting = true;
+        }
+        else
+        {
+            //Debug.Log("Off");
+            OnNotAllowed();
+            IsWriting = false;
+        }
+    }
+
+    public async void OnPlayerFloorCross()
+    {
+        if (Input.GetAxis("VerticalA") <= -0.6f && Input.GetButtonDown("AKey"))
+        {
+            if (IsWriting)
+            {
+                CubeSizeX = 0;
+                CubeSizeY = 0;
+
+                await Task.Delay(800);
+
+                CubeSizeX = SizeRamX;
+                CubeSizeY = SizeRamY;
+
+            }
+        }
+        
+        if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space))
+        {
+            if (IsWriting)
+            {
+                CubeSizeX = 0;
+                CubeSizeY = 0;
+
+                await Task.Delay(800);
+
+                CubeSizeX = SizeRamX;
+                CubeSizeY = SizeRamY;
+
+            }
         }
 
-        if (!ActiveLand)
-        {
-            WritingDetect();
-        }
         
     }
 
+    private void OnAllowed()
+    {
+        this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        //Debug.Log("IsUP");
+    }
+
+    private void OnNotAllowed()
+    {
+        this.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+        //Debug.Log("IsDown");
+    }
+    
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY));
+    }
+
+
+    /*
     private void WritingDetect()
     {
         if (Physics2D.OverlapBox(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY),0,PlayerLayer))
         {
             
             //OnAllowed();
-            if (this.transform.position.y + 0.2f  <= NowPlayer.transform.position.y)
+            if (this.transform.position.y + 0.7f <= NowPlayer.transform.position.y)
             {
                 IsWriting = true;
                 
@@ -63,7 +139,6 @@ public class LandFloor : MonoBehaviour
             
             OnAllowed();
             
-            /*
             if (this.transform.position.y  <= NowPlayer.transform.position.y)
             {
                 OnAllowed();
@@ -72,11 +147,11 @@ public class LandFloor : MonoBehaviour
             {
                 OnNotAllowed();
             }
-            */
+            
             
         }
     }
-
+    
     private async void OnFloorCross()
     {
         if (Input.GetAxis("VerticalA") <= -0.6f && Input.GetButtonDown("AKey"))
@@ -104,26 +179,7 @@ public class LandFloor : MonoBehaviour
         }
     }
     
-
-    private void OnAllowed()
-    {
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
-        //Debug.Log("IsUP");
-    }
-
-    private void OnNotAllowed()
-    {
-        gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-        //Debug.Log("IsDown");
-    }
     
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.white;
-        Gizmos.DrawWireCube(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY));
-    }
-    
-    /*
         if (Physics2D.OverlapBox(DetectArea.transform.position,new Vector2(CubeSizeX,CubeSizeY),0,PlayerLayer))
         {
             IsWriting = true;
