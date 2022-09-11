@@ -55,6 +55,7 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Test/ShowHit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/WeaponA/WeaponAmmo/AttackAmmo.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Trashcans/TreeTest.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -121,6 +122,7 @@
       <workItem from="1662700203553" duration="6747000" />
       <workItem from="1662722149005" duration="2588000" />
       <workItem from="1662898114440" duration="1845000" />
+      <workItem from="1662910427438" duration="1912000" />
     </task>
     <servers />
   </component>

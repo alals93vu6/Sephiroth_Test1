@@ -121,6 +121,7 @@
           <e p="Trashcans" t="Include">
             <e p="CtrlDistance.cs" t="Include" />
             <e p="StayArea.cs" t="Include" />
+            <e p="TreeTest.cs" t="Include" />
           </e>
         </e>
         <e p="Test" t="Include">
