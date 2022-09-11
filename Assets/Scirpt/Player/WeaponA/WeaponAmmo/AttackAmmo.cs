@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Project;
 using UnityEngine;
 
 public class AttackAmmo : MonoBehaviour
@@ -7,6 +9,10 @@ public class AttackAmmo : MonoBehaviour
     [SerializeField] private float AmmoAttackRange;
 
     [SerializeField] private LayerMask Floor;
+
+    [SerializeField] private LayerMask Enemy;
+
+    private bool HitCD;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +28,12 @@ public class AttackAmmo : MonoBehaviour
         {
             DestoryAmmo();
         }
+        
+        if (Physics2D.OverlapCircle(this.transform.position,AmmoAttackRange,Enemy) && !HitCD)
+        {
+            HitEnemy();
+            DestoryAmmo();
+        }
 
     }
 
@@ -33,6 +45,18 @@ public class AttackAmmo : MonoBehaviour
     private void DestoryAmmo()
     {
         Destroy(this.gameObject);
+    }
+
+    private async void HitEnemy()
+    {
+        EventBus.Post(new HitEnemyDetected());
+        Debug.Log("HitA");
+        HitCD = true;
+
+        await Task.Delay(1500);
+
+        HitCD = false;
+
     }
 
     private void OnDrawGizmos()

@@ -8,6 +8,17 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="BBB.cs" t="Include" />
+        <e p="CM vcam" t="Include">
+          <e p="CM_control.cs" t="Include" />
+        </e>
+        <e p="Light" t="Include">
+          <e p="CS" t="Include">
+            <e p="LightColorController.cs" t="Include" />
+            <e p="LightColorControllerEditor.cs" t="Include" />
+            <e p="LightColorSetter.cs" t="Include" />
+            <e p="LightIntensityController.cs" t="Include" />
+          </e>
+        </e>
         <e p="Samples" t="Include">
           <e p="Cinemachine" t="Include">
             <e p="2.6.17" t="Include">
@@ -72,6 +83,7 @@
           <e p="Events" t="Include">
             <e p="GamePlaying" t="Include">
               <e p="FloorCrossDetected.cs" t="Include" />
+              <e p="HitEnemyDetected.cs" t="Include" />
               <e p="PlayerAttackDetected.cs" t="Include" />
               <e p="PlayerCallShiDetected.cs" t="Include" />
               <e p="ShiReturnDetected.cs" t="Include" />
@@ -113,6 +125,7 @@
         </e>
         <e p="Test" t="Include">
           <e p="GitTestObj.cs" t="Include" />
+          <e p="ShowHit.cs" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

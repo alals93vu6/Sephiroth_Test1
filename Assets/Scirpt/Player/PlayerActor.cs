@@ -192,6 +192,11 @@ public class PlayerActor : MonoBehaviour
         else { IsJump = true;}
     }
 
+    public void PlayerDash()
+    {
+        
+    }
+
     public void OnSquatReady()
     {
         rig.velocity = Vector2.zero;
