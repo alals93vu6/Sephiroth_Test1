@@ -13,6 +13,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public bool IsSquat;
     [SerializeField] public bool IsMove;
     [SerializeField] private IState CurrenState = new IdeoState();
+    public bool Ideo;
     
     [Header("數值")]
     [SerializeField] private float RunSpeed;
@@ -150,11 +151,6 @@ public class PlayerActor : MonoBehaviour
         if (Input.GetAxis("HorizontalA") == 0 && Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
             IsMove = true;
-        }
-
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-        {
-            
         }
 
         if (Input.GetAxis("HorizontalA") == 0 && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))

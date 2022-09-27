@@ -50,12 +50,12 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/WeaponA/ShiActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Test/ShowHit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/WeaponA/WeaponAmmo/AttackAmmo.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Trashcans/TreeTest.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -131,6 +131,7 @@
       <workItem from="1662722149005" duration="2588000" />
       <workItem from="1662898114440" duration="1845000" />
       <workItem from="1662910427438" duration="2452000" />
+      <workItem from="1664291760674" duration="4960000" />
     </task>
     <servers />
   </component>

@@ -14,7 +14,6 @@
         <e p="Light" t="Include">
           <e p="CS" t="Include">
             <e p="LightColorController.cs" t="Include" />
-            <e p="LightColorControllerEditor.cs" t="Include" />
             <e p="LightColorSetter.cs" t="Include" />
             <e p="LightIntensityController.cs" t="Include" />
           </e>

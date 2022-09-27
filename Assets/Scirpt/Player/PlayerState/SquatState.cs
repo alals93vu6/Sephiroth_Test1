@@ -18,7 +18,7 @@ public class SquatState : IState
         actor.OnPlayerSquatDetect();
         
         LandFloor.instance.OnPlayerFloorCross();
-        
+
         if(!actor.IsSquat)
         {
             actor.ChangeState(new IdeoState());
