@@ -6,7 +6,7 @@ public class SquatState : IState
 {
     public void OnEnterState(object action)
     {
-        Debug.Log("IsSquat");
+        //Debug.Log("IsSquat");
         var actor = (PlayerActor) action;
         
         actor.OnSquatReady();

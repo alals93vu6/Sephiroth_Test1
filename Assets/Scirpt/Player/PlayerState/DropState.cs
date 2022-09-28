@@ -6,7 +6,7 @@ public class DropState : IState
 {
     public void OnEnterState(object action)
     {
-        Debug.Log("IsDrop");
+        //Debug.Log("IsDrop");
         PlayerAnimatorManager.instance.PlayDrop();
     }
 

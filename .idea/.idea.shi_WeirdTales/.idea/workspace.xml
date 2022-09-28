@@ -21,6 +21,7 @@
     <setting file="file://$PROJECT_DIR$/../PunchMan/Assets/Script/GamePlay/ActorEnemy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/每周瘋狗課程/第13周_奔跑三角錐/unity/Week13/Assets/Script/Player.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../PunchMan/Assets/Script/GamePlay/ActorJudgement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Test/TestPos.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/每周瘋狗課程/第4周_一發狙擊手/unity/week04/Assets/C#/Player.cs" root0="SKIP_HIGHLIGHTING" />
@@ -49,13 +50,14 @@
       <option value="$PROJECT_DIR$/Assets/Test/ShowHit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/WeaponA/WeaponAmmo/AttackAmmo.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Trashcans/TreeTest.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Test/TestPos.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -132,7 +134,7 @@
       <workItem from="1662898114440" duration="1845000" />
       <workItem from="1662910427438" duration="2452000" />
       <workItem from="1664291760674" duration="4960000" />
-      <workItem from="1664366622173" duration="3218000" />
+      <workItem from="1664366622173" duration="5134000" />
     </task>
     <servers />
   </component>
