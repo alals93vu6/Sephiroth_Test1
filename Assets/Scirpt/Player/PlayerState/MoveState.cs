@@ -30,7 +30,7 @@ public class MoveState : IState
         if (!actor.IsMove)
         {
             actor.ChangeState(new IdeoState());
-            Debug.Log("StopMove");
+            //Debug.Log("StopMove");
         }
     }
 

@@ -13,7 +13,7 @@ public class PlayerAnimatorManager : MonoBehaviour
     #endregion
     
     [Header("狀態")]
-    [SerializeField] private Animator AN;
+    [SerializeField] public Animator AN;
 
     // Start is called before the first frame update
     void Start()

@@ -39,23 +39,23 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/IStateShi.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/IState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/StopMoveState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFool.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/SummonState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/ShiCtrl/ShiState/FollowState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/WeaponA/ShiActor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Test/ShowHit.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/WeaponA/WeaponAmmo/AttackAmmo.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Trashcans/TreeTest.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -132,6 +132,7 @@
       <workItem from="1662898114440" duration="1845000" />
       <workItem from="1662910427438" duration="2452000" />
       <workItem from="1664291760674" duration="4960000" />
+      <workItem from="1664366622173" duration="3218000" />
     </task>
     <servers />
   </component>

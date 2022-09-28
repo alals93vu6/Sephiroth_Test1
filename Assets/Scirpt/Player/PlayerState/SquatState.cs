@@ -6,29 +6,30 @@ public class SquatState : IState
 {
     public void OnEnterState(object action)
     {
+        Debug.Log("IsSquat");
         var actor = (PlayerActor) action;
         
         actor.OnSquatReady();
-        PlayerAnimatorManager.instance.PlayIdeo();
+        PlayerAnimatorManager.instance.AN.Play("PlayerIdeoTest");
     }
 
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
         actor.OnPlayerSquatDetect();
-        
-        LandFloor.instance.OnPlayerFloorCross();
+        actor.OnPlayerDropFloor();
+        //LandFloor.instance.OnPlayerFloorCross();
 
-        if(!actor.IsSquat)
+        if(!actor.IsSquat && !actor.IsJump)
         {
             actor.ChangeState(new IdeoState());
         }
 
-        Debug.Log("IsSquat");
+        
     }
 
     public void OnExitState(object action)
     {
-        
+         
     }
 }

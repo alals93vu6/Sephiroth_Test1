@@ -1763,6 +1763,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1762748866841445853, guid: 49a667f8b9af0404cba38ba8b1efeb52,
+        type: 3}
+      propertyPath: Jumpfloor.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762748866841445853, guid: 49a667f8b9af0404cba38ba8b1efeb52,
+        type: 3}
+      propertyPath: Landfloor.m_Bits
+      value: 2048
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49a667f8b9af0404cba38ba8b1efeb52, type: 3}
 --- !u!1001 &6137972540481650875

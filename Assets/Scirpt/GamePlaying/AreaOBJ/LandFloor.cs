@@ -64,6 +64,7 @@ public class LandFloor : MonoBehaviour
         {
             if (IsWriting)
             {
+                this.gameObject.layer = LayerMask.NameToLayer("Default");
                 CubeSizeX = 0;
                 CubeSizeY = 0;
 
@@ -71,6 +72,7 @@ public class LandFloor : MonoBehaviour
 
                 CubeSizeX = SizeRamX;
                 CubeSizeY = SizeRamY;
+                this.gameObject.layer = LayerMask.NameToLayer("JumpFloor");
 
             }
         }
@@ -79,13 +81,15 @@ public class LandFloor : MonoBehaviour
         {
             if (IsWriting)
             {
+                this.gameObject.layer = LayerMask.NameToLayer("Default");
                 CubeSizeX = 0;
-                CubeSizeY = 0;
+                CubeSizeY = 0; 
 
                 await Task.Delay(800);
 
                 CubeSizeX = SizeRamX;
                 CubeSizeY = SizeRamY;
+                this.gameObject.layer = LayerMask.NameToLayer("JumpFloor");
 
             }
         }

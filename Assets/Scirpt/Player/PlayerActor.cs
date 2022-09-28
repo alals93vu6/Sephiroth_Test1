@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Project;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class PlayerActor : MonoBehaviour
     
     [Header("狀態")]
     [SerializeField] Rigidbody2D rig;
-    [SerializeField] private bool IsJump;
+    [SerializeField] public bool IsJump;
     [SerializeField] public bool IsSquat;
     [SerializeField] public bool IsMove;
     [SerializeField] private IState CurrenState = new IdeoState();
@@ -25,8 +26,8 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private float V;
 
     [Header("Layer")]
-    [SerializeField] private LayerMask JumpFloor;
-    [SerializeField] private LayerMask LandFloor;
+    [SerializeField] private LayerMask Jumpfloor;
+    [SerializeField] private LayerMask Landfloor;
     
     [Header("物件")]
     [SerializeField] GameObject JumpArea;
@@ -43,6 +44,8 @@ public class PlayerActor : MonoBehaviour
         V = Input.GetAxis("VerticalA");
         
         CurrenState.OnStayState(this);
+        
+        
     }
     
     public void PlayerMove()
@@ -166,7 +169,7 @@ public class PlayerActor : MonoBehaviour
 
     public void PlayerJumpWhether()
     {
-        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor))
+        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,Jumpfloor))
         {
             IsJump = false;
 
@@ -179,10 +182,10 @@ public class PlayerActor : MonoBehaviour
 
     public void PlayerDownWhether()
     {
-        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,JumpFloor))
+        if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,Jumpfloor))
         {
             IsJump = false;
-            //Debug.Log("著陸");
+            Debug.Log("著陸");
             ChangeState(new IdeoState());
         }
         else { IsJump = true;}
@@ -196,6 +199,31 @@ public class PlayerActor : MonoBehaviour
     public void OnSquatReady()
     {
         rig.velocity = Vector2.zero;
+    }
+
+
+    public async void OnPlayerDropFloor()
+    {
+        if (Input.GetAxis("VerticalA") <= -0.6f && Input.GetButtonDown("AKey"))
+        {
+            LandFloor.instance.OnPlayerFloorCross();
+            
+            
+            await Task.Delay(100);
+            
+            ChangeState(new DropState());
+            
+        }
+        
+        if (Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Space))
+        {
+            LandFloor.instance.OnPlayerFloorCross();
+            
+            await Task.Delay(100);
+            
+            ChangeState(new DropState());
+            
+        }
     }
 
     private void OnDrawGizmos()
