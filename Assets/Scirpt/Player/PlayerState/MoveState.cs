@@ -11,6 +11,8 @@ public class MoveState : IState
         //Debug.Log("IsMove");
         RunT = 0f;
         PlayerAnimatorManager.instance.PlayRun();
+        var actor = (PlayerActor) action;
+        actor.DashFouce = 3f;
     }
 
     public void OnStayState(object action)
@@ -24,6 +26,7 @@ public class MoveState : IState
         actor.OnPlayerJump();
         actor.PlayerJumpWhether();
         actor.OnPlayerSquatDetect();
+        actor.OnPlayerDash();
 
         //Debug.Log("IsMove");
 

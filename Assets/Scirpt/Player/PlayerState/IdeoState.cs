@@ -7,8 +7,9 @@ public class IdeoState : IState
     public void OnEnterState(object action)
     {
         //Debug.Log("IsIdeo");
-        
         PlayerAnimatorManager.instance.PlayIdeo();
+        var actor = (PlayerActor) action;
+        actor.DashFouce = 7f;
     }
 
     public void OnStayState(object action)
@@ -19,6 +20,7 @@ public class IdeoState : IState
         actor.OnPlayerJump();
         actor.PlayerJumpWhether();
         actor.OnPlayerSquatDetect();
+        actor.OnPlayerDash();
 
         if (actor.IsMove)
         {

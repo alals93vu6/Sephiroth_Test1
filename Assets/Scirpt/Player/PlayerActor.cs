@@ -13,14 +13,15 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public bool IsJump;
     [SerializeField] public bool IsSquat;
     [SerializeField] public bool IsMove;
+    [SerializeField] public bool IsRight;
     [SerializeField] private IState CurrenState = new IdeoState();
-    public bool Ideo;
-    
+
     [Header("數值")]
     [SerializeField] private float RunSpeed;
     [SerializeField] private float JumpRange;
     [SerializeField] private float JumpFouce;
     [SerializeField] private float BrakesFouce;
+    [SerializeField] public float DashFouce;
 
     [SerializeField] private float H;
     [SerializeField] private float V;
@@ -63,17 +64,19 @@ public class PlayerActor : MonoBehaviour
         //rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
         
         
-        if(Input.GetAxisRaw("HorizontalA") <= -0.01f  || Input.GetKey(KeyCode.A))
+        if(Input.GetAxisRaw("HorizontalA") <= -0.01f  || Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             rig.velocity = new Vector2 (-1 * RunSpeed, rig.velocity.y);
             transform.localScale = new Vector3(-5f, 5f, 5f);
-            
+            IsRight = false;
+
         }
 
-        if(Input.GetAxisRaw("HorizontalA") >= 0.01f || Input.GetKey(KeyCode.D))
+        if(Input.GetAxisRaw("HorizontalA") >= 0.01f || Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             rig.velocity = new Vector2 (1 * RunSpeed, rig.velocity.y);
             transform.localScale = new Vector3(5f, 5f, 5f);
+            IsRight = true;
         }
 
         if (Input.GetAxis("HorizontalA") == 0f && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
@@ -97,7 +100,7 @@ public class PlayerActor : MonoBehaviour
 
     public void OnPlayerStopMove()
     {
-        if (this.transform.localScale.x <= 0)
+        if (!IsRight)
         {
             rig.AddForce(new Vector2(-BrakesFouce,0) , ForceMode2D.Impulse);
         }
@@ -185,15 +188,31 @@ public class PlayerActor : MonoBehaviour
         if(Physics2D.OverlapCircle(JumpArea.transform.position,JumpRange,Jumpfloor))
         {
             IsJump = false;
-            Debug.Log("著陸");
+            //Debug.Log("著陸");
             ChangeState(new IdeoState());
         }
         else { IsJump = true;}
     }
 
-    public void PlayerDash()
+    public async void OnPlayerDash()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("BKey"))
+        {
+            ChangeState(new DashState());
+            if (!IsRight)
+            {
+                rig.AddForce(new Vector2(-DashFouce,0) , ForceMode2D.Impulse);
+            }
+            else
+            {
+                rig.AddForce(new Vector2(DashFouce,0) , ForceMode2D.Impulse);
+            }
+
+            await Task.Delay(500);
         
+            StopSlip();
+            ChangeState(new IdeoState());
+        }
     }
 
     public void OnSquatReady()

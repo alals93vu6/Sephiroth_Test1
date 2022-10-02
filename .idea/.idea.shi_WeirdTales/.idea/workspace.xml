@@ -51,13 +51,14 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/WeaponA/WeaponAmmo/AttackAmmo.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Trashcans/TreeTest.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
       <option value="$PROJECT_DIR$/Assets/Test/TestPos.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DashState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2D60yZoiEZfcqe56Hs9OwQGKfR9" />
@@ -135,6 +136,7 @@
       <workItem from="1662910427438" duration="2452000" />
       <workItem from="1664291760674" duration="4960000" />
       <workItem from="1664366622173" duration="5134000" />
+      <workItem from="1664712840654" duration="2981000" />
     </task>
     <servers />
   </component>

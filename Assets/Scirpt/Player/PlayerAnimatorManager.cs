@@ -41,7 +41,12 @@ public class PlayerAnimatorManager : MonoBehaviour
     {
         AN.Play("PlayerRunTest");
     }
-    
+
+    public void PlayDash()
+    {
+        AN.Play("PlayerDashTest");
+    }
+
     public void PlayStopMove()
     {
         AN.Play("PlayerStopMoveTest");

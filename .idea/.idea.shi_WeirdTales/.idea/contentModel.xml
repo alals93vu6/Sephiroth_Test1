@@ -99,6 +99,7 @@
             <e p="PlayerActor.cs" t="Include" />
             <e p="PlayerAnimatorManager.cs" t="Include" />
             <e p="PlayerState" t="Include">
+              <e p="DashState.cs" t="Include" />
               <e p="DropState.cs" t="Include" />
               <e p="IdeoState.cs" t="Include" />
               <e p="JumpState.cs" t="Include" />
