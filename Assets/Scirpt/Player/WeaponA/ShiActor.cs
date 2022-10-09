@@ -49,7 +49,7 @@ public class ShiActor : MonoBehaviour
     public void SummonsShi()
     {
         Shirig.velocity = Vector2.zero;
-        EventBus.Post(new PlayerCallShiDetected());
+        EventBus.Post(new CallWeaponDetected());
     }
 
     public async void OnSummonCD()
@@ -69,7 +69,7 @@ public class ShiActor : MonoBehaviour
 
     public void ShiReTurn()
     {
-        EventBus.Post(new ShiReturnDetected());
+        EventBus.Post(new CallBackWeaponDetected());
     }
 
     public void ShiFollowMove()

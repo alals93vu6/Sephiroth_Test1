@@ -2066,6 +2066,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1762748866841445853, guid: 49a667f8b9af0404cba38ba8b1efeb52,
         type: 3}
+      propertyPath: WeaponPos
+      value: 
+      objectReference: {fileID: 1079003474}
+    - target: {fileID: 1762748866841445853, guid: 49a667f8b9af0404cba38ba8b1efeb52,
+        type: 3}
       propertyPath: Jumpfloor.m_Bits
       value: 256
       objectReference: {fileID: 0}

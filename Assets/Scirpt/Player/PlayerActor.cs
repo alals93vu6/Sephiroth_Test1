@@ -14,6 +14,8 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public bool IsSquat;
     [SerializeField] public bool IsMove;
     [SerializeField] public bool IsRight;
+    [SerializeField] public bool WeaponIsRight;
+    [SerializeField] private bool DashCD;
     [SerializeField] private IState CurrenState = new IdeoState();
 
     [Header("數值")]
@@ -31,7 +33,8 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private LayerMask Landfloor;
     
     [Header("物件")]
-    [SerializeField] GameObject JumpArea;
+    [SerializeField] public GameObject JumpArea;
+    [SerializeField] private Transform WeaponPos;
     
     void Start()
     {
@@ -45,8 +48,15 @@ public class PlayerActor : MonoBehaviour
         V = Input.GetAxis("VerticalA");
         
         CurrenState.OnStayState(this);
+        WeaponPosDetected();
         
-        
+        UpdateTest();
+    }
+    
+    private void UpdateTest()
+    {
+        OnPlayerConnect();
+        OnPlayerCallWeapon();
     }
     
     public void PlayerMove()
@@ -111,11 +121,6 @@ public class PlayerActor : MonoBehaviour
         
         
         Invoke("StopSlip",0.4f);
-        
-    }
-
-    public void OnFloorCross()
-    {
         
     }
 
@@ -194,25 +199,68 @@ public class PlayerActor : MonoBehaviour
         else { IsJump = true;}
     }
 
+    public void OnPlayerConnect()
+    {
+        if (Input.GetButtonDown("WeaponConnect"))
+        {
+            Debug.Log("Weaponconnect!!");
+        }
+    }
+
+    public void OnPlayerCallWeapon()
+    {
+        if (Input.GetButtonDown("CallWeapon"))
+        {
+            Debug.Log("CallWeapon!!");
+        }
+    }
+
+    private void WeaponPosDetected()
+    {
+        if (WeaponPos.position.x >= this.transform.position.x)
+        {
+            WeaponIsRight = true;
+        }
+        else
+        {
+            WeaponIsRight = false;
+        }
+    }
+
     public async void OnPlayerDash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("BKey"))
+        if (!DashCD)
         {
-            ChangeState(new DashState());
-            if (!IsRight)
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("BKey"))
             {
-                rig.AddForce(new Vector2(-DashFouce,0) , ForceMode2D.Impulse);
+                OnDashCD();
+                ChangeState(new DashState());
+                if (!IsRight)
+                {
+                    rig.AddForce(new Vector2(-DashFouce,0) , ForceMode2D.Impulse);
+                }
+                else
+                {
+                    rig.AddForce(new Vector2(DashFouce,0) , ForceMode2D.Impulse);
+                }
+            
+                await Task.Delay(500);
+                    
+                StopSlip();
+                ChangeState(new IdeoState());
             }
-            else
-            {
-                rig.AddForce(new Vector2(DashFouce,0) , ForceMode2D.Impulse);
-            }
-
-            await Task.Delay(500);
-        
-            StopSlip();
-            ChangeState(new IdeoState());
         }
+
+        
+    }
+
+    private async void OnDashCD()
+    {
+        DashCD = true;
+        
+        await Task.Delay(800);
+
+        DashCD = false;
     }
 
     public void OnSquatReady()
