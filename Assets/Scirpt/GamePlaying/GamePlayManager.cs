@@ -17,15 +17,16 @@ public class GamePlayManager : MonoBehaviour
         
     }
 
+    void Update()
+    {
+       GameObject.Find("PlayerTest").GetComponent<PlayerActor>().connecttest();
+    }
+
     private void OnHitEnemy(HitEnemyDetected obj)
     {
         ShowHit.instance.GetHit();
     }
 
-    void Update()
-    {
-        
-    }
     private void OnShiReturn(CallBackWeaponDetected obj)
     {
         //Debug.Log("ShiIsBack");

@@ -14,6 +14,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public bool IsSquat;
     [SerializeField] public bool IsMove;
     [SerializeField] public bool IsRight;
+    [SerializeField] public bool WeaponSummon;
     [SerializeField] public bool WeaponIsRight;
     [SerializeField] private bool DashCD;
     [SerializeField] private IState CurrenState = new IdeoState();
@@ -51,6 +52,11 @@ public class PlayerActor : MonoBehaviour
         WeaponPosDetected();
         
         UpdateTest();
+    }
+
+    public void connecttest()
+    {
+        Debug.Log("AAAAA");
     }
     
     private void UpdateTest()
@@ -201,9 +207,17 @@ public class PlayerActor : MonoBehaviour
 
     public void OnPlayerConnect()
     {
-        if (Input.GetButtonDown("WeaponConnect"))
+        if(Input.GetButtonDown("WeaponConnect"))
         {
-            Debug.Log("Weaponconnect!!");
+            ChangeState(new ConnectState());
+        }
+    }
+
+    public void ConnectDetected()
+    {
+        if(!Input.GetButton("WeaponConnect"))
+        {
+            ChangeState(new IdeoState());
         }
     }
 
@@ -212,6 +226,18 @@ public class PlayerActor : MonoBehaviour
         if (Input.GetButtonDown("CallWeapon"))
         {
             Debug.Log("CallWeapon!!");
+        }
+    }
+
+    public void WeaponStateChang()
+    {
+        if(WeaponSummon)
+        {
+            WeaponSummon = false;
+        }
+        else
+        {
+            WeaponSummon = true;
         }
     }
 

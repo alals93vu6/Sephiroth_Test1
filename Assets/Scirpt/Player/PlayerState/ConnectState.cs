@@ -6,16 +6,17 @@ public class ConnectState : IState
 {
     public void OnEnterState(object action)
     {
-        
+        Debug.Log("IsConnect");
     }
 
     public void OnStayState(object action)
     {
-        
+        var actor = (PlayerActor) action;
+        actor.ConnectDetected();
     }
 
     public void OnExitState(object action)
     {
-        
+        Debug.Log("NotConnect");
     }
 }
