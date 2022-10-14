@@ -21,6 +21,7 @@ public class IdeoState : IState
         actor.PlayerJumpWhether();
         actor.OnPlayerSquatDetect();
         actor.OnPlayerDash();
+        actor.PlayerAttacking();
 
         if (actor.IsMove)
         {

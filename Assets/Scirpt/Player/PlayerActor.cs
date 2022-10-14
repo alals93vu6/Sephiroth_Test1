@@ -56,7 +56,7 @@ public class PlayerActor : MonoBehaviour
 
     public void connecttest()
     {
-        Debug.Log("AAAAA");
+        //Debug.Log("AAAAA");
     }
     
     private void UpdateTest()
@@ -102,6 +102,14 @@ public class PlayerActor : MonoBehaviour
 
         
         //到時候記得依角色大小改Scale
+    }
+
+    public void PlayerAttacking()
+    {
+        if (Input.GetButtonDown("XKey"))
+        {
+            ChangeState(new AttackState());
+        }
     }
 
     public void OnPlayerJump()

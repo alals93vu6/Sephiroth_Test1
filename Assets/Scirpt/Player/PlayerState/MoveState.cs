@@ -27,6 +27,7 @@ public class MoveState : IState
         actor.PlayerJumpWhether();
         actor.OnPlayerSquatDetect();
         actor.OnPlayerDash();
+        actor.PlayerAttacking();
 
         //Debug.Log("IsMove");
 

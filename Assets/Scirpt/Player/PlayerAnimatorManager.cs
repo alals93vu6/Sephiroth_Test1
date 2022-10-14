@@ -37,6 +37,11 @@ public class PlayerAnimatorManager : MonoBehaviour
         AN.SetBool("IsIdeo",false);
     }
 
+    public void PlayAttack()
+    {
+        AN.Play("PlayerAttackTest");
+    }
+
     public void PlayRun()
     {
         AN.Play("PlayerRunTest");

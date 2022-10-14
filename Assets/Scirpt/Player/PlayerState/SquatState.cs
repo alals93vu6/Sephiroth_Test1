@@ -18,6 +18,7 @@ public class SquatState : IState
         var actor = (PlayerActor) action;
         actor.OnPlayerSquatDetect();
         actor.OnPlayerDropFloor();
+        actor.PlayerAttacking();
         //LandFloor.instance.OnPlayerFloorCross();
 
         if(!actor.IsSquat && !actor.IsJump)

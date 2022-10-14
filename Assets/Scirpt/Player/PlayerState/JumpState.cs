@@ -18,6 +18,7 @@ public class JumpState : IState
     {
         var actor = (PlayerActor) action;
         actor.PlayerMove();
+        actor.PlayerAttacking();
         //actor.PlayerDownWhether();
 
         //Debug.Log(DelayTime);

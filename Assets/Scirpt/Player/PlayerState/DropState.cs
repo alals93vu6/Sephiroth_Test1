@@ -15,6 +15,7 @@ public class DropState : IState
         var actor = (PlayerActor) action;
         actor.PlayerMove();
         actor.PlayerDownWhether();
+        actor.PlayerAttacking();
     }
 
     public void OnExitState(object action)
