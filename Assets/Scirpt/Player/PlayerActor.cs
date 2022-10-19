@@ -164,6 +164,7 @@ public class PlayerActor : MonoBehaviour
         {
             ChangeState(new SquatState());
         }
+        
     }
 
     public void OnPlayerMoveDetect()
@@ -335,6 +336,7 @@ public class PlayerActor : MonoBehaviour
 
     public void ChangeState(IState nextState)
     {
+        //Debug.Log("StateChange");
         CurrenState.OnExitState(this);
         nextState.OnEnterState(this);
         CurrenState = nextState;

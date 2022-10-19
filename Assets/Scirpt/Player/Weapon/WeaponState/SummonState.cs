@@ -6,6 +6,8 @@ public class SummonState : IState
 {
     public void OnEnterState(object action)
     {
+        var actor = (ShiActor) action;
+        actor.SummonPosition();
         Debug.Log("IsSummons");
     }
 
@@ -27,7 +29,7 @@ public class SummonState : IState
             actor.OnSummonCD();
         }
         
-        actor.ShiAttack();
+        //actor.ShiAttack();
 
         
     }

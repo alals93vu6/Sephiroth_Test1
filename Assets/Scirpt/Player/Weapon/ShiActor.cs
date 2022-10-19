@@ -19,7 +19,8 @@ public class ShiActor : MonoBehaviour
     [SerializeField] private GameObject PlayerNowPos;
     [SerializeField] private GameObject AmmoArea;
     [SerializeField] private GameObject ShiAmmo;
-    
+    [SerializeField] private Transform WeaponPos;
+
     [Header("狀態")]
     [SerializeField] private Rigidbody2D Shirig;
     [SerializeField] private IState currenState = new FollowState();
@@ -49,7 +50,9 @@ public class ShiActor : MonoBehaviour
     public void SummonsShi()
     {
         Shirig.velocity = Vector2.zero;
-        EventBus.Post(new CallWeaponDetected());
+        ChangeState(new SummonState());
+        OnSummonCD();
+        //EventBus.Post(new CallWeaponDetected());
     }
 
     public async void OnSummonCD()
@@ -115,6 +118,11 @@ public class ShiActor : MonoBehaviour
         currenState.OnExitState(this);
         NextState.OnEnterState(this);
         currenState = NextState;
+    }
+
+    public void SummonPosition()
+    {
+        this.transform.position = WeaponPos.position;
     }
 
     public float GetNowShiGapPosX()
