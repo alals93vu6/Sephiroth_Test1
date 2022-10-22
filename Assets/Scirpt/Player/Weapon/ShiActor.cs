@@ -25,6 +25,7 @@ public class ShiActor : MonoBehaviour
     [SerializeField] private Rigidbody2D Shirig;
     [SerializeField] private IState currenState = new FollowState();
     [SerializeField] public bool SummonCD;
+    [SerializeField] public bool SummonON = false;
 
     // Start is called before the first frame update
     void Start()

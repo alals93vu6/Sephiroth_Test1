@@ -8,7 +8,8 @@ public class SummonState : IState
     {
         var actor = (ShiActor) action;
         actor.SummonPosition();
-        Debug.Log("IsSummons");
+        actor.SummonON = true;
+        //Debug.Log("IsSummons");
     }
 
     public void OnStayState(object action)
@@ -22,7 +23,7 @@ public class SummonState : IState
             actor.ChangeState(new FollowState());
         }
 
-        if (Input.GetAxis("SummonKey") >= 0.85f || Input.GetMouseButtonDown(1) && actor.SummonCD == false)
+        if (Input.GetAxis("CallWeapon") >= 0.85f || Input.GetMouseButtonDown(1) && actor.SummonCD == false)
         {
             actor.ShiReTurn();
             actor.ChangeState(new FollowState());
@@ -36,6 +37,7 @@ public class SummonState : IState
 
     public void OnExitState(object action)
     {
-        
+        var actor = (ShiActor) action;
+        actor.SummonON = false;
     }
 }

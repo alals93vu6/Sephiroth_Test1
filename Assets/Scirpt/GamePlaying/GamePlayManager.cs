@@ -50,8 +50,8 @@ public class GamePlayManager : MonoBehaviour
 
     private void OnCallingWeapon(CallWeaponDetected obj)
     {
-        //Debug.Log("SummosShi!!");
-        _shiActor.SummonsShi();
+        Debug.Log("SummosShi!!");
+        //_shiActor.SummonsShi();
     }
 
     private void OnPlayerAttack(PlayerAttackDetected obj)
