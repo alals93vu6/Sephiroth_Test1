@@ -31,46 +31,48 @@ public class WeaponPositionActor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SummonPositionActor();
+        if (!_shiActor.SummonON)
+        {
+            SummonPositionActor();
+        }
+
         
+        
+        PositionMove();
     }
 
     private async void SummonPositionActor()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetButtonDown("CallWeapon") && NowState == 3 )
         {
             ResetPosition();
-            GetEndPoint_R();
-            await Task.Delay(300);
-            
+            NowState = 4;
+            await Task.Delay(400);
+
+            if (NowState != 3)
+            {
+                PlayerFacingDetected();
+            }
+        }
+
+        if (Input.GetButtonUp("CallWeapon"))
+        {
+            NowState = 3;
+            EventBus.Post(new CallWeaponDetected());
+        }
+        
+    }
+
+    private void PlayerFacingDetected()
+    {
+        if (_playerActor.IsRight)
+        {
             NowState = 1;
         }
-        
-        
-        /*
-        if (Input.GetButton("CallWeapon") && _shiActor.SummonON == false && _shiActor.SummonCD == false)
+        else
         {
-            ResetPosition();
-            Debug.Log("VAR");
-            if (_playerActor.IsRight)
-            {
-                GetEndPoint_R();
-                await Task.Delay(600);
-                PositionMove();
-            }
-            else
-            {
-                GetEndPoint_L();
-                await Task.Delay(600);
-                PositionMove();
-            }
+            NowState = 2;
         }
-        else if(Input.GetButtonUp("CallWeapon"))
-        {
-            Debug.Log("VARB");
-            //EventBus.Post(new CallWeaponDetected());
-        }
-        */
     }
 
     private void PositionMove()
@@ -84,7 +86,7 @@ public class WeaponPositionActor : MonoBehaviour
             GetEndPoint_L();   
         }
 
-        if (NowState != 3)
+        if (NowState == 1 || NowState == 2)
         {
             transform.position = Vector3.Lerp(this.transform.position,new Vector3(endPosition,playerPosition.position.y,0), 0.015f);
         }
