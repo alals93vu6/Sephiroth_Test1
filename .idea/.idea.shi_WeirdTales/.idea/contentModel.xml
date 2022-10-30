@@ -77,6 +77,11 @@
             </e>
           </e>
         </e>
+        <e p="SceneSet" t="Include">
+          <e p="Script" t="Include">
+            <e p="MainSceneSet.cs" t="Include" />
+          </e>
+        </e>
         <e p="Scirpt" t="Include">
           <e p="EventBus.cs" t="Include" />
           <e p="Events" t="Include">

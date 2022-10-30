@@ -23,41 +23,53 @@ public class WeaponPositionActor : MonoBehaviour
         //this.gameObject.SetActive(false);
         _shiActor = FindObjectOfType<ShiActor>();
         _playerActor = FindObjectOfType<PlayerActor>();
-        NowState = 3;
         weaponSpriteRenderer = GetComponent<SpriteRenderer>();
+        NowState = 3;
+        SetColorAlpha(Mathf.Lerp(weaponSpriteRenderer.color.a,0,0.02f));
         SetColorAlpha(1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!_shiActor.SummonON)
+        if (!_shiActor.SummonON && !_shiActor.SummonCD)
         {
             SummonPositionActor();
         }
 
-        
-        
+        if (NowState == 1 || NowState == 2)
+        {
+            OnSummonPress();
+        }
+        else
+        {
+            OnSummonRelease();
+        }
+
+
+
         PositionMove();
     }
 
     private async void SummonPositionActor()
     {
+        //Debug.Log("VARB");
         if (Input.GetButtonDown("CallWeapon") && NowState == 3 )
         {
             ResetPosition();
             NowState = 4;
             await Task.Delay(400);
 
-            if (NowState != 3)
+            if (NowState == 4)
             {
                 PlayerFacingDetected();
             }
         }
 
-        if (Input.GetButtonUp("CallWeapon"))
+        if (Input.GetButtonUp("CallWeapon") && !_shiActor.SummonON && !_shiActor.SummonCD)
         {
-            NowState = 3;
+            //Debug.Log("VAR");
+            NowState = 5;
             EventBus.Post(new CallWeaponDetected());
         }
         
@@ -95,6 +107,11 @@ public class WeaponPositionActor : MonoBehaviour
         //this.transform.position = new Vector3(endPosition, this.transform.position.y, 0f);
     }
 
+    public void WeaPonReset()
+    {
+        NowState = 3;
+    }
+
     private void StateDetected()
     {
         if (_playerActor.IsRight)
@@ -124,11 +141,13 @@ public class WeaponPositionActor : MonoBehaviour
 
     private void OnSummonPress()
     {
-        SetColorAlpha(Mathf.Lerp(weaponSpriteRenderer.color.a,1,0.05f));
+        //Debug.Log("AAA");
+        SetColorAlpha(Mathf.Lerp(weaponSpriteRenderer.color.a,1,0.035f));
     }
 
     private void OnSummonRelease()
     {
+        //Debug.Log("BBB");
         SetColorAlpha(Mathf.Lerp(weaponSpriteRenderer.color.a,0,0.02f));
     }
 

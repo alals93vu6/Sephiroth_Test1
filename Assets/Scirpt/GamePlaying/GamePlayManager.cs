@@ -9,6 +9,7 @@ public class GamePlayManager : MonoBehaviour
 
     [SerializeField] private PlayerActor _playerActor;
     [SerializeField] private ShiActor _shiActor;
+    [SerializeField] private WeaponPositionActor _weaponPositionActor;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,8 @@ public class GamePlayManager : MonoBehaviour
         
         _playerActor = FindObjectOfType<PlayerActor>();
         _shiActor = FindObjectOfType<ShiActor>();
-        
+        _weaponPositionActor = FindObjectOfType<WeaponPositionActor>();
+
 
     }
 
@@ -46,12 +48,13 @@ public class GamePlayManager : MonoBehaviour
     private void OnWeaponReturn(CallBackWeaponDetected obj)
     {
         //Debug.Log("ShiIsBack");
+        _weaponPositionActor.WeaPonReset();
     }
 
     private void OnCallingWeapon(CallWeaponDetected obj)
     {
-        Debug.Log("SummosShi!!");
-        //_shiActor.SummonsShi();
+        //Debug.Log("SummosShi!!");
+        _shiActor.SummonsShi();
     }
 
     private void OnPlayerAttack(PlayerAttackDetected obj)

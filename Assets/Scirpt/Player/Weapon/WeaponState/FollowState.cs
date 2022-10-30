@@ -6,6 +6,8 @@ public class FollowState : IState
 {
     public void OnEnterState(object action)
     {
+        var actor = (ShiActor) action;
+        actor.LogState = 1;
         Debug.Log("IsFollow");
     }
 
@@ -15,6 +17,7 @@ public class FollowState : IState
         actor.ShiFollowMove();
         actor.ShiFollowPosMax();
         actor.ShiRotation();
+        //Debug.Log("VARC");
 
         /*
         if (Input.GetAxis("SummonKey") >= 0.85f || Input.GetMouseButtonDown(1) && actor.SummonCD == false)

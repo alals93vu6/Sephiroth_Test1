@@ -13,7 +13,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public bool IsJump;
     [SerializeField] public bool IsSquat;
     [SerializeField] public bool IsMove;
-    [SerializeField] public bool IsRight;
+    [SerializeField] public bool IsRight = true;
     [SerializeField] public bool WeaponSummon;
     [SerializeField] public bool WeaponIsRight;
     [SerializeField] private bool DashCD;
@@ -39,6 +39,7 @@ public class PlayerActor : MonoBehaviour
     
     void Start()
     {
+        ChangeState(new IdeoState());
         rig = GetComponent<Rigidbody2D>();
     }
 
@@ -62,7 +63,6 @@ public class PlayerActor : MonoBehaviour
     private void UpdateTest()
     {
         OnPlayerConnect();
-        OnPlayerCallWeapon();
     }
     
     public void PlayerMove()
@@ -227,14 +227,6 @@ public class PlayerActor : MonoBehaviour
         if(!Input.GetButton("WeaponConnect"))
         {
             ChangeState(new IdeoState());
-        }
-    }
-
-    public void OnPlayerCallWeapon()
-    {
-        if (Input.GetButtonDown("CallWeapon"))
-        {
-            Debug.Log("CallWeapon!!");
         }
     }
 

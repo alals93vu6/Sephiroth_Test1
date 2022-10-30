@@ -7,6 +7,7 @@ public class SummonState : IState
     public void OnEnterState(object action)
     {
         var actor = (ShiActor) action;
+        actor.LogState = 2;
         actor.SummonPosition();
         actor.SummonON = true;
         //Debug.Log("IsSummons");
@@ -20,13 +21,17 @@ public class SummonState : IState
         if (actor.GetNowShiGapPosX() >= 12 || actor.GetNowShiGapPosY() >= 8)
         {
             actor.ShiReTurn();
-            actor.ChangeState(new FollowState());
         }
-
+/*
         if (Input.GetAxis("CallWeapon") >= 0.85f || Input.GetMouseButtonDown(1) && actor.SummonCD == false)
         {
             actor.ShiReTurn();
-            actor.ChangeState(new FollowState());
+            actor.OnSummonCD();
+        }
+        */
+        if (Input.GetButtonUp("CallWeapon") && actor.SummonCD == false)
+        {
+            actor.ShiReTurn();
             actor.OnSummonCD();
         }
         
@@ -38,6 +43,5 @@ public class SummonState : IState
     public void OnExitState(object action)
     {
         var actor = (ShiActor) action;
-        actor.SummonON = false;
     }
 }

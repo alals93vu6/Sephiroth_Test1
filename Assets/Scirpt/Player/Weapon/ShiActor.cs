@@ -14,6 +14,7 @@ public class ShiActor : MonoBehaviour
     [SerializeField] private float PlayerX;
     [SerializeField] private float NowShiGapPosX , NowShiGapPosY;
     [SerializeField] private float XAxis;
+    [SerializeField] public int LogState;
 
     [Header("物件")] 
     [SerializeField] private GameObject PlayerNowPos;
@@ -25,12 +26,13 @@ public class ShiActor : MonoBehaviour
     [SerializeField] private Rigidbody2D Shirig;
     [SerializeField] private IState currenState = new FollowState();
     [SerializeField] public bool SummonCD;
-    [SerializeField] public bool SummonON = false;
+    [SerializeField] public bool SummonON;
 
     // Start is called before the first frame update
     void Start()
     {
         Shirig = GetComponent<Rigidbody2D>();
+        ChangeState(new FollowState());
     }
 
     // Update is called once per frame
@@ -71,8 +73,11 @@ public class ShiActor : MonoBehaviour
         NowShiGapPosY = Mathf.Abs(this.gameObject.transform.position.y - PlayerNowPos.transform.position.y);
     }
 
-    public void ShiReTurn()
+    public async void ShiReTurn()
     {
+        ChangeState(new FollowState());
+        SummonON = false;
+        
         EventBus.Post(new CallBackWeaponDetected());
     }
 
