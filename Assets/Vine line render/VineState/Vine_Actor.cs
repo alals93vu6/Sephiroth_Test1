@@ -17,6 +17,8 @@ public class Vine_Actor : MonoBehaviour
     [SerializeField] private Transform first_point;
     [Header("召喚物位置")]
     [SerializeField] private Transform end_point;
+    [Header("LineRender圖層")]
+    [Range(0,20)][SerializeField] private int Vine_linerender_layer;
 
     [Header("設定藤蔓渲染")]
     [SerializeField] public Material VineMaterial;
@@ -91,11 +93,11 @@ public class Vine_Actor : MonoBehaviour
     {
         Vine_now = VineMaterial.GetFloat("VineValue");
     }
-    void Cconcatenation()
+    void Cconcatenation() //連結設定
     {
         vine_linerender.SetPosition(0, first_point.position);
         //vine_linerender.SetWidth(.15f, .15f);
-        vine_linerender.sortingOrder = 3;
+        vine_linerender.sortingOrder = Vine_linerender_layer;
         vine_linerender.sortingLayerName = "Default";
         vine_linerender.SetPosition(1, end_point.position);
     }
