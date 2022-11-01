@@ -10,6 +10,7 @@ public class GamePlayManager : MonoBehaviour
     [SerializeField] private PlayerActor _playerActor;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] private WeaponPositionActor _weaponPositionActor;
+    [SerializeField] private Vine_Actor _vineActor;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +18,27 @@ public class GamePlayManager : MonoBehaviour
         EventBus.Subscribe<CallWeaponDetected>(OnCallingWeapon);//玩家召喚替身
         EventBus.Subscribe<CallBackWeaponDetected>(OnWeaponReturn);//替身回到玩家身邊
         EventBus.Subscribe<HitEnemyDetected>(OnHitEnemy);
+        //EventBus.Subscribe<OnPlayerConnectWeaponDetected>(OnConnect);
+        //EventBus.Subscribe<OnPlayerDisConnectDetected>(OnDisConnect);
         
         _playerActor = FindObjectOfType<PlayerActor>();
         _shiActor = FindObjectOfType<ShiActor>();
         _weaponPositionActor = FindObjectOfType<WeaponPositionActor>();
+        _vineActor = FindObjectOfType<Vine_Actor>();
 
 
     }
+/*
+    private void OnDisConnect(OnPlayerDisConnectDetected obj)
+    {
+        
+    }
 
+    private void OnConnect(OnPlayerConnectWeaponDetected obj)
+    {
+        
+    }
+*/
     void Update()
     {
        /*

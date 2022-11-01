@@ -8,7 +8,7 @@ public class FollowState : IState
     {
         var actor = (ShiActor) action;
         actor.LogState = 1;
-        Debug.Log("IsFollow");
+        //Debug.Log("IsFollow");
     }
 
     public void OnStayState(object action)

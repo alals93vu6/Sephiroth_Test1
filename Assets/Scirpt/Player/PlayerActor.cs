@@ -36,11 +36,15 @@ public class PlayerActor : MonoBehaviour
     [Header("物件")]
     [SerializeField] public GameObject JumpArea;
     [SerializeField] private Transform WeaponPos;
+    [SerializeField] private Vine_Actor _vineActor;
+    [SerializeField] private ShiActor _shiActor;
     
     void Start()
     {
         ChangeState(new IdeoState());
         rig = GetComponent<Rigidbody2D>();
+        _vineActor = FindObjectOfType<Vine_Actor>();
+        _shiActor = FindObjectOfType<ShiActor>();
     }
 
     // Update is called once per frame
@@ -53,6 +57,7 @@ public class PlayerActor : MonoBehaviour
         WeaponPosDetected();
         
         UpdateTest();
+        
     }
 
     public void connecttest()
@@ -67,19 +72,6 @@ public class PlayerActor : MonoBehaviour
     
     public void PlayerMove()
     {
-        /*
-        float H = Input.GetAxis("HorizontalA");
-
-        if (Mathf.Abs(H) >= 0.6f)
-        {
-            rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
-        }
-        
-        */
-
-        //rig.velocity = new Vector2 (Input.GetAxis("HorizontalA") * RunSpeed, rig.velocity.y);
-        
-        
         if(Input.GetAxisRaw("HorizontalA") <= -0.01f  || Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             rig.velocity = new Vector2 (-1 * RunSpeed, rig.velocity.y);
@@ -216,9 +208,13 @@ public class PlayerActor : MonoBehaviour
 
     public void OnPlayerConnect()
     {
-        if(Input.GetButtonDown("WeaponConnect"))
+        if (_shiActor.SummonON)
         {
-            ChangeState(new ConnectState());
+           if(Input.GetButtonDown("WeaponConnect"))
+           {
+               _vineActor.IsCconcatenation = true;
+               ChangeState(new ConnectState());
+           } 
         }
     }
 
@@ -226,6 +222,7 @@ public class PlayerActor : MonoBehaviour
     {
         if(!Input.GetButton("WeaponConnect"))
         {
+            _vineActor.IsCconcatenation = false;
             ChangeState(new IdeoState());
         }
     }

@@ -90,6 +90,8 @@
               <e p="CallWeaponDetected.cs" t="Include" />
               <e p="FloorCrossDetected.cs" t="Include" />
               <e p="HitEnemyDetected.cs" t="Include" />
+              <e p="OnPlayerConnectWeaponDetected.cs" t="Include" />
+              <e p="OnPlayerDisConnectDetected.cs" t="Include" />
               <e p="PlayerAttackDetected.cs" t="Include" />
             </e>
           </e>
@@ -136,6 +138,22 @@
           <e p="GitTestObj.cs" t="Include" />
           <e p="ShowHit.cs" t="Include" />
           <e p="TestPos.cs" t="Include" />
+        </e>
+        <e p="Vine line render" t="Include">
+          <e p="VineLinerenderCode" t="Include">
+            <e p="VineLineRender.cs" t="Include" />
+            <e p="VineLineShaderSet.cs" t="Include" />
+          </e>
+          <e p="VineState" t="Include">
+            <e p="Text.cs" t="Include" />
+            <e p="Vine_Actor.cs" t="Include" />
+            <e p="Vine_ideo_end.cs" t="Include" />
+            <e p="Vine_ideo_nothing.cs" t="Include" />
+            <e p="Vine_ideo_Start.cs" t="Include" />
+            <e p="Vine_ideo_stay.cs" t="Include" />
+            <e p="Vine_IdeoState.cs" t="Include" />
+            <e p="Vine_IsState.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

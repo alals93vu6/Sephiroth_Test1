@@ -43,7 +43,7 @@ public class Vine_Actor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Vine_value);
+        //Debug.Log(Vine_value);
         Cconcatenation();
         GetShaderFloat();
         Vine_IsCconcatenation();
@@ -81,12 +81,12 @@ public class Vine_Actor : MonoBehaviour
     }
     public void Vine_Start()
     {
-        Debug.Log("isStart");
+        //Debug.Log("isStart");
         Vine_value = Mathf.Lerp(Vine_now, 0f, Vine_speed * Time.deltaTime);
     }
     public void Vine_End()
     {
-        Debug.Log("isEnd");
+        //Debug.Log("isEnd");
         Vine_value = Mathf.Lerp(Vine_now, 1f, Vine_speed * Time.deltaTime);
     }
     void GetShaderFloat()
