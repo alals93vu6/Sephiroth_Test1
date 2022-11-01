@@ -26,17 +26,17 @@ public class AttackState : IState
         if (!actor.IsJump == false)
         {
             actor.ChangeState(new DropState());
-            LOGA();
+            //LOGA();
         }
         else if(actor.IsJump == false)
         {
-           LOGB();
+           //LOGB();
             if ( Mathf.Abs(Input.GetAxis("HorizontalA")) >= 0.55f || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
-           {
+            {
                actor.ChangeState(new MoveState());
                
-           }
-           else {actor.StopSlip(); actor.ChangeState(new IdeoState());} 
+            }
+            else {actor.StopSlip(); actor.ChangeState(new IdeoState());} 
         }
 
     }

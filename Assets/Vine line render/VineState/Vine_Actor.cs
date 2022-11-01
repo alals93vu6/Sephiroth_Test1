@@ -38,6 +38,7 @@ public class Vine_Actor : MonoBehaviour
     {
         vine_linerender = GetComponent<LineRenderer>();
         VineMaterial.SetFloat("VineValue", 1);
+        
     }
 
     // Update is called once per frame

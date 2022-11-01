@@ -54,7 +54,7 @@ public class PlayerActor : MonoBehaviour
         V = Input.GetAxis("VerticalA");
         
         CurrenState.OnStayState(this);
-        WeaponPosDetected();
+        WeaponDetected();
         
         UpdateTest();
         
@@ -213,33 +213,21 @@ public class PlayerActor : MonoBehaviour
            if(Input.GetButtonDown("WeaponConnect"))
            {
                _vineActor.IsCconcatenation = true;
-               ChangeState(new ConnectState());
+               
            } 
-        }
-    }
-
-    public void ConnectDetected()
-    {
-        if(!Input.GetButton("WeaponConnect"))
-        {
-            _vineActor.IsCconcatenation = false;
-            ChangeState(new IdeoState());
-        }
-    }
-
-    public void WeaponStateChang()
-    {
-        if(WeaponSummon)
-        {
-            WeaponSummon = false;
+           
+           if(Input.GetButtonUp("WeaponConnect"))
+           {
+               _vineActor.IsCconcatenation = false;
+           }
         }
         else
         {
-            WeaponSummon = true;
+            _vineActor.IsCconcatenation = false;
         }
     }
 
-    private void WeaponPosDetected()
+    private void WeaponDetected()
     {
         if (WeaponPos.position.x >= this.transform.position.x)
         {
@@ -249,33 +237,117 @@ public class PlayerActor : MonoBehaviour
         {
             WeaponIsRight = false;
         }
+        
+        if(!_shiActor.SummonON)
+        {
+            WeaponSummon = false;
+        }
+        else
+        {
+            WeaponSummon = true;
+        }
     }
 
-    public async void OnPlayerDash()
+    public void OnPlayerDash()
     {
         if (!DashCD)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("BKey"))
+            if(Input.GetButtonDown("BKey") && !_vineActor.IsCconcatenation)
             {
-                OnDashCD();
-                ChangeState(new DashState());
-                if (!IsRight)
-                {
-                    rig.AddForce(new Vector2(-DashFouce,0) , ForceMode2D.Impulse);
-                }
-                else
-                {
-                    rig.AddForce(new Vector2(DashFouce,0) , ForceMode2D.Impulse);
-                }
-            
-                await Task.Delay(500);
-                    
-                StopSlip();
-                ChangeState(new IdeoState());
+                NormalDash();
+            }
+            else if(WeaponSummon && _vineActor.IsCconcatenation)
+            {
+                ConnectDashDetected();
             }
         }
+    }
 
+    private async void NormalDash()
+    {
+        OnDashCD();
+        ChangeState(new DashState());
+        if (!IsRight)
+        {
+            rig.AddForce(new Vector2(-DashFouce,0) , ForceMode2D.Impulse);
+        }
+        else
+        {
+            rig.AddForce(new Vector2(DashFouce,0) , ForceMode2D.Impulse);
+        }
+        await Task.Delay(500);
+        StopSlip();
+        ChangeState(new IdeoState());
+    }
+
+    private void ConnectDashDetected()
+    {
+        if (WeaponIsRight)
+        {
+            if (H >= 0.6f && Input.GetButtonDown("BKey"))
+            {
+                SprintDash();
+            }
+            if (H <= -0.6f && Input.GetButtonDown("BKey"))
+            {
+                RetreatDash();
+            }
+            if (V >= 0.6f && Input.GetButtonDown("BKey"))
+            {
+                RiseDash();
+            }
+        }
+        else
+        {
+            if (H >= 0.6f && Input.GetButtonDown("BKey"))
+            {
+                RetreatDash();
+            }
+            if (H <= -0.6f && Input.GetButtonDown("BKey"))
+            {
+                SprintDash();
+            }
+            if (V >= 0.6f && Input.GetButtonDown("BKey"))
+            {
+                RiseDash();
+            }
+        }
+    }
+
+    private async void RetreatDash()
+    {
+        OnDashCD();
+        ChangeState(new DashState());
         
+        rig.AddForce(new Vector2(DashFouce,0) , ForceMode2D.Impulse);
+        Debug.Log("AAA");
+        
+        await Task.Delay(500);
+        StopSlip();
+        ChangeState(new IdeoState());
+    }
+
+    private async void SprintDash()
+    {
+        OnDashCD();
+        ChangeState(new DashState());
+        
+        rig.AddForce(new Vector2(-DashFouce,0) , ForceMode2D.Impulse);
+        Debug.Log("BBB");
+        
+        await Task.Delay(500);
+        StopSlip();
+        ChangeState(new IdeoState());
+    }
+
+    private async void RiseDash()
+    {
+        OnDashCD();
+        ChangeState(new DashState());
+        Debug.Log("CCC");
+        await Task.Delay(500);
+        StopSlip();
+        ChangeState(new IdeoState());
     }
 
     private async void OnDashCD()
