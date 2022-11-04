@@ -44,27 +44,27 @@ public class PlayerAnimatorManager : MonoBehaviour
 
     public void PlayRun()
     {
-        AN.Play("PlayerRunTest");
+        AN.Play("PlayerRun");
     }
 
     public void PlayDash()
     {
-        AN.Play("PlayerDashTest");
+        AN.Play("PlayerDash");
     }
 
     public void PlayStopMove()
     {
-        AN.Play("PlayerStopMoveTest");
+        AN.Play("PlayerStopMove");
     }
     
     public void PlayJump()
     {
-        AN.Play("PlayerJumpTest");
+        AN.Play("PlayerJump");
     }
     
     public void PlayDrop()
     {
-        AN.Play("PlayerDropTest");
+        AN.Play("PlayerDrop");
     }
     
 }

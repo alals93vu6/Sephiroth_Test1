@@ -13,7 +13,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public bool IsJump;
     [SerializeField] public bool IsSquat;
     [SerializeField] public bool IsMove;
-    [SerializeField] public bool IsRight = true;
+    [SerializeField] public bool IsRight;
     [SerializeField] public bool WeaponSummon;
     [SerializeField] public bool WeaponIsRight;
     [SerializeField] private bool DashCD;
@@ -75,7 +75,7 @@ public class PlayerActor : MonoBehaviour
         if(Input.GetAxisRaw("HorizontalA") <= -0.01f  || Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             rig.velocity = new Vector2 (-1 * RunSpeed, rig.velocity.y);
-            transform.localScale = new Vector3(-5f, 5f, 5f);
+            transform.localScale = new Vector3(5f, 5f, 5f);
             IsRight = false;
 
         }
@@ -83,7 +83,7 @@ public class PlayerActor : MonoBehaviour
         if(Input.GetAxisRaw("HorizontalA") >= 0.01f || Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             rig.velocity = new Vector2 (1 * RunSpeed, rig.velocity.y);
-            transform.localScale = new Vector3(5f, 5f, 5f);
+            transform.localScale = new Vector3(-5f, 5f, 5f);
             IsRight = true;
         }
 
