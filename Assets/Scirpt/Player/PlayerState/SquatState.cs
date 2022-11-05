@@ -10,7 +10,7 @@ public class SquatState : IState
         var actor = (PlayerActor) action;
         
         actor.OnSquatReady();
-        PlayerAnimatorManager.instance.AN.Play("PlayerIdeoTest");
+        PlayerAnimatorManager.instance.AN.Play("PlayerIdel");
     }
 
     public void OnStayState(object action)
