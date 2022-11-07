@@ -11,6 +11,7 @@ public class AttackState : IState
     {
         //Debug.Log("IsAttack");
         PlayerAnimatorManager.instance.PlayAttack();
+        PlayerFettle.instance.PlayerGetHit(1);
         EventBus.Post(new PlayerAttackDetected());
     }
 

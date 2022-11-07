@@ -19,11 +19,11 @@ TagManager:
   - ShiAereScreen
   - LandFloor
   - Player
-  - Monster
+  - 
   - Ground Soft
   - Wall Shadow
   - Enemy
-  - 
+  - EnemyFloor
   - 
   - 
   - 

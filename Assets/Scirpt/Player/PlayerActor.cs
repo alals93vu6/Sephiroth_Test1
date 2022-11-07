@@ -38,6 +38,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private Transform WeaponPos;
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;
+    [SerializeField] private PlayerFettle _playerFettle;
     
     void Start()
     {
@@ -45,6 +46,7 @@ public class PlayerActor : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         _vineActor = FindObjectOfType<Vine_Actor>();
         _shiActor = FindObjectOfType<ShiActor>();
+        _playerFettle = FindObjectOfType<PlayerFettle>();
     }
 
     // Update is called once per frame

@@ -16,8 +16,10 @@ public class GamePlayManager : MonoBehaviour
     {
         EventBus.Subscribe<PlayerAttackDetected>(OnPlayerAttack);//玩家發動攻擊
         EventBus.Subscribe<CallWeaponDetected>(OnCallingWeapon);//玩家召喚替身
+        EventBus.Subscribe<PlayerGetHitDetected>(OnPlayerGetHit);
         EventBus.Subscribe<CallBackWeaponDetected>(OnWeaponReturn);//替身回到玩家身邊
         EventBus.Subscribe<HitEnemyDetected>(OnHitEnemy);
+        EventBus.Subscribe<PlayerDeadDetected>(OnPlayerDead);
         //EventBus.Subscribe<OnPlayerConnectWeaponDetected>(OnConnect);
         //EventBus.Subscribe<OnPlayerDisConnectDetected>(OnDisConnect);
         
@@ -28,7 +30,8 @@ public class GamePlayManager : MonoBehaviour
 
 
     }
-/*
+
+    /*
     private void OnDisConnect(OnPlayerDisConnectDetected obj)
     {
         
@@ -75,6 +78,15 @@ public class GamePlayManager : MonoBehaviour
     {
        
     }
-
+    
+    private void OnPlayerGetHit(PlayerGetHitDetected obj)
+    {
+        Debug.Log("GetHit!!!");
+    }
+    
+    private void OnPlayerDead(PlayerDeadDetected obj)
+    {
+        
+    }
     
 }

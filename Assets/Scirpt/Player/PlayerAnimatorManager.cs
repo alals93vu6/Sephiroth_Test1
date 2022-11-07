@@ -39,7 +39,8 @@ public class PlayerAnimatorManager : MonoBehaviour
 
     public void PlayAttack()
     {
-        AN.Play("PlayerAttackTest");
+        //AN.Play("PlayerAttackTest");
+        Debug.Log("Attack");
     }
 
     public void PlayRun()

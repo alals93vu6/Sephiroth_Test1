@@ -93,6 +93,8 @@
               <e p="OnPlayerConnectWeaponDetected.cs" t="Include" />
               <e p="OnPlayerDisConnectDetected.cs" t="Include" />
               <e p="PlayerAttackDetected.cs" t="Include" />
+              <e p="PlayerDeadDetected.cs" t="Include" />
+              <e p="PlayerGetHitDetected.cs" t="Include" />
             </e>
           </e>
           <e p="GamePlaying" t="Include">
@@ -102,9 +104,16 @@
             <e p="GamePlayManager.cs" t="Include" />
           </e>
           <e p="IState.cs" t="Include" />
+          <e p="Monster" t="Include">
+            <e p="AreaA_Insitute" t="Include">
+              <e p="InstituteA.cs" t="Include" />
+              <e p="InstituteB.cs" t="Include" />
+            </e>
+          </e>
           <e p="Player" t="Include">
             <e p="PlayerActor.cs" t="Include" />
             <e p="PlayerAnimatorManager.cs" t="Include" />
+            <e p="PlayerFettle.cs" t="Include" />
             <e p="PlayerState" t="Include">
               <e p="AttackState.cs" t="Include" />
               <e p="DashState.cs" t="Include" />
@@ -127,6 +136,7 @@
               </e>
             </e>
           </e>
+          <e p="Shake.cs" t="Include" />
           <e p="Trashcans" t="Include">
             <e p="CtrlDistance.cs" t="Include" />
             <e p="StayArea.cs" t="Include" />
