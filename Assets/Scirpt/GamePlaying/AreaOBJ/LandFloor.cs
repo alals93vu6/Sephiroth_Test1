@@ -60,7 +60,7 @@ public class LandFloor : MonoBehaviour
 
     public async void OnPlayerFloorCross()
     {
-        if (Input.GetAxis("VerticalA") <= -0.6f && Input.GetButtonDown("AKey"))
+        if (Input.GetAxis("Vertical") <= -0.6f && Input.GetButtonDown("AKey"))
         {
             if (IsWriting)
             {

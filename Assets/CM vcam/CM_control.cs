@@ -9,7 +9,7 @@ public class CM_control : MonoBehaviour
     float size;
     public float start_size;
     public float end_size;
-    float start_time = 0;
+    //float start_time = 0;
     float time;
     public bool is_ON_CM = false;
     public bool is_OFF_CM = false;

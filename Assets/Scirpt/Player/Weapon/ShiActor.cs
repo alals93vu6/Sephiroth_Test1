@@ -73,7 +73,7 @@ public class ShiActor : MonoBehaviour
         NowShiGapPosY = Mathf.Abs(this.gameObject.transform.position.y - PlayerNowPos.transform.position.y);
     }
 
-    public async void ShiReTurn()
+    public void ShiReTurn()
     {
         ChangeState(new FollowState());
         SummonON = false;
@@ -83,7 +83,7 @@ public class ShiActor : MonoBehaviour
 
     public void ShiFollowMove()
     {
-        XAxis = Input.GetAxisRaw("HorizontalA");
+        XAxis = Input.GetAxisRaw("Horizontal");
 
         if (XAxis >= 0.55f)
         {

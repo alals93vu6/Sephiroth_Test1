@@ -6,20 +6,17 @@ public class DropState : IState
 {
     public void OnEnterState(object action)
     {
-        //Debug.Log("IsDrop");
-        PlayerAnimatorManager.instance.PlayDrop();
+        var actor = (PlayerActor) action;
     }
 
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        actor.PlayerMove();
-        actor.PlayerDownWhether();
-        actor.PlayerAttacking();
+        
     }
 
     public void OnExitState(object action)
     {
-        
+        var actor = (PlayerActor) action;
     }
 }
