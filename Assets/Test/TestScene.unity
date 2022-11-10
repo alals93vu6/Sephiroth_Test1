@@ -1019,28 +1019,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rig: {fileID: 0}
-  IsJump: 0
-  IsSquat: 0
-  IsMove: 0
-  IsRight: 1
-  WeaponSummon: 0
-  WeaponIsRight: 0
-  DashCD: 0
-  RunSpeed: 6
-  JumpRange: 0.265
-  JumpFouce: 16
-  BrakesFouce: 2
-  DashFouce: 8
+  runSpeed: 4
+  jumpRange: 0.22
+  JumpAera: {x: 0.03, y: 0.58, z: 0}
   H: 0
   V: 0
-  Jumpfloor:
+  jumpfloor:
     serializedVersion: 2
-    m_Bits: 256
-  Landfloor:
-    serializedVersion: 2
-    m_Bits: 2048
-  JumpArea: {fileID: 506832140}
-  WeaponPos: {fileID: 1079003474}
+    m_Bits: 2304
+  weaponPos: {fileID: 0}
+  _animatorManager: {fileID: 0}
   _vineActor: {fileID: 0}
   _shiActor: {fileID: 0}
   _playerFettle: {fileID: 0}
@@ -2076,6 +2064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AN: {fileID: 1343444410}
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &1349943610
 GameObject:
   m_ObjectHideFlags: 0

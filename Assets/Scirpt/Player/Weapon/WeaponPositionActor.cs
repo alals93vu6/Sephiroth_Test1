@@ -77,14 +77,7 @@ public class WeaponPositionActor : MonoBehaviour
 
     private void PlayerFacingDetected()
     {
-        if (_playerActor.IsRight)
-        {
-            NowState = 1;
-        }
-        else
-        {
-            NowState = 2;
-        }
+        
     }
 
     private void PositionMove()
@@ -114,6 +107,7 @@ public class WeaponPositionActor : MonoBehaviour
 
     private void StateDetected()
     {
+        /*
         if (_playerActor.IsRight)
         {
             NowState = 1;
@@ -122,6 +116,7 @@ public class WeaponPositionActor : MonoBehaviour
         {
             NowState = 2;
         }
+        */
     }
 
     private void GetEndPoint_R()

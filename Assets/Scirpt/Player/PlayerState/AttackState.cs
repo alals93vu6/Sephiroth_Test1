@@ -12,7 +12,7 @@ public class AttackState : IState
         
     }
 
-    public async void OnStayState(object action)
+    public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
     }
@@ -21,20 +21,5 @@ public class AttackState : IState
     {
         var actor = (PlayerActor) action;
         //actor.StopSlip();
-    }
-
-    private void LOGA()
-    {
-      Debug.Log("AAA");  
-    }
-    
-    private void LOGB()
-    {
-        Debug.Log("bbb");  
-    }
-    
-    private void LOGC()
-    {
-        Debug.Log("ccc");  
     }
 }

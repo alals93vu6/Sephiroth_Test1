@@ -4,68 +4,28 @@ using UnityEngine;
 
 public class PlayerAnimatorManager : MonoBehaviour
 {
-    #region Instance
-    static public PlayerAnimatorManager instance;
-    private void Awake()
-    {
-        instance = this;
-    }
-    #endregion
-    
     [Header("狀態")]
     [SerializeField] public Animator AN;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         AN = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void FlipPlayer(int flipInt)
     {
-        
+        if (flipInt == 1)
+        {
+            _spriteRenderer.flipX = false;
+        }
+        else
+        {
+            _spriteRenderer.flipX = true;
+        }
     }
 
-    public void PlayIdeo()
-    {
-        AN.SetBool("IsIdeo",true);
-    }
-
-    public void ExitIdeo()
-    {
-        AN.SetBool("IsIdeo",false);
-    }
-
-    public void PlayAttack()
-    {
-        //AN.Play("PlayerAttackTest");
-        Debug.Log("Attack");
-    }
-
-    public void PlayRun()
-    {
-        AN.Play("PlayerRun");
-    }
-
-    public void PlayDash()
-    {
-        AN.Play("PlayerDash");
-    }
-
-    public void PlayStopMove()
-    {
-        AN.Play("PlayerStopMove");
-    }
-    
-    public void PlayJump()
-    {
-        AN.Play("PlayerJump");
-    }
-    
-    public void PlayDrop()
-    {
-        AN.Play("PlayerDrop");
-    }
-    
 }

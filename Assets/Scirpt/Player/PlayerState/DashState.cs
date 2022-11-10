@@ -6,7 +6,7 @@ public class DashState : IState
 {
     public void OnEnterState(object action)
     {
-        PlayerAnimatorManager.instance.PlayDash();
+        
     }
 
     public void OnStayState(object action)

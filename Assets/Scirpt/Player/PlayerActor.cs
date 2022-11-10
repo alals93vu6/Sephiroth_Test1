@@ -9,41 +9,31 @@ public class PlayerActor : MonoBehaviour
     // Start is called before the first frame update
     
     [Header("狀態")]
-    [SerializeField] Rigidbody2D rig;
-    [SerializeField] public bool IsJump;
-    [SerializeField] public bool IsSquat;
-    [SerializeField] public bool IsMove;
-    [SerializeField] public bool IsRight;
-    [SerializeField] public bool WeaponSummon;
-    [SerializeField] public bool WeaponIsRight;
-    [SerializeField] private bool DashCD;
-    [SerializeField] private IState CurrenState = new IdeoState();
+    [SerializeField] public Rigidbody2D rig;
+    [SerializeField] private IState CurrenState = new IdleState();
 
     [Header("數值")]
-    [SerializeField] private float RunSpeed;
-    [SerializeField] private float JumpRange;
-    [SerializeField] private float JumpFouce;
-    [SerializeField] private float BrakesFouce;
-    [SerializeField] public float DashFouce;
-
-    [SerializeField] private float H;
-    [SerializeField] private float V;
+    [SerializeField] private float runSpeed;
+    [SerializeField] private float jumpRange;
+    [SerializeField] private Vector3 JumpAera = new Vector3(0, 0, 0);
+    [SerializeField] public float H;
+    [SerializeField] public float V;
 
     [Header("Layer")]
-    [SerializeField] private LayerMask Jumpfloor;
-    [SerializeField] private LayerMask Landfloor;
-    
+    [SerializeField] private LayerMask jumpfloor;
+
     [Header("物件")]
-    [SerializeField] public GameObject JumpArea;
-    [SerializeField] private Transform WeaponPos;
+    [SerializeField] private Transform weaponPos;
+    [SerializeField] private PlayerAnimatorManager _animatorManager ;
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] private PlayerFettle _playerFettle;
     
     void Start()
     {
-        changeState(new IdeoState());
+        changeState(new IdleState());
         rig = GetComponent<Rigidbody2D>();
+        _animatorManager = FindObjectOfType<PlayerAnimatorManager>();
         _vineActor = FindObjectOfType<Vine_Actor>();
         _shiActor = FindObjectOfType<ShiActor>();
         _playerFettle = FindObjectOfType<PlayerFettle>();
@@ -54,16 +44,31 @@ public class PlayerActor : MonoBehaviour
     {
         H = Input.GetAxis("Horizontal");
         V = Input.GetAxis("Vertical");
+        
         CurrenState.OnStayState(this);
-        
-        
+    }
+
+    public void PlayerMove()
+    {
+        if (H >= 0.2f)
+        {
+            runSpeed = Mathf.Abs(runSpeed);
+            _animatorManager.FlipPlayer(2);
+        }
+        else if(H <= 0.2f)
+        {
+            runSpeed = -Mathf.Abs(runSpeed);
+            _animatorManager.FlipPlayer(1);
+        }
+
+        rig.velocity = new Vector2(runSpeed, rig.velocity.y);
     }
 
 
-    private void onDrawGizmos()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(JumpArea.transform.position,JumpRange);
+        Gizmos.DrawWireSphere(this.transform.position - JumpAera,jumpRange);
     }
 
     public void changeState(IState nextState)
