@@ -16,7 +16,7 @@ public class PlayerAnimatorManager : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public void FlipPlayer(int flipInt)
+    public void flipPlayer(int flipInt)
     {
         if (flipInt == 1)
         {
@@ -26,6 +26,36 @@ public class PlayerAnimatorManager : MonoBehaviour
         {
             _spriteRenderer.flipX = true;
         }
+    }
+
+    public void playIdle()
+    {
+        AN.Play("PlayerIdle");
+    }
+    
+    public void playMove()
+    {
+        AN.Play("PlayerRun");
+    }
+
+    public void playBrakes()
+    {
+        AN.Play("PlayerStopMove");
+    }
+
+    public void playJump()
+    {
+        AN.Play("PlayerJump");
+    }
+    
+    public void playDrop()
+    {
+        AN.Play("PlayerDrop");
+    }
+    
+    public void playDash()
+    {
+        AN.Play("PlayerDash");
     }
 
 }

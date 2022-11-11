@@ -9,12 +9,13 @@ public class MoveState : IState
     {
         Debug.Log("IsMove");
         var actor = (PlayerActor) action;
+        
     }
 
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        
+        actor._animatorManager.playMove();
         actor.PlayerMove();
         
         if (Mathf.Abs(actor.H) <= 0.39f)

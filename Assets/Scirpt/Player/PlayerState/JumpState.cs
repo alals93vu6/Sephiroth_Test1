@@ -15,16 +15,18 @@ public class JumpState : IState
         actor.rig.velocity += Vector2.up * actor.JumpForce;
         
         
+        
     }
 
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
+        actor._animatorManager.playJump();
         actor.PlayerMove();
         JumpTime += Time.deltaTime;
         
         if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 
-           )
+            && JumpTime >= 0.3f)
         {
             if (actor.H != 0)
             {

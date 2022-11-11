@@ -8,17 +8,18 @@ public class IdleState : IState
     {
         Debug.Log("IsIdle");
         var actor = (PlayerActor) action;
+        
         //
     }
 
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
+        actor._animatorManager.playIdle();
         if (Mathf.Abs(actor.H) >= 0.4f)
         {
             actor.changeState(new MoveState());
         }
-
         if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 
             && Input.GetButtonDown("AKey"))
         {

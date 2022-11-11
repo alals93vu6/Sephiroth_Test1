@@ -25,7 +25,7 @@ public class PlayerActor : MonoBehaviour
 
     [Header("物件")]
     [SerializeField] private Transform weaponPos;
-    [SerializeField] private PlayerAnimatorManager _animatorManager ;
+    [SerializeField] public PlayerAnimatorManager _animatorManager ;
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] private PlayerFettle _playerFettle;
@@ -55,11 +55,11 @@ public class PlayerActor : MonoBehaviour
         
         if(H >= 0.2f)
         {
-            _animatorManager.FlipPlayer(2);
+            _animatorManager.flipPlayer(2);
         }
         else if(H <= 0.2f)
         {
-            _animatorManager.FlipPlayer(1);
+            _animatorManager.flipPlayer(1);
         }
         
         rig.velocity = new Vector2(MoveHorizontal * runSpeed, rig.velocity.y);
