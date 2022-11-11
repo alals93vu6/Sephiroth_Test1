@@ -5,30 +5,44 @@ using UnityEngine;
 
 public class JumpState : IState
 {
-    private int TestBool = 2;
+    private float JumpTime;
     
     public void OnEnterState(object action)
     {
         Debug.Log("IsJump");
+        JumpTime = 0;
         var actor = (PlayerActor) action;
         actor.rig.velocity += Vector2.up * actor.JumpForce;
+        
         
     }
 
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        if (actor.H == 0)
+        actor.PlayerMove();
+        JumpTime += Time.deltaTime;
+        
+        if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 
+           )
         {
-            actor.changeState(new IdleState());
+            if (actor.H != 0)
+            {
+                actor.changeState(new MoveState());
+            }
+            else
+            {
+                actor.changeState(new IdleState());
+            }
         }
-        else
+        /*
+        if (JumpTime >= 1f)
         {
-            actor.changeState(new MoveState());
+            
         }
+        */
 
-        
-        
+
 
     }
 
@@ -36,10 +50,5 @@ public class JumpState : IState
     {
         var actor = (PlayerActor) action;
     }
-
-    private void stateChange(object action)
-    {
-        var actor = (PlayerActor) action;
-        actor.TEst();
-    }
+    
 }

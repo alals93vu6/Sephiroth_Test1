@@ -14,14 +14,14 @@ public class PlayerActor : MonoBehaviour
 
     [Header("數值")]
     [SerializeField] private float runSpeed;
-    [SerializeField] private float jumpRange;
-    [SerializeField] private Vector3 JumpAera = new Vector3(0, 0, 0);
+    [SerializeField] public float jumpRange;
+    [SerializeField] public Vector3 JumpAera = new Vector3(0, 0, 0);
     [SerializeField] public float JumpForce;
     [SerializeField] public float H;
     [SerializeField] public float V;
 
     [Header("Layer")]
-    [SerializeField] private LayerMask jumpfloor;
+    [SerializeField] public LayerMask jumpfloor;
 
     [Header("物件")]
     [SerializeField] private Transform weaponPos;
@@ -64,11 +64,6 @@ public class PlayerActor : MonoBehaviour
         
         rig.velocity = new Vector2(MoveHorizontal * runSpeed, rig.velocity.y);
         
-    }
-
-    public void TEst()
-    {
-        Debug.Log("AAA");
     }
 
 

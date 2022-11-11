@@ -6,6 +6,7 @@ public class DropState : IState
 {
     public void OnEnterState(object action)
     {
+        Debug.Log("IsJump");
         var actor = (PlayerActor) action;
     }
 
