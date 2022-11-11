@@ -9,7 +9,7 @@ public class JumpState : IState
     
     public void OnEnterState(object action)
     {
-        Debug.Log("IsJump");
+        //Debug.Log("IsJump");
         JumpTime = 0;
         var actor = (PlayerActor) action;
         actor.rig.velocity += Vector2.up * actor.JumpForce;
@@ -37,12 +37,12 @@ public class JumpState : IState
                 actor.changeState(new IdleState());
             }
         }
-        /*
-        if (JumpTime >= 1f)
+        
+        if (JumpTime >= 0.5f)
         {
-            
+            actor.changeState(new DropState());
         }
-        */
+        
 
 
 

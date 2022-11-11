@@ -7,7 +7,7 @@ public class MoveState : IState
 
     public void OnEnterState(object action)
     {
-        Debug.Log("IsMove");
+        //Debug.Log("IsMove");
         var actor = (PlayerActor) action;
         
     }
@@ -23,11 +23,14 @@ public class MoveState : IState
             actor.rig.velocity = Vector2.zero;
             actor.changeState(new IdleState());
         }
-        
         if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 
             && Input.GetButtonDown("AKey"))
         {
             actor.changeState(new JumpState());
+        }
+        if (!Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
+        {
+            actor.changeState(new DropState());
         }
     }
 

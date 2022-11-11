@@ -24,7 +24,6 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public LayerMask jumpfloor;
 
     [Header("物件")]
-    [SerializeField] private Transform weaponPos;
     [SerializeField] public PlayerAnimatorManager _animatorManager ;
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;

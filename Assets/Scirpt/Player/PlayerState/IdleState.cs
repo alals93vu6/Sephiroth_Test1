@@ -6,7 +6,7 @@ public class IdleState : IState
 {
     public void OnEnterState(object action)
     {
-        Debug.Log("IsIdle");
+        //Debug.Log("IsIdle");
         var actor = (PlayerActor) action;
         
         //
@@ -24,6 +24,10 @@ public class IdleState : IState
             && Input.GetButtonDown("AKey"))
         {
             actor.changeState(new JumpState());
+        }
+        if (!Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
+        {
+            actor.changeState(new DropState());
         }
     }
 
