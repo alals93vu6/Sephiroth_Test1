@@ -16,6 +16,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private float runSpeed;
     [SerializeField] private float jumpRange;
     [SerializeField] private Vector3 JumpAera = new Vector3(0, 0, 0);
+    [SerializeField] public float JumpForce;
     [SerializeField] public float H;
     [SerializeField] public float V;
 
@@ -50,18 +51,24 @@ public class PlayerActor : MonoBehaviour
 
     public void PlayerMove()
     {
-        if (H >= 0.2f)
+        float MoveHorizontal = H;
+        
+        if(H >= 0.2f)
         {
-            runSpeed = Mathf.Abs(runSpeed);
             _animatorManager.FlipPlayer(2);
         }
         else if(H <= 0.2f)
         {
-            runSpeed = -Mathf.Abs(runSpeed);
             _animatorManager.FlipPlayer(1);
         }
+        
+        rig.velocity = new Vector2(MoveHorizontal * runSpeed, rig.velocity.y);
+        
+    }
 
-        rig.velocity = new Vector2(runSpeed, rig.velocity.y);
+    public void TEst()
+    {
+        Debug.Log("AAA");
     }
 
 

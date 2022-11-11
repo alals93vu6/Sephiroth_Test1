@@ -8,6 +8,7 @@ public class IdleState : IState
     {
         Debug.Log("IsIdle");
         var actor = (PlayerActor) action;
+        //
     }
 
     public void OnStayState(object action)
@@ -17,10 +18,18 @@ public class IdleState : IState
         {
             actor.changeState(new MoveState());
         }
+
+        if (Input.GetButtonDown("AKey"))
+        {
+            actor.changeState(new JumpState());
+        }
     }
 
     public void OnExitState(object action)
     {
         var actor = (PlayerActor) action;
+        
+        //actor.rig.velocity = new Vector2(0, actor.rig.velocity.y);
     }
+    
 }

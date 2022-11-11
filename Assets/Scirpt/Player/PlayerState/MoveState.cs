@@ -22,6 +22,11 @@ public class MoveState : IState
             actor.rig.velocity = Vector2.zero;
             actor.changeState(new IdleState());
         }
+        
+        if (Input.GetButtonDown("AKey"))
+        {
+            actor.changeState(new JumpState());
+        }
     }
 
     public void OnExitState(object action)

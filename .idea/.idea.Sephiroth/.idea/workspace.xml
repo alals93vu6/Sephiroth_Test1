@@ -20,7 +20,6 @@
       <option value="$PROJECT_DIR$/Assets/CM vcam/CM_control.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DashState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponPositionActor.cs" />
@@ -30,6 +29,7 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdleState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -80,7 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668020584891</updated>
       <workItem from="1668020588115" duration="2183000" />
-      <workItem from="1668115773557" duration="4737000" />
+      <workItem from="1668115773557" duration="10992000" />
     </task>
     <servers />
   </component>
