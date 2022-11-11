@@ -18,6 +18,11 @@ public class MoveState : IState
         actor._animatorManager.playMove();
         actor.PlayerMove();
         
+        if (Input.GetButtonDown("BKey"))
+        {
+            actor.onPlayerDash(2.5f);
+            actor.changeState(new DashState());
+        }
         if (Mathf.Abs(actor.H) <= 0.39f)
         {
             actor.rig.velocity = Vector2.zero;

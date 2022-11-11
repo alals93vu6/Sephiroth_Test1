@@ -66,6 +66,34 @@ public class PlayerActor : MonoBehaviour
     }
 
 
+    public async void onPlayerDash(float DashForce)
+    {
+        if (_animatorManager._spriteRenderer.flipX)
+        {
+            rig.AddForce(new Vector2(DashForce,0) , ForceMode2D.Impulse);
+        }
+        else
+        {
+            rig.AddForce(new Vector2(-DashForce,0) , ForceMode2D.Impulse);
+        }
+
+        await Task.Delay(600);
+            
+        if(Physics2D.OverlapCircle(transform.position - JumpAera, jumpRange, jumpfloor))
+        {
+            rig.velocity = Vector2.zero;
+        }
+        if (H != 0) 
+        {
+            changeState(new MoveState());
+        }
+        else
+        {
+            changeState(new IdleState());
+        }
+
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;

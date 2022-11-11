@@ -6,7 +6,7 @@ public class PlayerAnimatorManager : MonoBehaviour
 {
     [Header("狀態")]
     [SerializeField] public Animator AN;
-    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] public SpriteRenderer _spriteRenderer;
     
 
     // Start is called before the first frame update

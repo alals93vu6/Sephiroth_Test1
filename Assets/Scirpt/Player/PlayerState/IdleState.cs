@@ -16,6 +16,12 @@ public class IdleState : IState
     {
         var actor = (PlayerActor) action;
         actor._animatorManager.playIdle();
+        if (Input.GetButtonDown("BKey"))
+        {
+            actor.onPlayerDash(7);
+            actor.changeState(new DashState());
+        }
+
         if (Mathf.Abs(actor.H) >= 0.4f)
         {
             actor.changeState(new MoveState());

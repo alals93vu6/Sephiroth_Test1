@@ -9,7 +9,7 @@ public class AttackState : IState
 {
     public void OnEnterState(object action)
     {
-        
+        var actor = (PlayerActor) action;
     }
 
     public void OnStayState(object action)
