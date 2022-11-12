@@ -28,8 +28,8 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponPositionActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -82,7 +82,7 @@
       <workItem from="1668020588115" duration="2183000" />
       <workItem from="1668115773557" duration="10992000" />
       <workItem from="1668189696327" duration="9769000" />
-      <workItem from="1668293628323" duration="649000" />
+      <workItem from="1668293628323" duration="1083000" />
     </task>
     <servers />
   </component>

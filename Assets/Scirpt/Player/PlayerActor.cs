@@ -45,8 +45,8 @@ public class PlayerActor : MonoBehaviour
         H = Input.GetAxis("Horizontal");
         V = Input.GetAxis("Vertical");
         
-        
         CurrenState.OnStayState(this);
+        OnPlayerConnect();
     }
 
     public void PlayerMove()
@@ -98,6 +98,27 @@ public class PlayerActor : MonoBehaviour
         }
         onTheMoveDetected();
 
+    }
+    
+    public void OnPlayerConnect()
+    {
+        if (_shiActor.SummonON)
+        {
+            if(Input.GetButtonDown("WeaponConnect"))
+            {
+                _vineActor.IsCconcatenation = true;
+               
+            } 
+           
+            if(Input.GetButtonUp("WeaponConnect"))
+            {
+                _vineActor.IsCconcatenation = false;
+            }
+        }
+        else
+        {
+            _vineActor.IsCconcatenation = false;
+        }
     }
 
     private void OnDrawGizmos()
