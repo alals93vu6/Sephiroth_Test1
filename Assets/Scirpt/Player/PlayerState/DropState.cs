@@ -18,14 +18,7 @@ public class DropState : IState
 
         if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
         {
-            if (actor.H != 0)
-            {
-                actor.changeState(new MoveState());
-            }
-            else
-            {
-                actor.changeState(new IdleState());
-            }
+            actor.onTheMoveDetected();
         }
 
     }

@@ -28,14 +28,7 @@ public class JumpState : IState
         if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 
             && JumpTime >= 0.3f)
         {
-            if (actor.H != 0)
-            {
-                actor.changeState(new MoveState());
-            }
-            else
-            {
-                actor.changeState(new IdleState());
-            }
+            actor.onTheMoveDetected();
         }
         
         if (JumpTime >= 0.5f)

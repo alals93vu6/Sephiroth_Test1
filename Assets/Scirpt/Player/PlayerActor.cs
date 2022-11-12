@@ -45,6 +45,7 @@ public class PlayerActor : MonoBehaviour
         H = Input.GetAxis("Horizontal");
         V = Input.GetAxis("Vertical");
         
+        
         CurrenState.OnStayState(this);
     }
 
@@ -65,6 +66,18 @@ public class PlayerActor : MonoBehaviour
         
     }
 
+    public void onTheMoveDetected()
+    {
+        if (H != 0)
+        {
+            changeState(new MoveState());
+        }
+        else
+        {
+            changeState(new IdleState());
+        }
+    }
+
 
     public async void onPlayerDash(float DashForce)
     {
@@ -83,14 +96,7 @@ public class PlayerActor : MonoBehaviour
         {
             rig.velocity = Vector2.zero;
         }
-        if (H != 0) 
-        {
-            changeState(new MoveState());
-        }
-        else
-        {
-            changeState(new IdleState());
-        }
+        onTheMoveDetected();
 
     }
 

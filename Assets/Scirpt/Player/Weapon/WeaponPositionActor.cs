@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class WeaponPositionActor : MonoBehaviour
 {
     private ShiActor _shiActor;
-    private PlayerActor _playerActor;
+    private PlayerAnimatorManager _animatorManager;
     
     private SpriteRenderer weaponSpriteRenderer;
     [SerializeField]private Transform playerPosition;
@@ -22,7 +22,7 @@ public class WeaponPositionActor : MonoBehaviour
     {
         //this.gameObject.SetActive(false);
         _shiActor = FindObjectOfType<ShiActor>();
-        _playerActor = FindObjectOfType<PlayerActor>();
+        _animatorManager = FindObjectOfType<PlayerAnimatorManager>();
         weaponSpriteRenderer = GetComponent<SpriteRenderer>();
         NowState = 3;
         SetColorAlpha(Mathf.Lerp(weaponSpriteRenderer.color.a,0,0.02f));
@@ -77,7 +77,14 @@ public class WeaponPositionActor : MonoBehaviour
 
     private void PlayerFacingDetected()
     {
-        
+        if (_animatorManager._spriteRenderer.flipX)
+        {
+            NowState = 1;
+        }
+        else
+        {
+            NowState = 2;
+        }
     }
 
     private void PositionMove()
@@ -103,20 +110,6 @@ public class WeaponPositionActor : MonoBehaviour
     public void WeaPonReset()
     {
         NowState = 3;
-    }
-
-    private void StateDetected()
-    {
-        /*
-        if (_playerActor.IsRight)
-        {
-            NowState = 1;
-        }
-        else
-        {
-            NowState = 2;
-        }
-        */
     }
 
     private void GetEndPoint_R()
