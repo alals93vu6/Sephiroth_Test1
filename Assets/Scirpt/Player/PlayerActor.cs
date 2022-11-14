@@ -74,7 +74,6 @@ public class PlayerActor : MonoBehaviour
         }
         else
         {
-            rig.velocity = Vector2.zero;
             changeState(new IdleState());
         }
     }

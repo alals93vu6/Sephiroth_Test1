@@ -28,7 +28,15 @@ public class AttackState : IState
             }
             else
             {
-                actor.onTheMoveDetected();
+                if (actor.H != 0)
+                {
+                    actor.changeState(new MoveState());
+                }
+                else
+                {
+                    actor.rig.velocity = Vector2.zero;
+                    actor.changeState(new IdleState());
+                }
             }
         }
 
