@@ -29,7 +29,7 @@ public class MoveState : IState
             actor.changeState(new IdleState());
         }
         if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 
-            && Input.GetButtonDown("AKey"))
+            && Input.GetButtonDown("AKey") && actor.V >= -0.5f)
         {
             actor.changeState(new JumpState());
         }

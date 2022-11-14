@@ -109,6 +109,7 @@
               <e p="InstituteA.cs" t="Include" />
               <e p="InstituteB.cs" t="Include" />
             </e>
+            <e p="MonsterGeneral.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="PlayerActor.cs" t="Include" />

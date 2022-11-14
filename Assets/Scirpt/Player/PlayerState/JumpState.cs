@@ -14,8 +14,7 @@ public class JumpState : IState
         var actor = (PlayerActor) action;
         actor.rig.velocity += Vector2.up * actor.JumpForce;
         
-        
-        
+
     }
 
     public void OnStayState(object action)
