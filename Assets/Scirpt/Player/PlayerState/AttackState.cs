@@ -13,6 +13,7 @@ public class AttackState : IState
         var actor = (PlayerActor) action;
         actor._animatorManager.PlayAttack();
         AttackTime = 0f;
+        EventBus.Post(new PlayerAttackDetected());
     }
 
     public void OnStayState(object action)
