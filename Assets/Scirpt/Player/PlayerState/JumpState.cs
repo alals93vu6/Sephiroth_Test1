@@ -34,7 +34,12 @@ public class JumpState : IState
         {
             actor.changeState(new DropState());
         }
-        
+
+        if (Input.GetButtonDown("XKey"))
+        {
+            actor.changeState(new AttackState());
+        }
+
 
 
 

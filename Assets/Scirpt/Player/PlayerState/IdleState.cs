@@ -35,6 +35,10 @@ public class IdleState : IState
         {
             actor.changeState(new DropState());
         }
+        if (Input.GetButtonDown("XKey"))
+        {
+            actor.changeState(new AttackState());
+        }
     }
 
     public void OnExitState(object action)

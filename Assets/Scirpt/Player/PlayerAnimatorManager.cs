@@ -28,6 +28,11 @@ public class PlayerAnimatorManager : MonoBehaviour
         }
     }
 
+    public void PlayAttack()
+    {
+        AN.Play("PlayerAttack");
+    }
+
     public void playIdle()
     {
         AN.Play("PlayerIdle");

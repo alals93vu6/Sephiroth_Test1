@@ -20,6 +20,11 @@ public class DropState : IState
         {
             actor.onTheMoveDetected();
         }
+        
+        if (Input.GetButtonDown("XKey"))
+        {
+            actor.changeState(new AttackState());
+        }
 
     }
 
