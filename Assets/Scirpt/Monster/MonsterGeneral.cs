@@ -1,9 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
+public enum EnemyState
+{
+    PatrolState,
+    AttackState,
+        
+}
 public class MonsterGeneral : MonoBehaviour
 {
+
+    //public state MState = state.Patrolstate;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,7 +21,20 @@ public class MonsterGeneral : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual  void Update()
+    {
+        /*
+        switch (EnemyState)
+        {
+            case ParticleSystem;
+                
+                
+        }
+        */
+    }
+
+
+    public virtual void OnPatrol()
     {
         
     }

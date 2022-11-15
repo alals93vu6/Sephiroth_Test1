@@ -102,12 +102,16 @@
               <e p="LandFloor.cs" t="Include" />
             </e>
             <e p="GamePlayManager.cs" t="Include" />
+            <e p="UIManager.cs" t="Include" />
           </e>
           <e p="IState.cs" t="Include" />
           <e p="Monster" t="Include">
             <e p="AreaA_Insitute" t="Include">
-              <e p="InstituteA.cs" t="Include" />
-              <e p="InstituteB.cs" t="Include" />
+              <e p="InsituteA" t="Include">
+                <e p="InsituteAanimator.cs" t="Include" />
+                <e p="InstituteA.cs" t="Include" />
+              </e>
+              <e p="NewBehaviourScript.cs" t="Include" />
             </e>
             <e p="MonsterGeneral.cs" t="Include" />
           </e>

@@ -2360,7 +2360,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1504760790}
+  - component: {fileID: 1504760792}
   - component: {fileID: 1504760789}
+  - component: {fileID: 1504760791}
   m_Layer: 16
   m_Name: MonsterTest
   m_TagString: Untagged
@@ -2381,7 +2383,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.040007472}
+  m_Offset: {x: 0, y: -0.03728831}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2392,7 +2394,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2311535, y: 0.91998506}
+  m_Size: {x: 1.2311535, y: 1.0745766}
   m_EdgeRadius: 0
 --- !u!4 &1504760790
 Transform:
@@ -2402,13 +2404,56 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504760788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.52, y: 0.81, z: 4.007436}
+  m_LocalPosition: {x: -9.687, y: 0.717, z: 4.007436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1670509894}
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1504760791
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504760788}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1504760792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504760788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c74af0a7dff7c4f98bc3f2bd1ad612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1.2
+  pointTo: -1
+  detectedRange: 0.19
+  rightDetected: {x: -0.96, y: 0.72, z: 0}
+  LeftDetected: {x: 1.06, y: 0.72, z: 0}
+  floor:
+    serializedVersion: 2
+    m_Bits: 2304
+  _animator: {fileID: 0}
+  enemyrig: {fileID: 0}
 --- !u!1 &1537326500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,6 +2544,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1670509894}
+  - component: {fileID: 1670509896}
   - component: {fileID: 1670509895}
   m_Layer: 0
   m_Name: Monster_Turtle
@@ -2515,7 +2561,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670509893}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.19000053, y: 0.07999998, z: -4.007436}
+  m_LocalPosition: {x: -0.03, y: -0.147, z: -4.007436}
   m_LocalScale: {x: 0.59745, y: 0.59745, z: 0.59745}
   m_Children: []
   m_Father: {fileID: 1504760790}
@@ -2560,7 +2606,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eb14121dc196b3747b9e8815c97bf045, type: 3}
+  m_Sprite: {fileID: 3873298252783798681, guid: eb14121dc196b3747b9e8815c97bf045,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2571,6 +2618,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1670509896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670509893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f5a196acc7b7b499dba1d3db908cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spriteRenderer: {fileID: 0}
 --- !u!1 &1681987538
 GameObject:
   m_ObjectHideFlags: 0

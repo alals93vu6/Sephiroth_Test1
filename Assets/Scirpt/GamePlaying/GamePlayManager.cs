@@ -9,6 +9,7 @@ public class GamePlayManager : MonoBehaviour
 
     [SerializeField] private PlayerActor _playerActor;
     [SerializeField] private ShiActor _shiActor;
+    [SerializeField] private UIManager _uiManager;
     [SerializeField] private WeaponPositionActor _weaponPositionActor;
     [SerializeField] private Vine_Actor _vineActor;
     // Start is called before the first frame update
@@ -27,6 +28,7 @@ public class GamePlayManager : MonoBehaviour
         _shiActor = FindObjectOfType<ShiActor>();
         _weaponPositionActor = FindObjectOfType<WeaponPositionActor>();
         _vineActor = FindObjectOfType<Vine_Actor>();
+        _uiManager = FindObjectOfType<UIManager>();
 
 
     }
@@ -44,17 +46,7 @@ public class GamePlayManager : MonoBehaviour
 */
     void Update()
     {
-       /*
-        playerActor.connecttest();
-       if (playerActor.IsRight == true)
-       {
-           Debug.Log("R");
-       }
-       else
-       {
-           Debug.Log("L");
-       }
-       */
+        
     }
 
     private void OnHitEnemy(HitEnemyDetected obj)
@@ -76,7 +68,7 @@ public class GamePlayManager : MonoBehaviour
 
     private void OnPlayerAttack(PlayerAttackDetected obj)
     {
-       
+        Debug.Log("ATTACK!!!");
     }
     
     private void OnPlayerGetHit(PlayerGetHitDetected obj)
