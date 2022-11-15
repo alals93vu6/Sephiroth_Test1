@@ -16,6 +16,8 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private float runSpeed;
     [SerializeField] public float jumpRange;
     [SerializeField] public Vector3 JumpAera = new Vector3(0, 0, 0);
+    [SerializeField] public Vector3 hitboxAera = new Vector3(0, 0, 0);
+    [SerializeField] public Vector2 hitbox = new Vector2(0, 0);
     [SerializeField] public float JumpForce;
     [SerializeField] public float H;
     [SerializeField] public float V;
@@ -125,6 +127,7 @@ public class PlayerActor : MonoBehaviour
     {
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(this.transform.position - JumpAera,jumpRange);
+        Gizmos.DrawWireCube(this.transform.position - hitboxAera,hitbox);
     }
 
     public void changeState(IState nextState)

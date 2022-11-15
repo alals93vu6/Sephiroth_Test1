@@ -9,6 +9,7 @@ public class InstituteA : MonoBehaviour
     [SerializeField] public float moveSpeed;
     [SerializeField] private float pointTo;
     [SerializeField] private float detectedRange;
+    private float movetime;
     [SerializeField] public Vector3 rightDetected = new Vector3(0, 0, 0);
     [SerializeField] public Vector3 LeftDetected = new Vector3(0, 0, 0);
     
@@ -28,6 +29,7 @@ public class InstituteA : MonoBehaviour
     void Update()
     {
         enemyrig.velocity = new Vector2(pointTo * moveSpeed, enemyrig.velocity.y);
+        movetime += Time.deltaTime;
         ChanhePointTO();
     }
 
@@ -36,15 +38,32 @@ public class InstituteA : MonoBehaviour
         if(!Physics2D.OverlapCircle((transform.position - rightDetected), detectedRange,floor))
         {
             pointTo = -1;
-            _animator._spriteRenderer.flipX = false;
-
+            transform.localScale = new Vector3(1, 1, 1);
+            movetime = 0;
         }
         
         if(!Physics2D.OverlapCircle((transform.position - LeftDetected), detectedRange,floor))
         {
             pointTo = 1;
-            _animator._spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
+            movetime = 0;
         }
+        
+        if (movetime >= 5)
+        {
+            movetime = 0;
+            if (pointTo == 1)
+            {
+                pointTo = -1;
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else
+            {
+                pointTo = 1;
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+        }
+        
     }
 
     private void OnDrawGizmos()

@@ -12,6 +12,7 @@ public class AttackState : IState
     {
         var actor = (PlayerActor) action;
         actor._animatorManager.PlayAttack();
+        
         AttackTime = 0f;
         EventBus.Post(new PlayerAttackDetected());
     }
@@ -20,6 +21,7 @@ public class AttackState : IState
     {
         var actor = (PlayerActor) action;
         AttackTime += Time.deltaTime;
+        actor.PlayerMove();
 
         if (AttackTime >= 0.5f)
         {
