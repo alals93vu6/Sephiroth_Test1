@@ -16,6 +16,7 @@ public class MoveState : IState
     {
         var actor = (PlayerActor) action;
         actor._animatorManager.playMove();
+        actor.HitDetected();
         actor.PlayerMove();
         
         if (Input.GetButtonDown("BKey"))

@@ -7,7 +7,7 @@ public class DashState : IState
     private float DashTime;
     public void OnEnterState(object action)
     {
-        Debug.Log("Dash");
+        //Debug.Log("Dash");
         var actor = (PlayerActor) action;
         actor._animatorManager.playDash();
         DashTime = 0f;

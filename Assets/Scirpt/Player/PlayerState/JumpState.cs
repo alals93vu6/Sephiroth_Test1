@@ -22,6 +22,7 @@ public class JumpState : IState
         var actor = (PlayerActor) action;
         actor._animatorManager.playJump();
         actor.PlayerMove();
+        actor.HitDetected();
         JumpTime += Time.deltaTime;
         
         if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 

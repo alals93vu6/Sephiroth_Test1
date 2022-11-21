@@ -1,30 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Project;
-using Project.Events.GamePlaying;
 using UnityEngine;
 
-public class AttackState : IState
+public class HitState : IState
 {
-    private float AttackTime;
+    private float HitTime;
     public void OnEnterState(object action)
     {
+        HitTime = 0f;
+        Debug.Log("OnHit");
         var actor = (PlayerActor) action;
-        actor._animatorManager.PlayAttack();
-        
-        AttackTime = 0f;
-        EventBus.Post(new PlayerAttackDetected());
+        if (actor._animatorManager._spriteRenderer.flipX)//4
+        {
+            actor.rig.AddForce(new Vector2(-3,0) , ForceMode2D.Impulse);
+        }
+        else
+        {
+            actor.rig.AddForce(new Vector2(3,0) , ForceMode2D.Impulse);
+        }
     }
 
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        AttackTime += Time.deltaTime;
-        actor.PlayerMove();
-        actor.HitDetected();
-
-        if (AttackTime >= 0.5f)
+        HitTime += Time.deltaTime;
+        /*
+        if (HitTime >= 0.3f)
+        {
+            actor.rig.velocity = Vector2.zero;
+        }
+        */
+        if (HitTime >= 0.8f)
         {
             if (!Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
             {
@@ -43,12 +49,10 @@ public class AttackState : IState
                 }
             }
         }
-
     }
 
     public void OnExitState(object action)
     {
         var actor = (PlayerActor) action;
-        //actor.StopSlip();
     }
 }

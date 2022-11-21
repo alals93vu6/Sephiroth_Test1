@@ -16,6 +16,7 @@ public class IdleState : IState
     {
         var actor = (PlayerActor) action;
         actor._animatorManager.playIdle();
+        actor.HitDetected();
         if (Input.GetButtonDown("BKey"))
         {
             actor.onPlayerDash(7);

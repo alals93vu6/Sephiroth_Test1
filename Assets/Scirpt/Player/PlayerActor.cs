@@ -11,6 +11,7 @@ public class PlayerActor : MonoBehaviour
     [Header("狀態")]
     [SerializeField] public Rigidbody2D rig;
     [SerializeField] private IState CurrenState = new IdleState();
+    [SerializeField] private bool HitCD;
 
     [Header("數值")]
     [SerializeField] private float runSpeed;
@@ -24,6 +25,7 @@ public class PlayerActor : MonoBehaviour
 
     [Header("Layer")]
     [SerializeField] public LayerMask jumpfloor;
+    [SerializeField] public LayerMask HitObj;
 
     [Header("物件")]
     [SerializeField] public PlayerAnimatorManager _animatorManager ;
@@ -48,6 +50,7 @@ public class PlayerActor : MonoBehaviour
         V = Input.GetAxis("Vertical");
         
         CurrenState.OnStayState(this);
+        //HitDetected();
         OnPlayerConnect();
     }
 
@@ -101,7 +104,24 @@ public class PlayerActor : MonoBehaviour
         onTheMoveDetected();
 
     }
-    
+
+    public void HitDetected()
+    {
+        if (Physics2D.OverlapBox(this.transform.position - hitboxAera, hitbox,0, 65536) && !HitCD)
+        {
+            //rig.velocity = Vector2.zero;
+            changeState(new HitState());
+            GetHitCD();
+        }
+    }
+
+    private async void GetHitCD()
+    {
+        HitCD = true;
+        await Task.Delay(2000);
+        HitCD = false;
+    }
+
     public void OnPlayerConnect()
     {
         if (_shiActor.SummonON)

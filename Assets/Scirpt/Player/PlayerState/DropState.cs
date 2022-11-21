@@ -14,6 +14,7 @@ public class DropState : IState
     {
         var actor = (PlayerActor) action;
         actor.PlayerMove();
+        actor.HitDetected();
         actor._animatorManager.playDrop();
 
         if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
