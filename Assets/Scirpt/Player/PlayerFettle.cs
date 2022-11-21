@@ -31,20 +31,16 @@ public class PlayerFettle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (NowHP == 0)
+        {
+            EventBus.Post(new PlayerDeadDetected());
+            NowHP = -1;
+        }
     }
 
-    public async void PlayerGetHit(float GitDamage)
+    public void PlayerGetHit(float GitDamage)
     {
-        if (!HitCD)
-        {
-            NowHP -= GitDamage;
-            HitCD = true;
-            EventBus.Post(new PlayerGetHitDetected());
-            await Task.Delay(1000);
-
-            HitCD = false;
-        }
+        NowHP -= GitDamage;
     }
 
 

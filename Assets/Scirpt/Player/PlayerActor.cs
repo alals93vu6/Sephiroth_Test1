@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Project;
+using Project.Events.GamePlaying;
 using UnityEngine;
 
 public class PlayerActor : MonoBehaviour
@@ -113,6 +114,11 @@ public class PlayerActor : MonoBehaviour
             changeState(new HitState());
             GetHitCD();
         }
+    }
+
+    public void GetDamage()
+    {
+        EventBus.Post(new PlayerGetHitDetected());
     }
 
     private async void GetHitCD()

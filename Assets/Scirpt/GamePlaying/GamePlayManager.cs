@@ -8,6 +8,7 @@ public class GamePlayManager : MonoBehaviour
 {
 
     [SerializeField] private PlayerActor _playerActor;
+    [SerializeField] private PlayerFettle _playerFettle;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] private UIManager _uiManager;
     [SerializeField] private WeaponPositionActor _weaponPositionActor;
@@ -25,6 +26,7 @@ public class GamePlayManager : MonoBehaviour
         //EventBus.Subscribe<OnPlayerDisConnectDetected>(OnDisConnect);
         
         _playerActor = FindObjectOfType<PlayerActor>();
+        _playerFettle = FindObjectOfType<PlayerFettle>();
         _shiActor = FindObjectOfType<ShiActor>();
         _weaponPositionActor = FindObjectOfType<WeaponPositionActor>();
         _vineActor = FindObjectOfType<Vine_Actor>();
@@ -73,12 +75,13 @@ public class GamePlayManager : MonoBehaviour
     
     private void OnPlayerGetHit(PlayerGetHitDetected obj)
     {
-        Debug.Log("GetHit!!!");
+        Debug.Log("Hit");
+        _playerFettle.PlayerGetHit(1);
     }
     
     private void OnPlayerDead(PlayerDeadDetected obj)
     {
-        
+        _playerActor.changeState(new DeadState());
     }
     
 }
