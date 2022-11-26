@@ -18,6 +18,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private float runSpeed;
     [SerializeField] public float jumpRange;
     [SerializeField] public Vector3 JumpAera = new Vector3(0, 0, 0);
+    [SerializeField] public Vector3 AttackAera = new Vector3(0, 0, 0);
     [SerializeField] public Vector3 hitboxAera = new Vector3(0, 0, 0);
     [SerializeField] public Vector2 hitbox = new Vector2(0, 0);
     [SerializeField] public float JumpForce;
@@ -33,6 +34,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] private PlayerFettle _playerFettle;
+    [SerializeField] private GameObject AttackDetected;
     
     void Start()
     {
@@ -53,6 +55,7 @@ public class PlayerActor : MonoBehaviour
         CurrenState.OnStayState(this);
         //HitDetected();
         OnPlayerConnect();
+        AttackAreaSet();
     }
 
     public void PlayerMove()
@@ -126,6 +129,7 @@ public class PlayerActor : MonoBehaviour
         HitCD = true;
         await Task.Delay(2000);
         HitCD = false;
+        
     }
 
     public void OnPlayerConnect()
@@ -146,6 +150,21 @@ public class PlayerActor : MonoBehaviour
         else
         {
             _vineActor.IsCconcatenation = false;
+        }
+    }
+
+    public void AttackAreaSet()
+    {
+        
+        
+        if(H >= 0.2f)
+        {
+            AttackDetected.transform.position = this.transform.position + AttackAera;
+        }
+
+        if(H <= -0.2f)
+        {
+            AttackDetected.transform.position = this.transform.position - AttackAera;
         }
     }
 

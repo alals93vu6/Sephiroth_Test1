@@ -9,6 +9,8 @@ public class InstituteA : MonoBehaviour
     [SerializeField] public float moveSpeed;
     [SerializeField] private float pointTo;
     [SerializeField] private float detectedRange;
+
+    [SerializeField] private Vector2 Size;
     private float movetime;
     [SerializeField] public Vector3 rightDetected = new Vector3(0, 0, 0);
     [SerializeField] public Vector3 LeftDetected = new Vector3(0, 0, 0);
@@ -31,6 +33,11 @@ public class InstituteA : MonoBehaviour
         enemyrig.velocity = new Vector2(pointTo * moveSpeed, enemyrig.velocity.y);
         movetime += Time.deltaTime;
         ChanhePointTO();
+
+        if(Physics2D.OverlapBox((this.transform.position),Size,0,8192))
+        {
+            Debug.Log("AAA");
+        }
     }
 
     private void ChanhePointTO()
@@ -71,6 +78,7 @@ public class InstituteA : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(this.transform.position - rightDetected,detectedRange);
         Gizmos.DrawWireSphere(this.transform.position - LeftDetected,detectedRange);
+        Gizmos.DrawWireCube(this.transform.position,Size);
     }
     
     

@@ -49,6 +49,7 @@ MonoBehaviour:
   moveSpeed: 1.2
   pointTo: -1
   detectedRange: 0.19
+  Size: {x: 1.35, y: 0.72}
   rightDetected: {x: -0.96, y: 0.72, z: 0}
   LeftDetected: {x: 1.06, y: 0.72, z: 0}
   floor:
