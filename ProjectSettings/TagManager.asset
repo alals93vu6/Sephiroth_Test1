@@ -19,7 +19,7 @@ TagManager:
   - ShiAereScreen
   - LandFloor
   - Player
-  - 
+  - PlayerAttack
   - Ground Soft
   - Wall Shadow
   - Enemy

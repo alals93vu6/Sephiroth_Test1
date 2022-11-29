@@ -34,6 +34,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] private PlayerFettle _playerFettle;
+    [SerializeField] private MonsterGeneral _monsterGeneral;
     [SerializeField] private GameObject AttackDetected;
     
     void Start()
@@ -44,6 +45,7 @@ public class PlayerActor : MonoBehaviour
         _vineActor = FindObjectOfType<Vine_Actor>();
         _shiActor = FindObjectOfType<ShiActor>();
         _playerFettle = FindObjectOfType<PlayerFettle>();
+        _monsterGeneral = FindObjectOfType<MonsterGeneral>();
     }
 
     // Update is called once per frame
