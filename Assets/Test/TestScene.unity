@@ -1175,7 +1175,7 @@ MonoBehaviour:
   runSpeed: 7
   jumpRange: 0.26
   JumpAera: {x: 0.04, y: 0.53, z: 0}
-  AttackAera: {x: 0, y: 0, z: 0}
+  AttackAera: {x: 1.2, y: 0, z: 0}
   hitboxAera: {x: 0.06, y: -0.04, z: 0}
   hitbox: {x: 0.58, y: 1.4}
   JumpForce: 16
@@ -3023,20 +3023,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1504760788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c74af0a7dff7c4f98bc3f2bd1ad612, type: 3}
+  m_Script: {fileID: 11500000, guid: 33d44f4f51eb63c4c9adf7db702b0e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.2
-  pointTo: -1
-  detectedRange: 0.19
-  Size: {x: 0, y: 0}
-  rightDetected: {x: -0.96, y: 0.72, z: 0}
-  LeftDetected: {x: 1.06, y: 0.72, z: 0}
-  floor:
-    serializedVersion: 2
-    m_Bits: 2305
-  _animator: {fileID: 0}
-  enemyrig: {fileID: 0}
+  MEnemy: 0
 --- !u!1001 &1506160356
 PrefabInstance:
   m_ObjectHideFlags: 0

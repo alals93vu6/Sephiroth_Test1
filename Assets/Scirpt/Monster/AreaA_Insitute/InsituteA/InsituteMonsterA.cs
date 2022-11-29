@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class InsituteMonsterA : MonsterGeneral
 {
-    
-    // Start is called before the first frame update
-    void Start()
+    public override void Update()
     {
-        
+        base.Update();
+        Debug.Log("VAR");
+    }
+    public override void OnPatrol()
+    {
+        base.OnPatrol();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

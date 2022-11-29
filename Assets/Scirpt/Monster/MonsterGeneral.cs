@@ -28,11 +28,6 @@ public class MonsterGeneral : MonoBehaviour
     // Update is called once per frame
     public virtual  void Update()
     {
-        
-        if(Physics2D.OverlapBox((this.transform.position),new Vector2(.35f,0.75f),0,8192))
-        {
-            Debug.Log("AAA");
-        }
         switch (MEnemy)
         {
             case EnemyState.PatrolState:
@@ -59,7 +54,7 @@ public class MonsterGeneral : MonoBehaviour
 
     public virtual void OnPatrol()
     {
-        Debug.Log("BBB");
+        
     }
 
     public virtual void OnChase()
