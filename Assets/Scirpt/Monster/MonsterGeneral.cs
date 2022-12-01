@@ -20,7 +20,7 @@ public class MonsterGeneral : MonoBehaviour
 
     public EnemyState MEnemy = EnemyState.PatrolState;
     // Start is called before the first frame update
-    void Start()
+    public virtual void  Start()
     {
         
     }
@@ -54,12 +54,12 @@ public class MonsterGeneral : MonoBehaviour
 
     public virtual void OnPatrol()
     {
-        
+        Debug.Log("AAA");
     }
 
     public virtual void OnChase()
     {
-        
+        Debug.Log("BBB");
     }
 
     public virtual void OnAttack()
@@ -67,9 +67,10 @@ public class MonsterGeneral : MonoBehaviour
         
     }
 
-    public virtual void OnIdle()
+    public async virtual void OnIdle()
     {
-        
+        await Task.Delay(2000);
+        MEnemy = EnemyState.PatrolState;
     }
 
     public virtual void OnHit()
