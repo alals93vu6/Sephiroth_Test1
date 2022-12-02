@@ -9,6 +9,8 @@ public class InsituteMonsterA : MonsterGeneral
     public override void Start()
     {
         base.Start();
+        enemyrig = GetComponent<Rigidbody2D>();
+        
     }
 
     public override void Update()
@@ -19,18 +21,12 @@ public class InsituteMonsterA : MonsterGeneral
     public override void OnPatrol()
     {
         base.OnPatrol();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MEnemy = EnemyState.ChaseState;
-        }
+        
     }
 
     public override void OnChase()
     {
         base.OnChase();
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MEnemy = EnemyState.PatrolState;
-        }
+        
     }
 }
