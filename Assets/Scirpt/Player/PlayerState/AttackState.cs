@@ -12,6 +12,7 @@ public class AttackState : IState
     {
         var actor = (PlayerActor) action;
         actor._animatorManager.PlayAttack();
+        actor._monsterGeneral.EnemyGitHit();
         
         AttackTime = 0f;
         EventBus.Post(new PlayerAttackDetected());

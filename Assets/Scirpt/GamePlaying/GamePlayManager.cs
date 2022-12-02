@@ -70,12 +70,12 @@ public class GamePlayManager : MonoBehaviour
 
     private void OnPlayerAttack(PlayerAttackDetected obj)
     {
-        Debug.Log("ATTACK!!!");
+        //Debug.Log("ATTACK!!!");
     }
     
     private void OnPlayerGetHit(PlayerGetHitDetected obj)
     {
-        Debug.Log("Hit");
+        //Debug.Log("Hit");
         _playerFettle.PlayerGetHit(1);
     }
     

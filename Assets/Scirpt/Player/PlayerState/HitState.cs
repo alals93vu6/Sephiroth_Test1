@@ -10,7 +10,7 @@ public class HitState : IState
     public void OnEnterState(object action)
     {
         HitTime = 0f;
-        Debug.Log("OnHit");
+        //Debug.Log("OnHit");
         var actor = (PlayerActor) action;
         actor.GetDamage();
         if (actor._animatorManager._spriteRenderer.flipX)//4

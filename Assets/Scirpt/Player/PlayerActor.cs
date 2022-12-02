@@ -33,8 +33,8 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public PlayerAnimatorManager _animatorManager ;
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;
-    [SerializeField] private PlayerFettle _playerFettle;
-    [SerializeField] private MonsterGeneral _monsterGeneral;
+    [SerializeField] public PlayerFettle _playerFettle;
+    [SerializeField] public MonsterGeneral _monsterGeneral;
     [SerializeField] private GameObject AttackDetected;
     
     void Start()

@@ -35,16 +35,16 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/AttackState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/MonsterFettle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HitState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerFettle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DeadState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/InsituteA/InsituteMonsterA.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/AttackState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Monster/MonsterGeneral.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HitState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -113,7 +113,7 @@
       <workItem from="1669744917512" duration="217000" />
       <workItem from="1669745394812" duration="5067000" />
       <workItem from="1669914273397" duration="3819000" />
-      <workItem from="1669988862344" duration="3267000" />
+      <workItem from="1669988862344" duration="9475000" />
     </task>
     <servers />
   </component>

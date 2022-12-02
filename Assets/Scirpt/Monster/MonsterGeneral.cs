@@ -18,6 +18,7 @@ public enum EnemyState
 public class MonsterGeneral : MonoBehaviour
 {
     [Header("數值")]
+    [SerializeField] public bool AttackReady;
     [SerializeField] public int maxHP;
     [SerializeField] public int HP;
     [SerializeField] public float moveSpeed;
@@ -30,9 +31,11 @@ public class MonsterGeneral : MonoBehaviour
     
     [Header("物件")]
     [SerializeField] public LayerMask floor;
+    [SerializeField] public LayerMask attackArea;
     
     [Header("狀態")]
     [SerializeField] public Rigidbody2D enemyrig;
+    
     
     public EnemyState MEnemy = EnemyState.PatrolState;
     // Start is called before the first frame update
@@ -44,36 +47,16 @@ public class MonsterGeneral : MonoBehaviour
     // Update is called once per frame
     public virtual  void Update()
     {
-        movetime += Time.deltaTime;
-        switch (MEnemy)
-        {
-            case EnemyState.PatrolState:
-                OnPatrol();
-                break;
-            case EnemyState.ChaseState:
-                OnChase();
-                break;
-            case EnemyState.AttackState:
-                OnAttack();
-                break;
-            case EnemyState.IdleState:
-                OnIdle();
-                break;
-            case EnemyState.HitState:
-                OnHit();
-                break;
-            case EnemyState.DeadState:
-                OnDead();
-                break;
-                
-        }
+        AttackDetected();
+        DeadDetected();
+        StateChange();
         
     }
 
 
     public virtual void OnPatrol()
     {
-        enemyrig.velocity = new Vector2(pointTo * moveSpeed, enemyrig.velocity.y);
+        
     }
 
     public virtual void OnChase()
@@ -110,7 +93,63 @@ public class MonsterGeneral : MonoBehaviour
         this.gameObject.layer = LayerMask.NameToLayer("Enemy");
         MEnemy = EnemyState.PatrolState;
     }
-    
+
+    public void EnemyGitHit()
+    {
+        if (AttackReady)
+        {
+            HP--;
+            Debug.Log("VARB");
+        }
+
+        Debug.Log("VARA");
+    }
+
+    private void DeadDetected()
+    {
+        if (HP <= 0)
+        {
+            MEnemy = EnemyState.DeadState;
+        }
+    }
+
+    private void AttackDetected()
+    {
+        if (Physics2D.OverlapBox((this.transform.position), Size, 0, attackArea))
+        {
+            AttackReady = true;
+        }
+        else
+        {
+            AttackReady = false;
+        }
+    }
+
+    private void StateChange()
+    {
+        switch (MEnemy)
+        {
+            case EnemyState.PatrolState:
+                OnPatrol();
+                break;
+            case EnemyState.ChaseState:
+                OnChase();
+                break;
+            case EnemyState.AttackState:
+                OnAttack();
+                break;
+            case EnemyState.IdleState:
+                OnIdle();
+                break;
+            case EnemyState.HitState:
+                OnHit();
+                break;
+            case EnemyState.DeadState:
+                OnDead();
+                break;
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
