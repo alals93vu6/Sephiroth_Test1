@@ -18,7 +18,8 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private float runSpeed;
     [SerializeField] public float jumpRange;
     [SerializeField] public Vector3 JumpAera = new Vector3(0, 0, 0);
-    [SerializeField] public Vector3 AttackAera = new Vector3(0, 0, 0);
+    [SerializeField] public Vector3 AttackAeraL = new Vector3(0, 0, 0);
+    [SerializeField] public Vector3 AttackAeraR = new Vector3(0, 0, 0);
     [SerializeField] public Vector3 hitboxAera = new Vector3(0, 0, 0);
     [SerializeField] public Vector2 hitbox = new Vector2(0, 0);
     [SerializeField] public float JumpForce;
@@ -34,7 +35,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] public PlayerFettle _playerFettle;
-    [SerializeField] public MonsterGeneral _monsterGeneral;
+    //[SerializeField] public MonsterGeneral _monsterGeneral;
     [SerializeField] private GameObject AttackDetected;
     
     void Start()
@@ -45,7 +46,7 @@ public class PlayerActor : MonoBehaviour
         _vineActor = FindObjectOfType<Vine_Actor>();
         _shiActor = FindObjectOfType<ShiActor>();
         _playerFettle = FindObjectOfType<PlayerFettle>();
-        _monsterGeneral = FindObjectOfType<MonsterGeneral>();
+        //_monsterGeneral = FindObjectOfType<MonsterGeneral>();
     }
 
     // Update is called once per frame
@@ -161,12 +162,12 @@ public class PlayerActor : MonoBehaviour
         
         if(H >= 0.2f)
         {
-            AttackDetected.transform.position = this.transform.position + AttackAera;
+            AttackDetected.transform.position = this.transform.position + AttackAeraR;
         }
 
         if(H <= -0.2f)
         {
-            AttackDetected.transform.position = this.transform.position - AttackAera;
+            AttackDetected.transform.position = this.transform.position + AttackAeraL;
         }
     }
 

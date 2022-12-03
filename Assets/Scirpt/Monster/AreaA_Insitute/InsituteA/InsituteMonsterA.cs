@@ -15,7 +15,8 @@ public class InsituteMonsterA : MonsterGeneral
     public override void Update()
     {
         base.Update();
-        //Debug.Log("VAR");
+        AttackDetected();
+
     }
     public override void OnPatrol()
     {
@@ -28,9 +29,21 @@ public class InsituteMonsterA : MonsterGeneral
     public override void OnChase()
     {
         base.OnChase();
-        
     }
-    
+
+    public override void EnemyGitHit()
+    {
+        base.OnChase();
+        if (AttackReady)
+        {
+            HP--;
+            Debug.Log("EnemyGetHit");
+            MEnemy = EnemyState.HitState;
+        }
+
+
+    }
+
     private void ChangePointTO()
     {
         if(!Physics2D.OverlapCircle((transform.position - rightDetected), detectedRange,floor))
@@ -62,4 +75,6 @@ public class InsituteMonsterA : MonsterGeneral
             }
         }
     }
+    
+    
 }

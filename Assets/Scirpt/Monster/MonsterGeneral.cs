@@ -47,7 +47,6 @@ public class MonsterGeneral : MonoBehaviour
     // Update is called once per frame
     public virtual  void Update()
     {
-        AttackDetected();
         DeadDetected();
         StateChange();
         
@@ -71,17 +70,21 @@ public class MonsterGeneral : MonoBehaviour
 
     public async virtual void OnIdle()
     {
+        enemyrig.velocity = Vector2.zero;
         await Task.Delay(2000);
         MEnemy = EnemyState.PatrolState;
     }
 
-    public virtual void OnHit()
+    public virtual async void OnHit()
     {
-        
+        enemyrig.velocity = Vector2.zero;
+        await Task.Delay(300);
+        MEnemy = EnemyState.PatrolState;
     }
     
     public async void OnDead()
     {
+        enemyrig.velocity = Vector2.zero;
         this.gameObject.layer = LayerMask.NameToLayer("EnemyDead");
         await Task.Delay(500);
         this.gameObject.SetActive(false);
@@ -94,16 +97,11 @@ public class MonsterGeneral : MonoBehaviour
         MEnemy = EnemyState.PatrolState;
     }
 
-    public void EnemyGitHit()
+    public virtual void EnemyGitHit()
     {
-        if (AttackReady)
-        {
-            HP--;
-            Debug.Log("VARB");
-        }
-
-        Debug.Log("VARA");
+        Debug.Log("VAR");
     }
+
 
     private void DeadDetected()
     {
@@ -113,7 +111,7 @@ public class MonsterGeneral : MonoBehaviour
         }
     }
 
-    private void AttackDetected()
+    public void AttackDetected()
     {
         if (Physics2D.OverlapBox((this.transform.position), Size, 0, attackArea))
         {

@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttackReady: 0
-  maxHP: 8
+  maxHP: 3
   HP: 0
   moveSpeed: 2
   pointTo: -1
@@ -1784,6 +1784,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230067329089911029, guid: ae43e70e60a3c5e4792acf2cfed76cfa,
+        type: 3}
+      propertyPath: AttackAeraL.x
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230067329089911029, guid: ae43e70e60a3c5e4792acf2cfed76cfa,
+        type: 3}
+      propertyPath: AttackAeraR.x
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230067329276918989, guid: ae43e70e60a3c5e4792acf2cfed76cfa,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.5550652
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230067329276918989, guid: ae43e70e60a3c5e4792acf2cfed76cfa,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -0.2787243
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae43e70e60a3c5e4792acf2cfed76cfa, type: 3}
