@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class LightFlash : MonoBehaviour
+public class Flash : MonoBehaviour
 {
     [Header("設定燈光")]
     [SerializeField] public Light2D Light2D;
@@ -72,3 +72,5 @@ public class LightFlash : MonoBehaviour
     }
 
 }
+
+
