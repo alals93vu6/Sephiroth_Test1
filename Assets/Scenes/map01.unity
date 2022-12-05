@@ -3314,7 +3314,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 64b41301ec7a56b48a3c4306431111db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3362,7 +3362,7 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.2282841, g: 0.23969671, b: 0.2830189, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Intensity: 1
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
@@ -5465,7 +5465,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.6072197, y: 1.02404}
+  m_Offset: {x: 2.6072197, y: 1.1975956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5476,7 +5476,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 60.173134, y: 3.04808}
+  m_Size: {x: 60.173134, y: 3.3951912}
   m_EdgeRadius: 0
 --- !u!1 &756817726
 GameObject:
@@ -10026,6 +10026,7 @@ MonoBehaviour:
   _uiManager: {fileID: 0}
   _weaponPositionActor: {fileID: 0}
   _vineActor: {fileID: 0}
+  _monsterGeneral: []
 --- !u!4 &1524017412
 Transform:
   m_ObjectHideFlags: 0
@@ -14733,6 +14734,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8230067329089911028, guid: ae43e70e60a3c5e4792acf2cfed76cfa,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230067330936629790, guid: ae43e70e60a3c5e4792acf2cfed76cfa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.167
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230067330936629791, guid: ae43e70e60a3c5e4792acf2cfed76cfa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce1bea5e83ee7dd44a95fe212055152b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae43e70e60a3c5e4792acf2cfed76cfa, type: 3}
 --- !u!1001 &4555859268239868241
@@ -14842,7 +14858,8 @@ MonoBehaviour:
   runSpeed: 7
   jumpRange: 0.26
   JumpAera: {x: 0.04, y: 0.53, z: 0}
-  AttackAera: {x: 0, y: 0, z: 0}
+  AttackAeraL: {x: 0, y: 0, z: 0}
+  AttackAeraR: {x: 0, y: 0, z: 0}
   hitboxAera: {x: 0, y: 0, z: 0}
   hitbox: {x: 0, y: 0}
   JumpForce: 16
@@ -14858,7 +14875,6 @@ MonoBehaviour:
   _vineActor: {fileID: 0}
   _shiActor: {fileID: 0}
   _playerFettle: {fileID: 0}
-  _monsterGeneral: {fileID: 0}
   AttackDetected: {fileID: 0}
 --- !u!212 &5247758660183739865
 SpriteRenderer:
