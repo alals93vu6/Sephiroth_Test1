@@ -24,17 +24,17 @@ public class MoveState : IState
             actor.onPlayerDash(2.5f);
             actor.changeState(new DashState());
         }
-        if (Mathf.Abs(actor.H) <= 0.39f)
+        if (Mathf.Abs(Input.GetAxis("Horizontal")) <= 0.39f)
         {
             actor.rig.velocity = Vector2.zero;
             actor.changeState(new IdleState());
         }
-        if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 
-            && Input.GetButtonDown("AKey") && actor.V >= -0.5f)
+        if (Physics2D.OverlapCircle(actor.transform.position - actor._playerData.JumpAera, actor._playerData.jumpRange, actor.jumpfloor) 
+            && Input.GetButtonDown("AKey") && Input.GetAxis("Vertical") >= -0.5f)
         {
             actor.changeState(new JumpState());
         }
-        if (!Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
+        if (!Physics2D.OverlapCircle(actor.transform.position - actor._playerData.JumpAera, actor._playerData.jumpRange, actor.jumpfloor))
         {
             actor.changeState(new DropState());
         }

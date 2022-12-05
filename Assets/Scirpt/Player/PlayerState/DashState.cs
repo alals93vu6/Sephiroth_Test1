@@ -21,7 +21,7 @@ public class DashState : IState
 
         if (DashTime >= 0.5f)
         {
-           if (!Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
+           if (!Physics2D.OverlapCircle(actor.transform.position - actor._playerData.JumpAera, actor._playerData.jumpRange, actor.jumpfloor))
            {
                actor.changeState(new DropState());
            }

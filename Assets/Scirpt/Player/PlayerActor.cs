@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Project;
 using Project.Events.GamePlaying;
+using Project.Player;
 using UnityEngine;
 
 public class PlayerActor : MonoBehaviour
@@ -10,21 +11,12 @@ public class PlayerActor : MonoBehaviour
     // Start is called before the first frame update
     
     [Header("狀態")]
-    [SerializeField] public Rigidbody2D rig;
     [SerializeField] private IState CurrenState = new IdleState();
+    [SerializeField] public Rigidbody2D rig;
     [SerializeField] private bool HitCD;
 
-    [Header("數值")]
-    [SerializeField] private float runSpeed;
-    [SerializeField] public float jumpRange;
-    [SerializeField] public Vector3 JumpAera = new Vector3(0, 0, 0);
-    [SerializeField] public Vector3 AttackAeraL = new Vector3(0, 0, 0);
-    [SerializeField] public Vector3 AttackAeraR = new Vector3(0, 0, 0);
-    [SerializeField] public Vector3 hitboxAera = new Vector3(0, 0, 0);
-    [SerializeField] public Vector2 hitbox = new Vector2(0, 0);
-    [SerializeField] public float JumpForce;
-    [SerializeField] public float H;
-    [SerializeField] public float V;
+    [Header("數值")] 
+    [SerializeField] public PlayerData _playerData;
 
     [Header("Layer")]
     [SerializeField] public LayerMask jumpfloor;
@@ -52,9 +44,6 @@ public class PlayerActor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        H = Input.GetAxis("Horizontal");
-        V = Input.GetAxis("Vertical");
-        
         CurrenState.OnStayState(this);
         //HitDetected();
         OnPlayerConnect();
@@ -63,24 +52,22 @@ public class PlayerActor : MonoBehaviour
 
     public void PlayerMove()
     {
-        float MoveHorizontal = H;
-        
-        if(H >= 0.2f)
+        if(Input.GetAxis("Horizontal") >= 0.2f)
         {
             _animatorManager.flipPlayer(2);
         }
-        else if(H <= 0.2f)
+        else if(Input.GetAxis("Horizontal") <= 0.2f)
         {
             _animatorManager.flipPlayer(1);
         }
         
-        rig.velocity = new Vector2(MoveHorizontal * runSpeed, rig.velocity.y);
+        rig.velocity = new Vector2(Input.GetAxis("Horizontal") *  _playerData.runSpeed, rig.velocity.y);
         
     }
 
     public void onTheMoveDetected()
     {
-        if (H != 0)
+        if (Input.GetAxis("Horizontal") != 0)
         {
             changeState(new MoveState());
         }
@@ -104,7 +91,7 @@ public class PlayerActor : MonoBehaviour
 
         await Task.Delay(600);
             
-        if(Physics2D.OverlapCircle(transform.position - JumpAera, jumpRange, jumpfloor))
+        if(Physics2D.OverlapCircle(transform.position - _playerData.JumpAera,_playerData.jumpRange, jumpfloor))
         {
             rig.velocity = Vector2.zero;
         }
@@ -114,7 +101,7 @@ public class PlayerActor : MonoBehaviour
 
     public void HitDetected()
     {
-        if (Physics2D.OverlapBox(this.transform.position - hitboxAera, hitbox,0, 65536) && !HitCD)
+        if (Physics2D.OverlapBox(this.transform.position -_playerData.hitboxAera, _playerData.hitbox,0, 65536) && !HitCD)
         {
             //rig.velocity = Vector2.zero;
             changeState(new HitState());
@@ -160,22 +147,23 @@ public class PlayerActor : MonoBehaviour
     {
         
         
-        if(H >= 0.2f)
+        if(Input.GetAxis("Horizontal") >= 0.2f)
         {
-            AttackDetected.transform.position = this.transform.position + AttackAeraR;
+            AttackDetected.transform.position = this.transform.position +_playerData.AttackAeraR;
         }
 
-        if(H <= -0.2f)
+        if(Input.GetAxis("Horizontal") <= -0.2f)
         {
-            AttackDetected.transform.position = this.transform.position + AttackAeraL;
+            AttackDetected.transform.position = this.transform.position +_playerData.AttackAeraL;
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(this.transform.position - JumpAera,jumpRange);
-        Gizmos.DrawWireCube(this.transform.position - hitboxAera,hitbox);
+        Gizmos.DrawWireSphere(this.transform.position -_playerData.JumpAera,_playerData.jumpRange);
+        Gizmos.DrawWireCube(this.transform.position -_playerData.hitboxAera,_playerData.hitbox);
+        //Gizmos.DrawWireCube(this.transform.position - _playerData.HitDetected,_playerData.hitDetectedox);
     }
 
     public void changeState(IState nextState)

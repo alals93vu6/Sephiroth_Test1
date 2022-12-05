@@ -25,13 +25,13 @@ public class AttackState : IState
 
         if (AttackTime >= 0.5f)
         {
-            if (!Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
+            if (!Physics2D.OverlapCircle(actor.transform.position - actor._playerData.JumpAera, actor._playerData.jumpRange, actor.jumpfloor))
             {
                 actor.changeState(new DropState());
             }
             else
             {
-                if (actor.H != 0)
+                if (Input.GetAxis("Horizontal") != 0)
                 {
                     actor.changeState(new MoveState());
                 }

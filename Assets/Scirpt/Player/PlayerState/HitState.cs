@@ -7,19 +7,22 @@ using UnityEngine;
 public class HitState : IState
 {
     private float HitTime;
+    
     public void OnEnterState(object action)
     {
         HitTime = 0f;
         //Debug.Log("OnHit");
         var actor = (PlayerActor) action;
         actor.GetDamage();
-        if (actor._animatorManager._spriteRenderer.flipX)//4
+        actor._animatorManager.playHit();
+        if (Physics2D.OverlapBox( actor.transform.position - actor._playerData.HitDetected,
+            actor._playerData.hitDetectedbox, 0, actor.HitObj))
         {
-            actor.rig.AddForce(new Vector2(-3,0) , ForceMode2D.Impulse);
+            actor.rig.AddForce(new Vector2(-5,0) , ForceMode2D.Impulse);
         }
         else
         {
-            actor.rig.AddForce(new Vector2(3,0) , ForceMode2D.Impulse);
+            actor.rig.AddForce(new Vector2(5,0) , ForceMode2D.Impulse);
         }
     }
 
@@ -35,13 +38,13 @@ public class HitState : IState
         */
         if (HitTime >= 0.8f)
         {
-            if (!Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor))
+            if (!Physics2D.OverlapCircle(actor.transform.position - actor._playerData.JumpAera, actor._playerData.jumpRange, actor.jumpfloor))
             {
                 actor.changeState(new DropState());
             }
             else
             {
-                if (actor.H != 0)
+                if (Input.GetAxis("Horizontal") != 0)
                 {
                     actor.changeState(new MoveState());
                 }

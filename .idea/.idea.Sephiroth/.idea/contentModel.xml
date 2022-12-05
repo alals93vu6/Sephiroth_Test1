@@ -12,6 +12,17 @@
           <e p="CM_control.cs" t="Include" />
         </e>
         <e p="Effect" t="Include">
+          <e p="Light" t="Include">
+            <e p="Light_Flash" t="Include">
+              <e p="Flash.cs" t="Include" />
+            </e>
+            <e p="Link" t="Include">
+              <e p="Link.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Materail" t="Include">
+            <e p="AddNewBaseMap.cs" t="Include" />
+          </e>
           <e p="Shader" t="Include">
             <e p="Disappear" t="Include">
               <e p="Disappear.cs" t="Include" />
@@ -32,11 +43,6 @@
                 <e p="Vine_IsState.cs" t="Include" />
               </e>
             </e>
-          </e>
-        </e>
-        <e p="Light" t="Include">
-          <e p="Light_Flash" t="Include">
-            <e p="LightFlash.cs" t="Include" />
           </e>
         </e>
         <e p="Samples" t="Include">
@@ -140,6 +146,7 @@
           <e p="Player" t="Include">
             <e p="PlayerActor.cs" t="Include" />
             <e p="PlayerAnimatorManager.cs" t="Include" />
+            <e p="PlayerData.cs" t="Include" />
             <e p="PlayerFettle.cs" t="Include" />
             <e p="PlayerState" t="Include">
               <e p="AttackState.cs" t="Include" />

@@ -38,9 +38,19 @@ public class PlayerAnimatorManager : MonoBehaviour
         AN.Play("PlayerIdle");
     }
     
+    public void playDead()
+    {
+        AN.Play("PlayerDeadL");
+    }
+    
     public void playMove()
     {
         AN.Play("PlayerRun");
+    }
+    
+    public void playHit()
+    {
+        AN.Play("PlayerHitL");
     }
 
     public void playBrakes()

@@ -12,7 +12,7 @@ public class JumpState : IState
         //Debug.Log("IsJump");
         JumpTime = 0;
         var actor = (PlayerActor) action;
-        actor.rig.velocity += Vector2.up * actor.JumpForce;
+        actor.rig.velocity += Vector2.up * actor._playerData.JumpForce;
         
 
     }
@@ -25,7 +25,7 @@ public class JumpState : IState
         actor.HitDetected();
         JumpTime += Time.deltaTime;
         
-        if (Physics2D.OverlapCircle(actor.transform.position - actor.JumpAera, actor.jumpRange, actor.jumpfloor) 
+        if (Physics2D.OverlapCircle(actor.transform.position - actor._playerData.JumpAera, actor._playerData.jumpRange, actor.jumpfloor) 
             && JumpTime >= 0.3f)
         {
             actor.onTheMoveDetected();

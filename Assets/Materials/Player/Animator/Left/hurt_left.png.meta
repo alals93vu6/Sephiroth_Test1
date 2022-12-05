@@ -115,8 +115,8 @@ TextureImporter:
         y: 653
         width: 436
         height: 462
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.47788638, y: 0.008238821}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,12 +132,12 @@ TextureImporter:
       name: hurt_left_1
       rect:
         serializedVersion: 2
-        x: 1284
+        x: 1281
         y: 652
         width: 455
         height: 451
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.47641414, y: 0.00488579}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -157,8 +157,8 @@ TextureImporter:
         y: 50
         width: 378
         height: 452
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5349953, y: 0.0058109737}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
