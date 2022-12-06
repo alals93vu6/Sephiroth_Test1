@@ -104,11 +104,6 @@
             </e>
           </e>
         </e>
-        <e p="SceneSet" t="Include">
-          <e p="Script" t="Include">
-            <e p="MainSceneSet.cs" t="Include" />
-          </e>
-        </e>
         <e p="Scirpt" t="Include">
           <e p="EventBus.cs" t="Include" />
           <e p="Events" t="Include">
@@ -127,6 +122,7 @@
           <e p="GamePlaying" t="Include">
             <e p="AreaOBJ" t="Include">
               <e p="LandFloor.cs" t="Include" />
+              <e p="MapPortal.cs" t="Include" />
             </e>
             <e p="GamePlayManager.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
@@ -170,6 +166,11 @@
                 <e p="FollowState.cs" t="Include" />
                 <e p="SummonState.cs" t="Include" />
               </e>
+            </e>
+          </e>
+          <e p="SceneSet" t="Include">
+            <e p="Script" t="Include">
+              <e p="MainSceneSet.cs" t="Include" />
             </e>
           </e>
           <e p="Shake.cs" t="Include" />

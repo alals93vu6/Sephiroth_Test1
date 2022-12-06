@@ -54,6 +54,7 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HitState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DeadState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/MapPortal.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -125,6 +126,7 @@
       <workItem from="1669988862344" duration="9475000" />
       <workItem from="1670097180113" duration="7448000" />
       <workItem from="1670264512720" duration="5862000" />
+      <workItem from="1670357959592" duration="1111000" />
     </task>
     <servers />
   </component>
