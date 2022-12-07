@@ -24,6 +24,7 @@ public class GamePlayManager : MonoBehaviour
         EventBus.Subscribe<CallBackWeaponDetected>(OnWeaponReturn);//替身回到玩家身邊
         EventBus.Subscribe<HitEnemyDetected>(OnHitEnemy);
         EventBus.Subscribe<PlayerDeadDetected>(OnPlayerDead);
+        EventBus.Subscribe<PlayerChangeMapDetected>(OnPlayerChangeMap);
         //EventBus.Subscribe<OnPlayerConnectWeaponDetected>(OnConnect);
         //EventBus.Subscribe<OnPlayerDisConnectDetected>(OnDisConnect);
         
@@ -36,6 +37,12 @@ public class GamePlayManager : MonoBehaviour
         _monsterGeneral = GameObject.FindObjectsOfType<MonsterGeneral>();
 
 
+    }
+
+    private void OnPlayerChangeMap(PlayerChangeMapDetected obj)
+    {
+        _uiManager.IsTransition = true;
+        //Debug.Log("ChangeMap!");
     }
 
     /*

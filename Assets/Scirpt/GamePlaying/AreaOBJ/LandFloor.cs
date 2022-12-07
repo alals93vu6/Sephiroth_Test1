@@ -17,15 +17,12 @@ public class LandFloor : MonoBehaviour
     [SerializeField] private float CubeSizeY;
     [SerializeField] private float SizeRamX;
     [SerializeField] private float SizeRamY;
-    
 
     [SerializeField] private bool IsWriting;
-    [SerializeField] private bool ActiveLand;
 
     [SerializeField] private LayerMask PlayerLayer;
 
     [SerializeField] private GameObject DetectArea;
-    [SerializeField] private GameObject NowPlayer;
 
     // Start is called before the first frame update
     void Start()

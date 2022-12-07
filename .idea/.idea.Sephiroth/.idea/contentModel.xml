@@ -115,6 +115,7 @@
               <e p="OnPlayerConnectWeaponDetected.cs" t="Include" />
               <e p="OnPlayerDisConnectDetected.cs" t="Include" />
               <e p="PlayerAttackDetected.cs" t="Include" />
+              <e p="PlayerChangeMapDetected.cs" t="Include" />
               <e p="PlayerDeadDetected.cs" t="Include" />
               <e p="PlayerGetHitDetected.cs" t="Include" />
             </e>
