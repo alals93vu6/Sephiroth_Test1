@@ -5,21 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class MainSceneSet : MonoBehaviour
 {
-    [Tooltip("主要畫面編號")]
-    [Header("主要畫面編號")]
-    [SerializeField] private int MainSceneIdex;
+    [Tooltip("載入畫面編號")]
+    [Header("載入畫面編號")]
+    [SerializeField] private int Scene00Idex;
 
-    [Tooltip("遊戲畫面編號")]
-    [Header("遊戲畫面編號")]
-    [SerializeField] private int GameSceneIdex;
+    [Tooltip("載入畫面編號")]
+    [Header("載入畫面編號")]
+    [SerializeField] private int Scene01Idex;
 
-    public void LoadScene_MainScene()
+    public void LoadScene_Scene00()
     {
-        SceneManager.LoadScene(MainSceneIdex);
+        SceneManager.LoadScene(Scene00Idex);
     }
-    public void LoadScene_GameScene()
+    public void LoadScene_Scene01()
     {
-        SceneManager.LoadScene(GameSceneIdex);
+        SceneManager.LoadScene(Scene01Idex);
     }
     public void ExitGame()
     {
