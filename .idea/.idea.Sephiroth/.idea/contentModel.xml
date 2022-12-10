@@ -156,6 +156,7 @@
           <e p="Player" t="Include">
             <e p="PlayerActor.cs" t="Include" />
             <e p="PlayerAnimatorManager.cs" t="Include" />
+            <e p="PlayerAudio.cs" t="Include" />
             <e p="PlayerData.cs" t="Include" />
             <e p="PlayerFettle.cs" t="Include" />
             <e p="PlayerState" t="Include">

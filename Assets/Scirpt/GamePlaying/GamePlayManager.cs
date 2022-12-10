@@ -14,6 +14,7 @@ public class GamePlayManager : MonoBehaviour
     [SerializeField] private UIManager _uiManager;
     [SerializeField] private WeaponPositionActor _weaponPositionActor;
     [SerializeField] private Vine_Actor _vineActor;
+    [SerializeField] private PlayerAudio _playerAudio;
     [SerializeField] public MonsterGeneral[] _monsterGeneral;
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class GamePlayManager : MonoBehaviour
         _vineActor = FindObjectOfType<Vine_Actor>();
         _uiManager = FindObjectOfType<UIManager>();
         _monsterGeneral = GameObject.FindObjectsOfType<MonsterGeneral>();
+        _playerAudio = FindObjectOfType<PlayerAudio>();
 
 
     }
@@ -84,6 +86,8 @@ public class GamePlayManager : MonoBehaviour
         {
             VARIABLE.EnemyGitHit();
         }
+        
+        _playerAudio.PlayAttack();
         
         //_monsterGeneral[1].EnemyGitHit();
     }

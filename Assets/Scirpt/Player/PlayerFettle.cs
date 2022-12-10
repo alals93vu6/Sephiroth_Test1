@@ -31,10 +31,9 @@ public class PlayerFettle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (NowHP == 0)
+        if (NowHP <= 0)
         {
             EventBus.Post(new PlayerDeadDetected());
-            NowHP = -1;
         }
     }
 
