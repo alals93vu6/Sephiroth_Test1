@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scirpt/SceneSet/Scene_text_2.unity
     guid: 69016c2403453914490047c25bd04540
+  - enabled: 1
+    path: Assets/Scenes/map01.unity
+    guid: 3ea7fb71b124335408faf0eb953890bf
   m_configObjects: {}

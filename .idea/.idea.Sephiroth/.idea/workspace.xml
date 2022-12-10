@@ -58,6 +58,7 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdleState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HealState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/SceneSet/Script/MainSceneSet.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -132,6 +133,7 @@
       <workItem from="1670357959592" duration="1708000" />
       <workItem from="1670435615623" duration="5657000" />
       <workItem from="1670654128452" duration="2080000" />
+      <workItem from="1670706980516" duration="135000" />
     </task>
     <servers />
   </component>

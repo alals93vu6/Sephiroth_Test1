@@ -12,6 +12,10 @@ public class MainSceneSet : MonoBehaviour
     [Tooltip("載入畫面編號")]
     [Header("載入畫面編號")]
     [SerializeField] private int Scene01Idex;
+    
+    [Tooltip("載入畫面編號")]
+    [Header("載入畫面編號")]
+    [SerializeField] private int Scene02Idex;
 
     public void LoadScene_Scene00()
     {
@@ -21,6 +25,12 @@ public class MainSceneSet : MonoBehaviour
     {
         SceneManager.LoadScene(Scene01Idex);
     }
+
+    public void LoadScene_Scene02()
+    {
+        SceneManager.LoadScene(Scene02Idex);
+    }
+
     public void ExitGame()
     {
         Application.Quit();
