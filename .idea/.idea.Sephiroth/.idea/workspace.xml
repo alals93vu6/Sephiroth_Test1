@@ -38,16 +38,12 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/InsituteA/InsituteAanimator.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/InsituteA/InstituteA.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/MonsterFettle.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerFettle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/InsituteA/InsituteMonsterA.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Monster/MonsterGeneral.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/AttackState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DashState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdleState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerData.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HitState.cs" />
@@ -57,6 +53,11 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/MapPortal.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/UIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerFettle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdleState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HealState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -130,6 +131,7 @@
       <workItem from="1670264512720" duration="5862000" />
       <workItem from="1670357959592" duration="1708000" />
       <workItem from="1670435615623" duration="5657000" />
+      <workItem from="1670654128452" duration="2080000" />
     </task>
     <servers />
   </component>

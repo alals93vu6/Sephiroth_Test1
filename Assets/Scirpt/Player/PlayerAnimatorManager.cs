@@ -52,6 +52,11 @@ public class PlayerAnimatorManager : MonoBehaviour
     {
         AN.Play("PlayerHitL");
     }
+    
+    public void playHeal()
+    {
+        AN.Play("PlayerHealL");
+    }
 
     public void playBrakes()
     {

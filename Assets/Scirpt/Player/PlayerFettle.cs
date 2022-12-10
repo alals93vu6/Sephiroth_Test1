@@ -8,8 +8,8 @@ using UnityEngine;
 public class PlayerFettle : MonoBehaviour
 {
     [Header("數值")] 
-    [SerializeField] private float MaxHP;
-    [SerializeField] private float NowHP;
+    [SerializeField] public float MaxHP;
+    [SerializeField] public float NowHP;
     
     [Header("狀態")]
     [SerializeField] private bool HitCD;

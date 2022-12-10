@@ -40,6 +40,10 @@ public class IdleState : IState
         {
             actor.changeState(new AttackState());
         }
+        if (Input.GetButtonDown("YKey") && actor._playerFettle.NowHP < actor._playerFettle.MaxHP)
+        {
+            actor.changeState(new HealState());
+        }
     }
 
     public void OnExitState(object action)

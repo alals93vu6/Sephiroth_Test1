@@ -118,8 +118,8 @@ TextureImporter:
         y: 650
         width: 246
         height: 495
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.54977244, y: 0.013816756}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -139,8 +139,8 @@ TextureImporter:
         y: 652
         width: 257
         height: 491
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5844047, y: 0.012895076}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: heal_left_2
       rect:
         serializedVersion: 2
-        x: 99
-        y: 50
+        x: 98
+        y: 49
         width: 384
         height: 493
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5160194, y: 0.010068085}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,8 +181,8 @@ TextureImporter:
         y: 53
         width: 352
         height: 493
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5417066, y: 0.0052244253}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

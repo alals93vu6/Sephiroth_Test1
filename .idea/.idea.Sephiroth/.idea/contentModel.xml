@@ -20,8 +20,18 @@
               <e p="Link.cs" t="Include" />
             </e>
           </e>
+          <e p="LookAt" t="Include">
+            <e p="LookAt.cs" t="Include" />
+          </e>
           <e p="Materail" t="Include">
             <e p="AddNewBaseMap.cs" t="Include" />
+          </e>
+          <e p="SetSound" t="Include">
+            <e p="Creat_Aduio" t="Include">
+              <e p="Creat_SetSound.cs" t="Include" />
+            </e>
+            <e p="SetAudio.cs" t="Include" />
+            <e p="SetAudioVal.cs" t="Include" />
           </e>
           <e p="Shader" t="Include">
             <e p="Disappear" t="Include">
@@ -43,6 +53,9 @@
                 <e p="Vine_IsState.cs" t="Include" />
               </e>
             </e>
+          </e>
+          <e p="UI_Transitions" t="Include">
+            <e p="UI_Transitions.cs" t="Include" />
           </e>
         </e>
         <e p="Samples" t="Include">
@@ -150,6 +163,7 @@
               <e p="DashState.cs" t="Include" />
               <e p="DeadState.cs" t="Include" />
               <e p="DropState.cs" t="Include" />
+              <e p="HealState.cs" t="Include" />
               <e p="HitState.cs" t="Include" />
               <e p="IdleState.cs" t="Include" />
               <e p="JumpState.cs" t="Include" />
