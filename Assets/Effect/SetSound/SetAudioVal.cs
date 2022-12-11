@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class SetAudioVal : MonoBehaviour
 {
-    public static float Sound_Val;
+    public static float Sound_Val = 1;
     public Scrollbar bar;
     void Update()
     {
