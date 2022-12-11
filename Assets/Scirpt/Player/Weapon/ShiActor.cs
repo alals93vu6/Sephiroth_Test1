@@ -11,13 +11,13 @@ public class ShiActor : MonoBehaviour
 {
     [Header("數值")]
     [SerializeField] private float MoveSpeed;
-    [SerializeField] private float PlayerX;
+    [SerializeField] public float PlayerX;
     [SerializeField] private float NowShiGapPosX , NowShiGapPosY;
     [SerializeField] private float XAxis;
     [SerializeField] public int LogState;
 
     [Header("物件")] 
-    [SerializeField] private GameObject PlayerNowPos;
+    [SerializeField] public GameObject PlayerNowPos;
     [SerializeField] private Transform WeaponPos;
     
 
@@ -26,6 +26,7 @@ public class ShiActor : MonoBehaviour
     [SerializeField] private IState currenState = new FollowState();
     [SerializeField] public bool SummonCD;
     [SerializeField] public bool SummonON;
+    [SerializeField] public bool IsRight;
 
     // Start is called before the first frame update
     void Start()
@@ -97,12 +98,22 @@ public class ShiActor : MonoBehaviour
     {
         if (this.transform.position.x <= PlayerX)
         {
-            this.transform.localScale = new Vector2(0.12f, 0.12f);
+            TurnLeft();
         }
         else
         {
-            this.transform.localScale = new Vector2(-0.12f, 0.12f);
+            TurnRight();
         }
+    }
+
+    public void TurnLeft()
+    {
+        this.transform.localScale = new Vector2(0.12f, 0.12f);
+    }
+    
+    public void TurnRight()
+    {
+        this.transform.localScale = new Vector2(-0.12f, 0.12f);
     }
 
     public void ShiFollowPosMax()

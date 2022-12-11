@@ -7,6 +7,8 @@ public class SummonState : IState
     public void OnEnterState(object action)
     {
         var actor = (ShiActor) action;
+        
+
         actor.LogState = 2;
         actor.SummonPosition();
         actor.SummonON = true;
@@ -17,6 +19,15 @@ public class SummonState : IState
     {
         var actor = (ShiActor) action;
         actor.SummonsPosMaxDetection();
+        
+        if (actor.transform.position.x <= actor.PlayerX)
+        {
+            actor.TurnLeft();
+        }
+        else
+        {
+            actor.TurnRight();
+        }
         
         if (actor.GetNowShiGapPosX() >= 12 || actor.GetNowShiGapPosY() >= 8)
         {
