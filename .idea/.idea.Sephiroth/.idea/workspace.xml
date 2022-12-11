@@ -49,16 +49,17 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/MapPortal.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAnimatorManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdleState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HealState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/SceneSet/Script/MainSceneSet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerFettle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAudio.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponAnimatorManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdleState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/MoveState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/ShiActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Effect/LookAt/LookAt.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -135,6 +136,7 @@
       <workItem from="1670654128452" duration="2080000" />
       <workItem from="1670706980516" duration="1711000" />
       <workItem from="1670737934442" duration="4075000" />
+      <workItem from="1670772964842" duration="1772000" />
     </task>
     <servers />
   </component>

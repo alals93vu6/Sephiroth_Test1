@@ -14,6 +14,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private IState CurrenState = new IdleState();
     [SerializeField] public Rigidbody2D rig;
     [SerializeField] private bool HitCD;
+    [SerializeField] private bool IsConnect;
 
     [Header("數值")] 
     [SerializeField] public PlayerData _playerData;
@@ -24,7 +25,7 @@ public class PlayerActor : MonoBehaviour
 
     [Header("物件")]
     [SerializeField] public PlayerAnimatorManager _animatorManager ;
-    [SerializeField] private Vine_Actor _vineActor;
+    [SerializeField] private LookAt[] _lookAt;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] public PlayerFettle _playerFettle;
     [SerializeField] public WeaponAnimatorManager _weaponAnimator;
@@ -37,7 +38,7 @@ public class PlayerActor : MonoBehaviour
         rig = GetComponent<Rigidbody2D>();
         _animatorManager = FindObjectOfType<PlayerAnimatorManager>();
         _weaponAnimator = FindObjectOfType<WeaponAnimatorManager>();
-        _vineActor = FindObjectOfType<Vine_Actor>();
+        _lookAt = GameObject.FindObjectsOfType<LookAt>();
         _shiActor = FindObjectOfType<ShiActor>();
         _playerFettle = FindObjectOfType<PlayerFettle>();
         //_monsterGeneral = FindObjectOfType<MonsterGeneral>();
@@ -130,20 +131,32 @@ public class PlayerActor : MonoBehaviour
         {
             if(Input.GetButtonDown("WeaponConnect"))
             {
-                _vineActor.IsCconcatenation = true;
+                foreach (var VARIABLE in _lookAt)
+                {
+                    VARIABLE.is_link = true;
+                }
+                IsConnect = true;
                 _weaponAnimator.PlayConnect();
                
             } 
            
             if(Input.GetButtonUp("WeaponConnect"))
             {
-                _vineActor.IsCconcatenation = false;
+                foreach (var VARIABLE in _lookAt)
+                {
+                    VARIABLE.is_link = false;
+                }
+                IsConnect = false;
                 _weaponAnimator.PlayDisConnect();
             }
         }
         else
         {
-            _vineActor.IsCconcatenation = false;
+            foreach (var VARIABLE in _lookAt)
+            {
+                VARIABLE.is_link = false;
+            }
+            IsConnect = false;
             _weaponAnimator.PlayDisConnect();
         }
     }

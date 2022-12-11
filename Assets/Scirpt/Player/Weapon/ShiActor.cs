@@ -18,8 +18,6 @@ public class ShiActor : MonoBehaviour
 
     [Header("物件")] 
     [SerializeField] private GameObject PlayerNowPos;
-    [SerializeField] private GameObject AmmoArea;
-    [SerializeField] private GameObject ShiAmmo;
     [SerializeField] private Transform WeaponPos;
     
 
@@ -45,11 +43,7 @@ public class ShiActor : MonoBehaviour
 
     public void ShiAttack()
     {
-        if (Input.GetButtonDown("XKey") || Input.GetMouseButtonDown(0))
-        {
-            Instantiate(ShiAmmo,AmmoArea.transform.position,AmmoArea.transform.rotation);
-            //Debug.Log("Attack");
-        }
+        
     }
 
     public void SummonsShi()
@@ -103,11 +97,11 @@ public class ShiActor : MonoBehaviour
     {
         if (this.transform.position.x <= PlayerX)
         {
-            this.transform.localScale = new Vector2(0.21f, 0.21f);
+            this.transform.localScale = new Vector2(0.12f, 0.12f);
         }
         else
         {
-            this.transform.localScale = new Vector2(-0.21f, 0.21f);
+            this.transform.localScale = new Vector2(-0.12f, 0.12f);
         }
     }
 

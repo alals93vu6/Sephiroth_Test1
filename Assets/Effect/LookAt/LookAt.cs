@@ -43,4 +43,5 @@ public class LookAt : MonoBehaviour
     {
         Light_now = light2D01.intensity;
     }
+
 }

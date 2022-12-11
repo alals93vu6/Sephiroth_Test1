@@ -21,7 +21,7 @@ public class MoveState : IState
         
         if (Input.GetButtonDown("BKey"))
         {
-            actor.onPlayerDash(2.5f);
+            actor.onPlayerDash(4.5f);
             actor.changeState(new DashState());
         }
         if (Mathf.Abs(Input.GetAxis("Horizontal")) <= 0.39f)
