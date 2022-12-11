@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Setaudio:
   - {fileID: 8300000, guid: d70d312e4dc062149bd7496d62d761f3, type: 3}
+  - {fileID: 8300000, guid: 7c88a3d562130bd4182e7e5e64268676, type: 3}
   BGM_Audio: {fileID: -1704411381346998114}
 --- !u!82 &-1704411381346998114
 AudioSource:

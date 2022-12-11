@@ -20,6 +20,8 @@ public class MainSceneSet : MonoBehaviour
     public void LoadScene_Scene00()
     {
         SceneManager.LoadScene(Scene00Idex);
+        Cursor.visible = false;
+        SetAudio.audioNum = 1;
     }
     public void LoadScene_Scene01()
     {
