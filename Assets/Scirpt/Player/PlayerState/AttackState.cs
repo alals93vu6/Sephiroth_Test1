@@ -11,8 +11,17 @@ public class AttackState : IState
     public void OnEnterState(object action)
     {
         var actor = (PlayerActor) action;
-        actor._animatorManager.PlayAttack();
         AttackTime = 0f;
+
+        if (actor.IsConnect)
+        {
+            //Debug.Log("WeaponAttack");
+            actor._weaponAnimator.OnWeaponAttack();
+        }
+        else
+        {
+            actor._animatorManager.PlayAttack();
+        }
         EventBus.Post(new PlayerAttackDetected());
     }
 

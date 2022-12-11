@@ -27,4 +27,9 @@ public class WeaponAnimatorManager : MonoBehaviour
     {
         _weaponAnimator.SetBool("IsConnect",false);
     }
+
+    public void OnWeaponAttack()
+    {
+        _weaponAnimator.Play("WeaponAttack");
+    }
 }

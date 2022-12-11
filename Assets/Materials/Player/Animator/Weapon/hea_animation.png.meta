@@ -59,6 +59,36 @@ TextureImporter:
   - first:
       213: 1533456560900865173
     second: hea_animation_18
+  - first:
+      213: -3483350782170967086
+    second: hea_animation_19
+  - first:
+      213: 5449696528771560672
+    second: hea_animation_20
+  - first:
+      213: 6406302805983007049
+    second: hea_animation_21
+  - first:
+      213: 572146013620953849
+    second: hea_animation_22
+  - first:
+      213: -5223984565144072285
+    second: hea_animation_23
+  - first:
+      213: -4063580010738254901
+    second: hea_animation_24
+  - first:
+      213: -7047374319455809673
+    second: hea_animation_25
+  - first:
+      213: 7461374669033372517
+    second: hea_animation_26
+  - first:
+      213: 9144993524041927237
+    second: hea_animation_27
+  - first:
+      213: 2096054016970644500
+    second: hea_animation_28
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -589,6 +619,237 @@ TextureImporter:
       bones: []
       spriteID: 59cfcf61e9ee74510800000000000000
       internalID: 1533456560900865173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_15
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 2030
+        width: 633
+        height: 465
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5843efdaefc2d03d0800000000000000
+      internalID: -3238883084657085307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_19
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 2035
+        width: 648
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3de905be6a8afc0800000000000000
+      internalID: -3483350782170967086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_20
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 2049
+        width: 724
+        height: 447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4bb138e1631ab40800000000000000
+      internalID: 5449696528771560672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_21
+      rect:
+        serializedVersion: 2
+        x: 2540
+        y: 2054
+        width: 695
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9419432c572c7e850800000000000000
+      internalID: 6406302805983007049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_22
+      rect:
+        serializedVersion: 2
+        x: 3324
+        y: 2054
+        width: 749
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2688d94cba0f700800000000000000
+      internalID: 572146013620953849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_23
+      rect:
+        serializedVersion: 2
+        x: 4166
+        y: 2060
+        width: 421
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3afc67247bda087b0800000000000000
+      internalID: -5223984565144072285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_24
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 1366
+        width: 448
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcb719f82834b97c0800000000000000
+      internalID: -4063580010738254901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_25
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1376
+        width: 504
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f40a12562b23e90800000000000000
+      internalID: -7047374319455809673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_26
+      rect:
+        serializedVersion: 2
+        x: 1684
+        y: 1400
+        width: 626
+        height: 361
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56bf4dbbab02c8760800000000000000
+      internalID: 7461374669033372517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_27
+      rect:
+        serializedVersion: 2
+        x: 2559
+        y: 1400
+        width: 476
+        height: 393
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a44c9682b89ee70800000000000000
+      internalID: 9144993524041927237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_28
+      rect:
+        serializedVersion: 2
+        x: 3166
+        y: 1401
+        width: 667
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cd097e50ea61d10800000000000000
+      internalID: 2096054016970644500
       vertices: []
       indices: 
       edges: []

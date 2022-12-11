@@ -14,7 +14,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private IState CurrenState = new IdleState();
     [SerializeField] public Rigidbody2D rig;
     [SerializeField] private bool HitCD;
-    [SerializeField] private bool IsConnect;
+    [SerializeField] public bool IsConnect;
 
     [Header("數值")] 
     [SerializeField] public PlayerData _playerData;
