@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 7f6d5cb242b5fc04a9fab5f0c367302f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3075437520378149122
+    second: hea_animation_0
+  - first:
+      213: -4180130815942614674
+    second: hea_animation_1
+  - first:
+      213: -8727257314420704486
+    second: hea_animation_2
+  - first:
+      213: 4868118414495493667
+    second: hea_animation_3
+  - first:
+      213: -3483664672130859951
+    second: hea_animation_4
+  - first:
+      213: 5129161197464437372
+    second: hea_animation_5
+  - first:
+      213: 1753250610842564325
+    second: hea_animation_6
+  - first:
+      213: 1036762393778061634
+    second: hea_animation_7
+  - first:
+      213: 2536848017274491283
+    second: hea_animation_8
+  - first:
+      213: 8299651702533502861
+    second: hea_animation_9
+  - first:
+      213: 8559524667987453691
+    second: hea_animation_10
+  - first:
+      213: -4344257710951069452
+    second: hea_animation_11
+  - first:
+      213: -3109691907560709829
+    second: hea_animation_12
+  - first:
+      213: -4542270525580192581
+    second: hea_animation_13
+  - first:
+      213: -6549292905331891441
+    second: hea_animation_14
+  - first:
+      213: -3238883084657085307
+    second: hea_animation_15
+  - first:
+      213: 8527955652624792099
+    second: hea_animation_16
+  - first:
+      213: 5394299998106702958
+    second: hea_animation_17
+  - first:
+      213: 1533456560900865173
+    second: hea_animation_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Lumin
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hea_animation_0
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 4663
+        width: 266
+        height: 224
+      alignment: 9
+      pivot: {x: 0.46808815, y: 0.40147182}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2093c0361262eaa20800000000000000
+      internalID: 3075437520378149122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_1
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 4660
+        width: 269
+        height: 219
+      alignment: 9
+      pivot: {x: 0.4483334, y: 0.39586455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61a3119b213df5c0800000000000000
+      internalID: -4180130815942614674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_2
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 4670
+        width: 277
+        height: 228
+      alignment: 9
+      pivot: {x: 0.46338242, y: 0.37595302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1b368626bd82e680800000000000000
+      internalID: -8727257314420704486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_3
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 4669
+        width: 270
+        height: 218
+      alignment: 9
+      pivot: {x: 0.44425908, y: 0.39069444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32eaa84d7e70f8340800000000000000
+      internalID: 4868118414495493667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_4
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 4057
+        width: 265
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15cff0d107987afc0800000000000000
+      internalID: -3483664672130859951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_5
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 4049
+        width: 424
+        height: 281
+      alignment: 9
+      pivot: {x: 0.5043624, y: 0.335444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72c5920fe07e2740800000000000000
+      internalID: 5129161197464437372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_6
+      rect:
+        serializedVersion: 2
+        x: 1284
+        y: 4032
+        width: 502
+        height: 397
+      alignment: 9
+      pivot: {x: 0.49336833, y: 0.35724232}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e6f185342cc45810800000000000000
+      internalID: 1753250610842564325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_7
+      rect:
+        serializedVersion: 2
+        x: 1892
+        y: 4023
+        width: 579
+        height: 512
+      alignment: 9
+      pivot: {x: 0.48660895, y: 0.35293484}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24100a577e1536e00800000000000000
+      internalID: 1036762393778061634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_8
+      rect:
+        serializedVersion: 2
+        x: 2579
+        y: 4028
+        width: 677
+        height: 430
+      alignment: 9
+      pivot: {x: 0.4931976, y: 0.29921648}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391dcc6b4d1b43320800000000000000
+      internalID: 2536848017274491283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_9
+      rect:
+        serializedVersion: 2
+        x: 3341
+        y: 3990
+        width: 685
+        height: 403
+      alignment: 9
+      pivot: {x: 0.48518905, y: 0.4271916}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d87b9f000494e2370800000000000000
+      internalID: 8299651702533502861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_10
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 3370
+        width: 644
+        height: 440
+      alignment: 9
+      pivot: {x: 0.47420156, y: 0.40086114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf6e591d55a89c670800000000000000
+      internalID: 8559524667987453691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_11
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 3377
+        width: 609
+        height: 434
+      alignment: 9
+      pivot: {x: 0.44840616, y: 0.40441895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f88206f0a816b3c0800000000000000
+      internalID: -4344257710951069452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_12
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 3386
+        width: 662
+        height: 486
+      alignment: 9
+      pivot: {x: 0.50398093, y: 0.3628894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b31efe89fa728d4d0800000000000000
+      internalID: -3109691907560709829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_13
+      rect:
+        serializedVersion: 2
+        x: 2444
+        y: 3387
+        width: 653
+        height: 483
+      alignment: 9
+      pivot: {x: 0.44671303, y: 0.37970185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4d011e50d96f0c0800000000000000
+      internalID: -4542270525580192581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_14
+      rect:
+        serializedVersion: 2
+        x: 3183
+        y: 3370
+        width: 758
+        height: 437
+      alignment: 9
+      pivot: {x: 0.42937636, y: 0.41452172}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03e4bf5dcc3c15a0800000000000000
+      internalID: -6549292905331891441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_16
+      rect:
+        serializedVersion: 2
+        x: 1117
+        y: 2709
+        width: 715
+        height: 441
+      alignment: 9
+      pivot: {x: 0.43345273, y: 0.4074292}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32a3cf6ab72695670800000000000000
+      internalID: 8527955652624792099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_17
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 2705
+        width: 756
+        height: 431
+      alignment: 9
+      pivot: {x: 0.4349333, y: 0.41385686}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e645a0f94476cda40800000000000000
+      internalID: 5394299998106702958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hea_animation_18
+      rect:
+        serializedVersion: 2
+        x: 2714
+        y: 2713
+        width: 763
+        height: 429
+      alignment: 9
+      pivot: {x: 0.4324537, y: 0.4105495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59cfcf61e9ee74510800000000000000
+      internalID: 1533456560900865173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

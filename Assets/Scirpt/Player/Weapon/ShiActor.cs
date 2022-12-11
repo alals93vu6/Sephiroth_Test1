@@ -21,6 +21,7 @@ public class ShiActor : MonoBehaviour
     [SerializeField] private GameObject AmmoArea;
     [SerializeField] private GameObject ShiAmmo;
     [SerializeField] private Transform WeaponPos;
+    
 
     [Header("狀態")]
     [SerializeField] private Rigidbody2D Shirig;
@@ -32,6 +33,7 @@ public class ShiActor : MonoBehaviour
     void Start()
     {
         Shirig = GetComponent<Rigidbody2D>();
+        
         ChangeState(new FollowState());
     }
 
@@ -101,11 +103,11 @@ public class ShiActor : MonoBehaviour
     {
         if (this.transform.position.x <= PlayerX)
         {
-            this.transform.localScale = new Vector2(0.12f, 0.12f);
+            this.transform.localScale = new Vector2(0.21f, 0.21f);
         }
         else
         {
-            this.transform.localScale = new Vector2(-0.12f, 0.12f);
+            this.transform.localScale = new Vector2(-0.21f, 0.21f);
         }
     }
 
@@ -113,7 +115,7 @@ public class ShiActor : MonoBehaviour
     {
         PlayerX = PlayerNowPos.transform.position.x;
 
-        this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1f, PlayerX + 1f), 
+        this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1f, PlayerX + 2f), 
             Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1f, PlayerNowPos.transform.position.y + 1f));
         
         

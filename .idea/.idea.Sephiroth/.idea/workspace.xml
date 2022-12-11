@@ -19,16 +19,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/InsituteA/InsituteAanimator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/InsituteA/InstituteA.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scirpt/Monster/AreaA_Insitute/InsituteA/InsituteMonsterA.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HitState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponAnimatorManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../User/Desktop/怪物參考/SphereEnemy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/ShiActor.cs" />
       <option value="$PROJECT_DIR$/Assets/CM vcam/CM_control.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/IdeoState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/SquatState.cs" />
@@ -45,7 +42,6 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DropState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/JumpState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerData.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/HitState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/DeadState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/AreaOBJ/LandFloor.cs" />
@@ -60,6 +56,9 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerFettle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerAudio.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponAnimatorManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerActor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/ShiActor.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -135,6 +134,7 @@
       <workItem from="1670435615623" duration="5657000" />
       <workItem from="1670654128452" duration="2080000" />
       <workItem from="1670706980516" duration="1711000" />
+      <workItem from="1670737934442" duration="4075000" />
     </task>
     <servers />
   </component>

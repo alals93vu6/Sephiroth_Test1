@@ -27,6 +27,7 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] public PlayerFettle _playerFettle;
+    [SerializeField] public WeaponAnimatorManager _weaponAnimator;
     //[SerializeField] public MonsterGeneral _monsterGeneral;
     [SerializeField] private GameObject AttackDetected;
     
@@ -35,6 +36,7 @@ public class PlayerActor : MonoBehaviour
         changeState(new IdleState());
         rig = GetComponent<Rigidbody2D>();
         _animatorManager = FindObjectOfType<PlayerAnimatorManager>();
+        _weaponAnimator = FindObjectOfType<WeaponAnimatorManager>();
         _vineActor = FindObjectOfType<Vine_Actor>();
         _shiActor = FindObjectOfType<ShiActor>();
         _playerFettle = FindObjectOfType<PlayerFettle>();
@@ -129,17 +131,20 @@ public class PlayerActor : MonoBehaviour
             if(Input.GetButtonDown("WeaponConnect"))
             {
                 _vineActor.IsCconcatenation = true;
+                _weaponAnimator.PlayConnect();
                
             } 
            
             if(Input.GetButtonUp("WeaponConnect"))
             {
                 _vineActor.IsCconcatenation = false;
+                _weaponAnimator.PlayDisConnect();
             }
         }
         else
         {
             _vineActor.IsCconcatenation = false;
+            _weaponAnimator.PlayDisConnect();
         }
     }
 
@@ -163,7 +168,7 @@ public class PlayerActor : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(this.transform.position -_playerData.JumpAera,_playerData.jumpRange);
         Gizmos.DrawWireCube(this.transform.position -_playerData.hitboxAera,_playerData.hitbox);
-        //Gizmos.DrawWireCube(this.transform.position - _playerData.HitDetected,_playerData.hitDetectedox);
+        //Gizmos.DrawWireCube(this.transform.position - _playerData.HitDetected,_playerData.hitDetectedbox);
     }
 
     public void changeState(IState nextState)
