@@ -1,0 +1,47 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SummonState : IState
+{
+    public void OnEnterState(object action)
+    {
+        var actor = (ShiActor) action;
+        actor.LogState = 2;
+        actor.SummonPosition();
+        actor.SummonON = true;
+        //Debug.Log("IsSummons");
+    }
+
+    public void OnStayState(object action)
+    {
+        var actor = (ShiActor) action;
+        actor.SummonsPosMaxDetection();
+        
+        if (actor.GetNowShiGapPosX() >= 12 || actor.GetNowShiGapPosY() >= 8)
+        {
+            actor.ShiReTurn();
+        }
+/*
+        if (Input.GetAxis("CallWeapon") >= 0.85f || Input.GetMouseButtonDown(1) && actor.SummonCD == false)
+        {
+            actor.ShiReTurn();
+            actor.OnSummonCD();
+        }
+        */
+        if (Input.GetButtonUp("CallWeapon") && actor.SummonCD == false)
+        {
+            actor.ShiReTurn();
+            actor.OnSummonCD();
+        }
+        
+        //actor.ShiAttack();
+
+        
+    }
+
+    public void OnExitState(object action)
+    {
+        var actor = (ShiActor) action;
+    }
+}

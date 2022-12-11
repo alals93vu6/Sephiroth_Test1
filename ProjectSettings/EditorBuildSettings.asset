@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/Scenes/NewbieTeaching.unity
     guid: 41fc24ba7e2247045adef19b4e6f2061
   - enabled: 1
-    path: Assets/Scirpt/SceneSet/Scene_text_1.unity
+    path: Assets/Scenes/Scirpt/SceneSet/Scene_text_1.unity
     guid: 9401152d49964ea4b8c29e98eadbafea
   - enabled: 1
-    path: Assets/Scirpt/SceneSet/Scene_text_2.unity
+    path: Assets/Scenes/Scirpt/SceneSet/Scene_text_2.unity
     guid: 69016c2403453914490047c25bd04540
   - enabled: 1
     path: Assets/Scenes/map01.unity
