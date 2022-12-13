@@ -1869,9 +1869,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2138c452be5db4686ed10094887d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene00Idex: 0
-  Scene01Idex: 0
-  Scene02Idex: 0
+  SceneIdex: 0000000000000000
+  MainSceneNum: 0
+  TipRectTransform: []
+  TipGameObject: {fileID: 0}
 --- !u!4 &1859143152
 Transform:
   m_ObjectHideFlags: 0
