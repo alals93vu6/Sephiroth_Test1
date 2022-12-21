@@ -12,7 +12,6 @@ public class GamePlayManager : MonoBehaviour
     [SerializeField] private PlayerFettle _playerFettle;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] private UIManager _uiManager;
-    [SerializeField] private WeaponPositionActor _weaponPositionActor;
     [SerializeField] private Vine_Actor _vineActor;
     [SerializeField] private PlayerAudio _playerAudio;
     [SerializeField] public MonsterGeneral[] _monsterGeneral;
@@ -32,7 +31,6 @@ public class GamePlayManager : MonoBehaviour
         _playerActor = FindObjectOfType<PlayerActor>();
         _playerFettle = FindObjectOfType<PlayerFettle>();
         _shiActor = FindObjectOfType<ShiActor>();
-        _weaponPositionActor = FindObjectOfType<WeaponPositionActor>();
         _vineActor = FindObjectOfType<Vine_Actor>();
         _uiManager = FindObjectOfType<UIManager>();
         _monsterGeneral = GameObject.FindObjectsOfType<MonsterGeneral>();
@@ -71,7 +69,7 @@ public class GamePlayManager : MonoBehaviour
     private void OnWeaponReturn(CallBackWeaponDetected obj)
     {
         //Debug.Log("ShiIsBack");
-        _weaponPositionActor.WeaPonReset();
+        //_weaponPositionActor.WeaPonReset();
     }
 
     private void OnCallingWeapon(CallWeaponDetected obj)

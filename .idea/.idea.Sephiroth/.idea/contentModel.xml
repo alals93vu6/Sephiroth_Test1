@@ -199,12 +199,15 @@
               <e p="FollowObj.cs" t="Include" />
               <e p="ShiActor.cs" t="Include" />
               <e p="WeaponAnimatorManager.cs" t="Include" />
+              <e p="WeaponData.cs" t="Include" />
               <e p="Weaponmmo" t="Include">
                 <e p="AttackAmmo.cs" t="Include" />
               </e>
               <e p="WeaponPositionActor.cs" t="Include" />
               <e p="WeaponState" t="Include">
+                <e p="DizzyState.cs" t="Include" />
                 <e p="FollowState.cs" t="Include" />
+                <e p="StrikeState.cs" t="Include" />
                 <e p="SummonState.cs" t="Include" />
               </e>
             </e>

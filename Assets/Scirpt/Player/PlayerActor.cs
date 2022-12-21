@@ -15,6 +15,8 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] public Rigidbody2D rig;
     [SerializeField] private bool HitCD;
     [SerializeField] public bool IsConnect;
+    [SerializeField] public int IsRight;
+    [SerializeField] public int PassState;
 
     [Header("數值")] 
     [SerializeField] public PlayerData _playerData;
@@ -51,15 +53,41 @@ public class PlayerActor : MonoBehaviour
         //HitDetected();
         OnPlayerConnect();
         AttackAreaSet();
+        DirectionDetected();
+    }
+
+    private void DirectionDetected()
+    {
+        if(Input.GetAxis("Horizontal") == 0f)
+        {
+            IsRight = 0;
+        }
+        if(Input.GetAxis("Horizontal") > 0f)
+        {
+            IsRight = 1;
+        }
+        if(Input.GetAxis("Horizontal") < 0f)
+        {
+            IsRight = 2;
+        }
+
+        if (IsRight == 1)
+        {
+            PassState = 1;
+        }
+        if (IsRight == 2)
+        {
+            PassState = 2;
+        }
     }
 
     public void PlayerMove()
     {
-        if(Input.GetAxis("Horizontal") >= 0.2f)
+        if(IsRight == 1)
         {
             _animatorManager.flipPlayer(2);
         }
-        else if(Input.GetAxis("Horizontal") <= 0.2f)
+        else if(IsRight == 2)
         {
             _animatorManager.flipPlayer(1);
         }
@@ -165,12 +193,12 @@ public class PlayerActor : MonoBehaviour
     {
         
         
-        if(Input.GetAxis("Horizontal") >= 0.2f)
+        if(IsRight == 1)
         {
             AttackDetected.transform.position = this.transform.position +_playerData.AttackAeraR;
         }
 
-        if(Input.GetAxis("Horizontal") <= -0.2f)
+        if(IsRight == 2)
         {
             AttackDetected.transform.position = this.transform.position +_playerData.AttackAeraL;
         }

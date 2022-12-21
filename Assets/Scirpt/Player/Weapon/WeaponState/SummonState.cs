@@ -8,11 +8,9 @@ public class SummonState : IState
     {
         var actor = (ShiActor) action;
         
-
-        actor.LogState = 2;
-        actor.SummonPosition();
+        actor._weaponData.LogState = 2;
         actor.SummonON = true;
-        //Debug.Log("IsSummons");
+        Debug.Log("IsSummons");
     }
 
     public void OnStayState(object action)
@@ -20,7 +18,7 @@ public class SummonState : IState
         var actor = (ShiActor) action;
         actor.SummonsPosMaxDetection();
         
-        if (actor.transform.position.x <= actor.PlayerX)
+        if (actor.transform.position.x <= actor._weaponData.PlayerX)
         {
             actor.TurnLeft();
         }
@@ -28,12 +26,12 @@ public class SummonState : IState
         {
             actor.TurnRight();
         }
-        
+        /*
         if (actor.GetNowShiGapPosX() >= 12 || actor.GetNowShiGapPosY() >= 8)
         {
             actor.ShiReTurn();
         }
-/*
+
         if (Input.GetAxis("CallWeapon") >= 0.85f || Input.GetMouseButtonDown(1) && actor.SummonCD == false)
         {
             actor.ShiReTurn();

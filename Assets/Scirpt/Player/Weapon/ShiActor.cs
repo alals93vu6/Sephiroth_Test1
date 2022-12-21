@@ -4,35 +4,31 @@ using System.Numerics;
 using System.Threading.Tasks;
 using Project;
 using Project.Events.GamePlaying;
+using Project.Player;
 using UnityEngine;
 using Vector2 = UnityEngine.Vector2;
 
 public class ShiActor : MonoBehaviour
 {
-    [Header("數值")]
-    [SerializeField] private float MoveSpeed;
-    [SerializeField] public float PlayerX;
-    [SerializeField] private float NowShiGapPosX , NowShiGapPosY;
-    [SerializeField] private float XAxis;
-    [SerializeField] public int LogState;
+    [Header("數值")] 
+    [SerializeField] public WeaponData _weaponData;
 
     [Header("物件")] 
     [SerializeField] public GameObject PlayerNowPos;
-    [SerializeField] private Transform WeaponPos;
-    
+    [SerializeField] public PlayerActor _playerActor;
+
 
     [Header("狀態")]
-    [SerializeField] private Rigidbody2D Shirig;
+    [SerializeField] public Rigidbody2D Shirig;
     [SerializeField] private IState currenState = new FollowState();
     [SerializeField] public bool SummonCD;
     [SerializeField] public bool SummonON;
-    [SerializeField] public bool IsRight;
 
     // Start is called before the first frame update
     void Start()
     {
         Shirig = GetComponent<Rigidbody2D>();
-        
+        _playerActor = FindObjectOfType<PlayerActor>();
         ChangeState(new FollowState());
     }
 
@@ -50,7 +46,7 @@ public class ShiActor : MonoBehaviour
     public void SummonsShi()
     {
         Shirig.velocity = Vector2.zero;
-        ChangeState(new SummonState());
+        ChangeState(new StrikeState());
         OnSummonCD();
         //EventBus.Post(new CallWeaponDetected());
     }
@@ -66,8 +62,8 @@ public class ShiActor : MonoBehaviour
 
     public void SummonsPosMaxDetection()
     {
-        NowShiGapPosX = Mathf.Abs(this.gameObject.transform.position.x - PlayerNowPos.transform.position.x);
-        NowShiGapPosY = Mathf.Abs(this.gameObject.transform.position.y - PlayerNowPos.transform.position.y);
+        _weaponData.NowShiGapPosX = Mathf.Abs(this.gameObject.transform.position.x - PlayerNowPos.transform.position.x);
+        _weaponData.NowShiGapPosY = Mathf.Abs(this.gameObject.transform.position.y - PlayerNowPos.transform.position.y);
     }
 
     public void ShiReTurn()
@@ -80,11 +76,11 @@ public class ShiActor : MonoBehaviour
 
     public void ShiFollowMove()
     {
-        XAxis = Input.GetAxisRaw("Horizontal");
+        _weaponData.XAxis = Input.GetAxisRaw("Horizontal");
 
-        if (XAxis >= 0.55f)
+        if (_weaponData.XAxis >= 0.55f)
         {
-            Shirig.velocity = new Vector2(-XAxis ,0) * MoveSpeed;
+            Shirig.velocity = new Vector2(-_weaponData.XAxis ,0) * _weaponData.MoveSpeed;
         }
         else
         {
@@ -96,7 +92,7 @@ public class ShiActor : MonoBehaviour
 
     public void ShiRotation()
     {
-        if (this.transform.position.x <= PlayerX)
+        if (this.transform.position.x <= _weaponData.PlayerX)
         {
             TurnLeft();
         }
@@ -118,9 +114,9 @@ public class ShiActor : MonoBehaviour
 
     public void ShiFollowPosMax()
     {
-        PlayerX = PlayerNowPos.transform.position.x;
+        _weaponData.PlayerX = PlayerNowPos.transform.position.x;
 
-        this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, PlayerX - 1f, PlayerX + 2f), 
+        this.transform.position = new Vector2(Mathf.Clamp(this.transform.position.x, _weaponData.PlayerX - 1f, _weaponData.PlayerX + 2f), 
             Mathf.Clamp(this.transform.position.y, PlayerNowPos.transform.position.y + 1f, PlayerNowPos.transform.position.y + 1f));
         
         
@@ -132,20 +128,16 @@ public class ShiActor : MonoBehaviour
         NextState.OnEnterState(this);
         currenState = NextState;
     }
-
-    public void SummonPosition()
-    {
-        this.transform.position = WeaponPos.position;
-    }
+    
 
     public float GetNowShiGapPosX()
     {
-        return NowShiGapPosX;
+        return _weaponData.NowShiGapPosX;
     }
 
     public float GetNowShiGapPosY()
     {
-        return NowShiGapPosY;
+        return _weaponData.NowShiGapPosY;
     }
 
 }
