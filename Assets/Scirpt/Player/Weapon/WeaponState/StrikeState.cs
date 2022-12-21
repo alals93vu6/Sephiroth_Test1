@@ -57,6 +57,7 @@ public class StrikeState : IState
             actor._weaponData.StrileRange, actor.StrikeLayer))
         {
             EventBus.Post(new PlayerAttackDetected());
+            actor._weaponAnimator.OnWeaponAttack();
             actor.ChangeState(new SummonState());
         }
         

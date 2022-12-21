@@ -7,7 +7,7 @@ public class SummonState : IState
     public void OnEnterState(object action)
     {
         var actor = (ShiActor) action;
-        
+        actor.ReadyAttack = true;
         actor._weaponData.LogState = 2;
         actor.SummonON = true;
         actor.Shirig.velocity = Vector2.zero;
@@ -53,5 +53,6 @@ public class SummonState : IState
     public void OnExitState(object action)
     {
         var actor = (ShiActor) action;
+        actor.ReadyAttack = false;
     }
 }

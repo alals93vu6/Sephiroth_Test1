@@ -84,7 +84,7 @@ public class GamePlayManager : MonoBehaviour
         {
             VARIABLE.EnemyGitHit();
         }
-        
+        _shiActor.WeaponAttack();
         _playerAudio.PlayAttack();
         
         //_monsterGeneral[1].EnemyGitHit();

@@ -25,6 +25,7 @@ public class ShiActor : MonoBehaviour
     [SerializeField] private IState currenState = new FollowState();
     [SerializeField] public bool SummonCD;
     [SerializeField] public bool SummonON;
+    public bool ReadyAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +62,14 @@ public class ShiActor : MonoBehaviour
         await Task.Delay(2000);
 
         SummonCD = false;
+    }
+
+    public void WeaponAttack()
+    {
+        if (ReadyAttack)
+        {
+            _weaponAnimator.OnWeaponAttack();
+        }
     }
 
     public void SummonsPosMaxDetection()

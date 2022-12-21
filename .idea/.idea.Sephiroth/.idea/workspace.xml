@@ -63,10 +63,10 @@
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/PlayerState/AttackState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponState/FollowState.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponData.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponState/StrikeState.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/ShiActor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponState/SummonState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/GamePlaying/GamePlayManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scirpt/Player/Weapon/WeaponState/StrikeState.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="2HK4kC0TeQMCKQljYk9IQYNpvSS" />
@@ -145,7 +145,7 @@
       <workItem from="1670737934442" duration="4075000" />
       <workItem from="1670772964842" duration="5867000" />
       <workItem from="1671627378454" duration="5969000" />
-      <workItem from="1671633767097" duration="2454000" />
+      <workItem from="1671633767097" duration="3019000" />
     </task>
     <servers />
   </component>
