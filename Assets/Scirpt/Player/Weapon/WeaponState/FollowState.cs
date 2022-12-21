@@ -7,6 +7,7 @@ public class FollowState : IState
     public void OnEnterState(object action)
     {
         var actor = (ShiActor) action;
+        actor._weaponAnimator.PlayDisConnect();
         actor._weaponData.LogState = 1;
         Debug.Log("IsFollow");
         actor.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;

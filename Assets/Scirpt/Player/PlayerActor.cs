@@ -30,7 +30,6 @@ public class PlayerActor : MonoBehaviour
     [SerializeField] private LookAt[] _lookAt;
     [SerializeField] private ShiActor _shiActor;
     [SerializeField] public PlayerFettle _playerFettle;
-    [SerializeField] public WeaponAnimatorManager _weaponAnimator;
     //[SerializeField] public MonsterGeneral _monsterGeneral;
     [SerializeField] private GameObject AttackDetected;
     
@@ -39,7 +38,7 @@ public class PlayerActor : MonoBehaviour
         changeState(new IdleState());
         rig = GetComponent<Rigidbody2D>();
         _animatorManager = FindObjectOfType<PlayerAnimatorManager>();
-        _weaponAnimator = FindObjectOfType<WeaponAnimatorManager>();
+        
         _lookAt = GameObject.FindObjectsOfType<LookAt>();
         _shiActor = FindObjectOfType<ShiActor>();
         _playerFettle = FindObjectOfType<PlayerFettle>();
@@ -51,7 +50,7 @@ public class PlayerActor : MonoBehaviour
     {
         CurrenState.OnStayState(this);
         //HitDetected();
-        OnPlayerConnect();
+        //OnPlayerConnect();
         AttackAreaSet();
         DirectionDetected();
     }
@@ -155,6 +154,7 @@ public class PlayerActor : MonoBehaviour
 
     public void OnPlayerConnect()
     {
+        /*
         if (_shiActor.SummonON)
         {
             if(Input.GetButtonDown("WeaponConnect"))
@@ -164,7 +164,7 @@ public class PlayerActor : MonoBehaviour
                     VARIABLE.is_link = true;
                 }
                 IsConnect = true;
-                _weaponAnimator.PlayConnect();
+                
                
             } 
            
@@ -187,6 +187,7 @@ public class PlayerActor : MonoBehaviour
             IsConnect = false;
             _weaponAnimator.PlayDisConnect();
         }
+        */
     }
 
     public void AttackAreaSet()

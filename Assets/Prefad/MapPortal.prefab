@@ -40,7 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6734919546033418749}
   - component: {fileID: 6734919546033418748}
-  m_Layer: 0
+  - component: {fileID: 9073968710665493140}
+  m_Layer: 10
   m_Name: MapPortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,3 +78,29 @@ MonoBehaviour:
   player: {fileID: 0}
   endPoint: {fileID: 6734919544553207295}
   portalSize: {x: 3.66, y: 6.05}
+--- !u!61 &9073968710665493140
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6734919546033418739}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.024404526, y: 0.024401903}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6843529, y: 6.0270715}
+  m_EdgeRadius: 0

@@ -16,6 +16,8 @@ public class ShiActor : MonoBehaviour
     [Header("物件")] 
     [SerializeField] public GameObject PlayerNowPos;
     [SerializeField] public PlayerActor _playerActor;
+    [SerializeField] public WeaponAnimatorManager _weaponAnimator;
+    [SerializeField] public LayerMask StrikeLayer;
 
 
     [Header("狀態")]
@@ -29,6 +31,7 @@ public class ShiActor : MonoBehaviour
     {
         Shirig = GetComponent<Rigidbody2D>();
         _playerActor = FindObjectOfType<PlayerActor>();
+        _weaponAnimator = FindObjectOfType<WeaponAnimatorManager>();
         ChangeState(new FollowState());
     }
 
@@ -104,12 +107,12 @@ public class ShiActor : MonoBehaviour
 
     public void TurnLeft()
     {
-        this.transform.localScale = new Vector2(0.12f, 0.12f);
+        this.transform.localScale = new Vector2(-0.12f, 0.12f);
     }
     
     public void TurnRight()
     {
-        this.transform.localScale = new Vector2(-0.12f, 0.12f);
+        this.transform.localScale = new Vector2(0.12f, 0.12f);
     }
 
     public void ShiFollowPosMax()
@@ -139,5 +142,12 @@ public class ShiActor : MonoBehaviour
     {
         return _weaponData.NowShiGapPosY;
     }
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(this.transform.position + _weaponData.StrikeOffset,_weaponData.StrileRange);
+        Gizmos.DrawWireSphere(this.transform.position - _weaponData.StrikeOffset,_weaponData.StrileRange);
+        //Gizmos.DrawWireCube(this.transform.position -_playerData.hitboxAera,_playerData.hitbox);
+        //Gizmos.DrawWireCube(this.transform.position - _playerData.HitDetected,_playerData.hitDetectedbox);
+    }
 }

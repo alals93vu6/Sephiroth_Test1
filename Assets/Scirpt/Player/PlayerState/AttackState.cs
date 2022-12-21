@@ -16,7 +16,7 @@ public class AttackState : IState
         if (actor.IsConnect)
         {
             //Debug.Log("WeaponAttack");
-            actor._weaponAnimator.OnWeaponAttack();
+            //actor._weaponAnimator.OnWeaponAttack();
         }
         else
         {

@@ -14,6 +14,8 @@ namespace Project.Player
         [SerializeField] public float NowShiGapPosX , NowShiGapPosY;
         [SerializeField] public float XAxis;
         [SerializeField] public int LogState;
+        [SerializeField] public Vector3 StrikeOffset;
+        [SerializeField] public float StrileRange;
     }
 
 }
