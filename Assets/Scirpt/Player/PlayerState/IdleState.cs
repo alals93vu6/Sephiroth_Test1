@@ -19,7 +19,7 @@ public class IdleState : IState
         actor.HitDetected();
         if (Input.GetButtonDown("BKey"))
         {
-            actor.onPlayerDash(9);
+            //actor.onPlayerDash(9);
             actor.changeState(new DashState());
         }
 

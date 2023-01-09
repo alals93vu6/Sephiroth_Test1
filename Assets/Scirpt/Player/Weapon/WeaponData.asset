@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponData
   m_EditorClassIdentifier: 
   MoveSpeed: 4.2
-  StrikeSpeed: 9
+  StrikeSpeed: 20
   PlayerX: 111.899994
   NowShiGapPosX: 1.9810944
   NowShiGapPosY: 5.441597

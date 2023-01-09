@@ -65,7 +65,7 @@ public class StrikeState : IState
                 actor._weaponData.StrileRange, 1024)
             || Physics2D.OverlapCircle(actor.transform.position - actor._weaponData.StrikeOffset,
                 actor._weaponData.StrileRange, 1024)
-            || StrikeTime >= 3)
+            || StrikeTime >= 2)
         {
             actor.ChangeState(new FollowState());
         }

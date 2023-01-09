@@ -14,15 +14,18 @@ public class HitState : IState
         //Debug.Log("OnHit");
         var actor = (PlayerActor) action;
         actor.GetDamage();
+        actor.rig.velocity = Vector2.zero;
         actor._animatorManager.playHit();
         if (Physics2D.OverlapBox( actor.transform.position - actor._playerData.HitDetected,
             actor._playerData.hitDetectedbox, 0, actor.HitObj))
         {
-            actor.rig.AddForce(new Vector2(-5,0) , ForceMode2D.Impulse);
+            actor._playerData.HitandDashOffset = new Vector3(actor.transform.position.x - 3,0,0);
+            //actor.rig.AddForce(new Vector2(-5,0) , ForceMode2D.Impulse);
         }
         else
         {
-            actor.rig.AddForce(new Vector2(5,0) , ForceMode2D.Impulse);
+            actor._playerData.HitandDashOffset = new Vector3(actor.transform.position.x + 3,0,0);
+            //actor.rig.AddForce(new Vector2(5,0) , ForceMode2D.Impulse);
         }
     }
 
@@ -30,6 +33,9 @@ public class HitState : IState
     {
         var actor = (PlayerActor) action;
         HitTime += Time.deltaTime;
+        actor.transform.position = new Vector3(Mathf.Lerp(actor.transform.position.x, actor._playerData.HitandDashOffset.x, 0.03f)
+            , actor.transform.position.y,actor.transform.position.z);
+        //actor.transform.position = Mathf.Lerp(actor.transform.position, actor._playerData.hitStepBack, 0.01f);
         /*
         if (HitTime >= 0.3f)
         {

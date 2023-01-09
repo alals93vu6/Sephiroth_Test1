@@ -5,10 +5,20 @@ using UnityEngine;
 public class DashState : IState
 {
     private float DashTime;
+    
     public void OnEnterState(object action)
     {
         //Debug.Log("Dash");
         var actor = (PlayerActor) action;
+        if (actor.PassState == 1)
+        {
+            actor._playerData.HitandDashOffset.y = actor.transform.position.x + 5f;
+        }
+        else
+        {
+            actor._playerData.HitandDashOffset.y = actor.transform.position.x - 5f;
+        }
+        actor.rig.velocity = Vector2.zero;
         actor._animatorManager.playDash();
         DashTime = 0f;
     }
@@ -18,6 +28,8 @@ public class DashState : IState
         var actor = (PlayerActor) action;
 
         DashTime += Time.deltaTime;
+        actor.transform.position = new Vector3(Mathf.Lerp(actor.transform.position.x, actor._playerData.HitandDashOffset.y, 0.05f)
+            ,actor.transform.position.y,actor.transform.position.z);
 
         if (DashTime >= 0.5f)
         {

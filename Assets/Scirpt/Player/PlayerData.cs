@@ -12,6 +12,7 @@ namespace Project.Player
         [SerializeField] public Vector3 AttackAeraL = new Vector3(0, 0, 0);
         [SerializeField] public Vector3 AttackAeraR = new Vector3(0, 0, 0);
         [SerializeField] public Vector3 hitboxAera = new Vector3(0, 0, 0);
+        [SerializeField] public Vector3 HitandDashOffset = new Vector3(0, 0, 0);
         [SerializeField] public Vector2 hitbox = new Vector2(0, 0);
         [SerializeField] public float JumpForce;
         [SerializeField] public Vector3 HitDetected = new Vector3(0, 0, 0);

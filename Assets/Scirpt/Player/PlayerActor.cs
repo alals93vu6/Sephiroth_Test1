@@ -61,11 +61,11 @@ public class PlayerActor : MonoBehaviour
         {
             IsRight = 0;
         }
-        if(Input.GetAxis("Horizontal") > 0f)
+        if(Input.GetAxis("Horizontal") > 0.4f)
         {
             IsRight = 1;
         }
-        if(Input.GetAxis("Horizontal") < 0f)
+        if(Input.GetAxis("Horizontal") < -0.4f)
         {
             IsRight = 2;
         }
@@ -108,8 +108,9 @@ public class PlayerActor : MonoBehaviour
     }
 
 
-    public async void onPlayerDash(float DashForce)
+    public async void onPlayerDash(float DashForce)//Todo
     {
+        /*
         if (_animatorManager._spriteRenderer.flipX)
         {
             rig.AddForce(new Vector2(DashForce,0) , ForceMode2D.Impulse);
@@ -126,7 +127,7 @@ public class PlayerActor : MonoBehaviour
             rig.velocity = Vector2.zero;
         }
         onTheMoveDetected();
-
+        */
     }
 
     public void HitDetected()
