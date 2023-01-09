@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Project;
@@ -106,30 +107,6 @@ public class PlayerActor : MonoBehaviour
             changeState(new IdleState());
         }
     }
-
-
-    public async void onPlayerDash(float DashForce)//Todo
-    {
-        /*
-        if (_animatorManager._spriteRenderer.flipX)
-        {
-            rig.AddForce(new Vector2(DashForce,0) , ForceMode2D.Impulse);
-        }
-        else
-        {
-            rig.AddForce(new Vector2(-DashForce,0) , ForceMode2D.Impulse);
-        }
-
-        await Task.Delay(600);
-            
-        if(Physics2D.OverlapCircle(transform.position - _playerData.JumpAera,_playerData.jumpRange, jumpfloor))
-        {
-            rig.velocity = Vector2.zero;
-        }
-        onTheMoveDetected();
-        */
-    }
-
     public void HitDetected()
     {
         if (Physics2D.OverlapBox(this.transform.position -_playerData.hitboxAera, _playerData.hitbox,0, 65536) && !HitCD)

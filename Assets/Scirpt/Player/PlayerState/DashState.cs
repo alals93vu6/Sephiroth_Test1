@@ -28,7 +28,7 @@ public class DashState : IState
         var actor = (PlayerActor) action;
 
         DashTime += Time.deltaTime;
-        actor.transform.position = new Vector3(Mathf.Lerp(actor.transform.position.x, actor._playerData.HitandDashOffset.y, 0.05f)
+        actor.transform.position = new Vector3(Mathf.Lerp(actor.transform.position.x, actor._playerData.HitandDashOffset.y, 0.035f)
             ,actor.transform.position.y,actor.transform.position.z);
 
         if (DashTime >= 0.5f)
