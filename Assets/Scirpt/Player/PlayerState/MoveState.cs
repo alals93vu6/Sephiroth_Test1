@@ -15,7 +15,7 @@ public class MoveState : IState
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        actor._animatorManager.playMove();
+        actor._animatorManager.playMove(actor.PassState);
         actor.HitDetected();
         actor.PlayerMove();
         

@@ -15,7 +15,7 @@ public class IdleState : IState
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        actor._animatorManager.playIdle();
+        actor._animatorManager.playIdle(actor.PassState);
         actor.HitDetected();
         if (Input.GetButtonDown("BKey"))
         {

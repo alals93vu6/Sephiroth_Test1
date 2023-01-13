@@ -20,7 +20,7 @@ public class AttackState : IState
         }
         else
         {
-            actor._animatorManager.PlayAttack();
+            actor._animatorManager.PlayAttack(actor.PassState);
         }
         EventBus.Post(new PlayerAttackDetected());
     }

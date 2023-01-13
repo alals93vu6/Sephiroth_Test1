@@ -9,7 +9,7 @@ public class DeadState : IState
         //Debug.Log("PlayerDead");
         var actor = (PlayerActor) action;
         actor.rig.velocity = Vector2.zero;
-        actor._animatorManager.playDead();
+        actor._animatorManager.playDead(actor.PassState);
     }
 
     public void OnStayState(object action)

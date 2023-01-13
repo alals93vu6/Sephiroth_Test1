@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,65 +8,136 @@ public class PlayerAnimatorManager : MonoBehaviour
     [Header("狀態")]
     [SerializeField] public Animator AN;
     [SerializeField] public SpriteRenderer _spriteRenderer;
-    [SerializeField] public PlayerActor _Player;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
         AN = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _Player = FindObjectOfType<PlayerActor>();
+    }
+    public void PlayAttack(int IsRight)
+    {
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerAttackR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerAttackL");
+        }
     }
 
-    public void PlayAttack()
+    public void playIdle(int IsRight)
     {
-        AN.Play("PlayerAttack");
-    }
-
-    public void playIdle()
-    {
-        AN.Play("PlayerIdle");
-    }
-    
-    public void playDead()
-    {
-        AN.Play("PlayerDeadL");
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerIdleR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerIdleL");
+        }
+        
     }
     
-    public void playMove()
+    public void playDead(int IsRight)
     {
-        AN.Play("PlayerRun");
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerDeadR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerDeadL");
+        }
     }
     
-    public void playHit()
+    public void playMove(int IsRight)
     {
-        AN.Play("PlayerHitL");
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerRunR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerRunL");
+        }
     }
     
-    public void playHeal()
+    public void playHit(int IsRight)
     {
-        AN.Play("PlayerHealL");
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerHitR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerHitL");
+        }
     }
-
-    public void playBrakes()
+    
+    public void playHeal(int IsRight)
     {
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerHealR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerHealL");
+        }
+    }
+/*
+    public void playBrakes(int IsRight)
+    {
+        
+        if (IsRight == 1)
+        {
+            
+        }
+        if (IsRight == 2)
+        {
+            
+        }
         AN.Play("PlayerStopMove");
     }
-
-    public void playJump()
+*/
+    public void playJump(int IsRight)
     {
-        AN.Play("PlayerJump");
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerJumpR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerJumpL");
+        }
     }
     
-    public void playDrop()
+    public void playDrop(int IsRight)
     {
-        AN.Play("PlayerDrop");
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerDropR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerDropL");
+        }
+        
     }
     
-    public void playDash()
+    public void playDash(int IsRight)
     {
-        AN.Play("PlayerDash");
+        if (IsRight == 1)
+        {
+            AN.Play("PlayerDashR");
+        }
+        if (IsRight == 2)
+        {
+            AN.Play("PlayerDashL");
+        }
     }
 
 }

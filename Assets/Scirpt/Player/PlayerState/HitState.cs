@@ -15,7 +15,7 @@ public class HitState : IState
         var actor = (PlayerActor) action;
         actor.GetDamage();
         actor.rig.velocity = Vector2.zero;
-        actor._animatorManager.playHit();
+        actor._animatorManager.playHit(actor.PassState);
         if (Physics2D.OverlapBox( actor.transform.position - actor._playerData.HitDetected,
             actor._playerData.hitDetectedbox, 0, actor.HitObj))
         {

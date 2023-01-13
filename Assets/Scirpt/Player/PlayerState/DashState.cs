@@ -19,7 +19,7 @@ public class DashState : IState
             actor._playerData.HitandDashOffset.y = actor.transform.position.x - 5f;
         }
         actor.rig.velocity = Vector2.zero;
-        actor._animatorManager.playDash();
+        actor._animatorManager.playDash(actor.PassState);
         DashTime = 0f;
     }
 

@@ -16,7 +16,7 @@ public class HealState : IState
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        actor._animatorManager.playHeal();
+        actor._animatorManager.playHeal(actor.PassState);
         healTime += Time.deltaTime;
 
         if (Input.GetButtonUp("YKey") || healTime >= 1.11f)

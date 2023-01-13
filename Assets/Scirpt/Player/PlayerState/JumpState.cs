@@ -20,7 +20,7 @@ public class JumpState : IState
     public void OnStayState(object action)
     {
         var actor = (PlayerActor) action;
-        actor._animatorManager.playJump();
+        actor._animatorManager.playJump(actor.PassState);
         actor.PlayerMove();
         actor.HitDetected();
         JumpTime += Time.deltaTime;
