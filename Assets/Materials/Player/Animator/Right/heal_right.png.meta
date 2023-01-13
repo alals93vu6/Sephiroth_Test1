@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: 2ca1e4cf22ff902449cea5872a6e0830
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -674544369668275704
+    second: heal_right_0
+  - first:
+      213: 3695669411058927356
+    second: heal_right_1
+  - first:
+      213: -4537877897117689653
+    second: heal_right_2
+  - first:
+      213: -2812124085669399677
+    second: heal_right_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -71,9 +83,105 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: heal_right_0
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 650
+        width: 245
+        height: 495
+      alignment: 9
+      pivot: {x: 0.5116866, y: 0.021831227}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802ceac387983a6f0800000000000000
+      internalID: -674544369668275704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heal_right_1
+      rect:
+        serializedVersion: 2
+        x: 1396
+        y: 651
+        width: 257
+        height: 491
+      alignment: 9
+      pivot: {x: 0.47400424, y: 0.017915878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6c175bfb7a94330800000000000000
+      internalID: 3695669411058927356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heal_right_2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 49
+        width: 386
+        height: 493
+      alignment: 9
+      pivot: {x: 0.5, y: 0.01873418}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8143468183601c0800000000000000
+      internalID: -4537877897117689653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heal_right_3
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 50
+        width: 355
+        height: 496
+      alignment: 9
+      pivot: {x: 0.48672375, y: 0.016975688}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383fa591b0459f8d0800000000000000
+      internalID: -2812124085669399677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -7,6 +7,7 @@ public class PlayerAnimatorManager : MonoBehaviour
     [Header("狀態")]
     [SerializeField] public Animator AN;
     [SerializeField] public SpriteRenderer _spriteRenderer;
+    [SerializeField] public PlayerActor _Player;
     
 
     // Start is called before the first frame update
@@ -14,18 +15,7 @@ public class PlayerAnimatorManager : MonoBehaviour
     {
         AN = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    public void flipPlayer(int flipInt)
-    {
-        if (flipInt == 1)
-        {
-            _spriteRenderer.flipX = false;
-        }
-        else
-        {
-            _spriteRenderer.flipX = true;
-        }
+        _Player = FindObjectOfType<PlayerActor>();
     }
 
     public void PlayAttack()

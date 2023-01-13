@@ -83,17 +83,7 @@ public class PlayerActor : MonoBehaviour
 
     public void PlayerMove()
     {
-        if(IsRight == 1)
-        {
-            _animatorManager.flipPlayer(2);
-        }
-        else if(IsRight == 2)
-        {
-            _animatorManager.flipPlayer(1);
-        }
-        
         rig.velocity = new Vector2(Input.GetAxis("Horizontal") *  _playerData.runSpeed, rig.velocity.y);
-        
     }
 
     public void onTheMoveDetected()
@@ -170,8 +160,6 @@ public class PlayerActor : MonoBehaviour
 
     public void AttackAreaSet()
     {
-        
-        
         if(IsRight == 1)
         {
             AttackDetected.transform.position = this.transform.position +_playerData.AttackAeraR;
