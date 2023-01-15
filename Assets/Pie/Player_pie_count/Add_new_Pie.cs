@@ -5,11 +5,9 @@ using UnityEngine;
 public class Add_new_Pie : MonoBehaviour
 {
     [Header("Who play with player in the Game")]
-    [SerializeField] public bool is_Get_Basic_Attack_pie = false;
-    [SerializeField] public bool is_Get_Basic_Recover_pie = false;
-    [SerializeField] public bool is_Get_Draw_knife_pie = false;
-    [SerializeField] public int player_1;
-    [SerializeField] public int player_2;
+    [SerializeField] public bool is_Get_Basic_Attack_pie;
+    [SerializeField] public bool is_Get_Basic_Recover_pie;
+    [SerializeField] public bool is_Get_Draw_knife_pie;
 
     [Header("Player_count")]
     [SerializeField] public int player_count = 0;
@@ -40,9 +38,9 @@ public class Add_new_Pie : MonoBehaviour
     void Update()
     {
         stop_pie_fine_now_count(pie_list_player, 0);
-        stop_pie_fine_now_count(pie_list_Basic_Attack, 1);
-        stop_pie_fine_now_count(pie_list_Basic_Recover, 2);
-        stop_pie_fine_now_count(pie_list_Draw_knife, 3);
+        if (is_Get_Basic_Attack_pie) { stop_pie_fine_now_count(pie_list_Basic_Attack, 1); }
+        if (is_Get_Basic_Recover_pie) { stop_pie_fine_now_count(pie_list_Basic_Recover, 2); }
+        if (is_Get_Draw_knife_pie) { stop_pie_fine_now_count(pie_list_Draw_knife, 3); }
     }
     void Get_player_pie()
     {
@@ -90,10 +88,10 @@ public class Add_new_Pie : MonoBehaviour
         {
             if (Now_pie.pie_int >= i[a] && Now_pie.pie_int <= i[a + 1])
             {
-               /* Debug.Log("is_work");
-                Debug.Log(i[a]);
-                Debug.Log(i[a + 1]);
-                Debug.Log(a);*/
+                /* Debug.Log("is_work");
+                 Debug.Log(i[a]);
+                 Debug.Log(i[a + 1]);
+                 Debug.Log(a);*/
 
                 if (SetCount == 0)
                 {
